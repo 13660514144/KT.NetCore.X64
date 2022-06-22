@@ -1,0 +1,25 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <Platforms>AnyCPU;x64;x86</Platforms>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Hitachi\**" />
+    <EmbeddedResource Remove="Hitachi\**" />
+    <None Remove="Hitachi\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.IO.Ports" Version="4.7.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\KT.Common.Core\KT.Common.Core.csproj" />
+    <ProjectReference Include="..\KT.Common.WpfApp\KT.Common.WpfApp.csproj" />
+    <ProjectReference Include="..\KT.Device\KT.Device.csproj" />
+    <ProjectReference Include="..\KT.Quanta.Common\KT.Quanta.Common.csproj" />
+  </ItemGroup>
+
+</Project>

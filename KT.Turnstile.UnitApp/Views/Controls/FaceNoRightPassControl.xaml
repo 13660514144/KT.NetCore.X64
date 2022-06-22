@@ -1,0 +1,36 @@
+﻿<UserControl x:Class="KT.Turnstile.Unit.ClientApp.Views.Controls.FaceNoRightPassControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:prism="http://prismlibrary.com/"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             prism:ViewModelLocator.AutoWireViewModel="True"
+             mc:Ignorable="d" 
+             d:DesignHeight="1000" d:DesignWidth="600">
+    <Grid Visibility="{Binding Show,Converter={StaticResource cvt_TrueVisbile}}">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0" Margin="50,80">
+                <Grid.Background>
+                    <ImageBrush ImageSource="/KT.Turnstile.Unit.ClientApp;component/Resources/Images/NormalFrame.png" />
+                </Grid.Background>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0" Height="150">
+                    <StackPanel Orientation="Vertical" VerticalAlignment="Bottom" HorizontalAlignment="Center">
+                        <TextBlock Text="抱歉，您无通行权限！" Foreground="#04ECFF" FontSize="28" />
+                    </StackPanel>
+                </Grid>
+                <Grid Grid.Row="1">
+                    <Image Source="/KT.Turnstile.Unit.ClientApp;component/Resources/Images/LiftResultFrame.png" Margin="30"/>
+                    <Image Source="/KT.Turnstile.Unit.ClientApp;component/Resources/Images/NoPass.png" Width="160"/>
+                </Grid>
+            </Grid>
+        </Grid>
+    </Grid>
+</UserControl>

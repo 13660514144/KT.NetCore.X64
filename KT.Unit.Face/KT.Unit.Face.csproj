@@ -1,0 +1,50 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <Platforms>AnyCPU;x64;x86</Platforms>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="ReferenceFiles\Face\ArcFaceSdk\Pro\libarcsoft_face.dll" />
+    <None Remove="ReferenceFiles\Face\ArcFaceSdk\Pro\libarcsoft_face_engine.dll" />
+    <None Remove="ReferenceFiles\Face\ArcFaceSdk\Pro\libarcsoft_face_engine.lib" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="ReferenceFiles\Face\ArcFaceSdk\Pro\libarcsoft_face.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ReferenceFiles\Face\ArcFaceSdk\Pro\libarcsoft_face_engine.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ReferenceFiles\Face\ArcFaceSdk\Pro\libarcsoft_face_engine.lib">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="ReferenceFiles\Face\ArcFaceSdk\Free\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Emgu.CV" Version="4.3.0.3890" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\KT.Common.Core\KT.Common.Core.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="ReferenceFiles\Face\ArcFaceSdk\Free\libarcsoft_face.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="ReferenceFiles\Face\ArcFaceSdk\Free\libarcsoft_face_engine.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="ReferenceFiles\Face\ArcFaceSdk\Free\libarcsoft_face_engine.lib">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>

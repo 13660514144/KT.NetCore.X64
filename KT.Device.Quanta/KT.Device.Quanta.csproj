@@ -1,0 +1,29 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <Platforms>AnyCPU;x64;x86</Platforms>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Servers\**" />
+    <EmbeddedResource Remove="Servers\**" />
+    <None Remove="Servers\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\KT.Common.Event\KT.Common.Event.csproj" />
+    <ProjectReference Include="..\KT.Common.Netty\KT.Common.Netty.csproj" />
+    <ProjectReference Include="..\KT.Device\KT.Device.csproj" />
+    <ProjectReference Include="..\KT.Quanta.Common\KT.Quanta.Common.csproj" />
+    <ProjectReference Include="..\KT.Quanta.Entity\KT.Quanta.Entity.csproj" />
+    <ProjectReference Include="..\KT.Quanta.IDao\KT.Quanta.IDao.csproj" />
+    <ProjectReference Include="..\KT.Quanta.Model\KT.Quanta.Model.csproj" />
+    <ProjectReference Include="..\KT.Quanta.Unit.Model\KT.Quanta.Unit.Model.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Coders\" />
+  </ItemGroup>
+
+</Project>

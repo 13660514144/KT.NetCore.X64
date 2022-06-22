@@ -1,0 +1,74 @@
+﻿<Page x:Class="KT.Visitor.SelfApp.Public.IdentityReadIdCardPage"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:KT.Visitor.SelfApp.Public"
+        mc:Ignorable="d"
+        Title="IdentityReadIdCardPage">
+    <Page.Background>
+        <ImageBrush ImageSource="/KT.Visitor.SelfApp;component/Resources/icons/bg/bg.png"/>
+    </Page.Background>
+    <Page.Triggers>
+        <EventTrigger RoutedEvent="Window.Loaded" >
+            <BeginStoryboard>
+                <Storyboard>
+                    <DoubleAnimation Duration="00:00:01" Storyboard.TargetProperty="Opacity" From="0" To="1" />
+                </Storyboard>
+            </BeginStoryboard>
+        </EventTrigger>
+    </Page.Triggers>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <!--顶部导航开始-->
+        <Grid Grid.Row="0" Margin="20">
+            <StackPanel Height="53" 
+                        HorizontalAlignment="Left" >
+                <TextBlock Text="访客登记系统" 
+                           FontSize="36" 
+                           TextAlignment="Center" 
+                           Foreground="White"
+                           Name="txb_title"
+                           Padding="55,0,0,0">
+                    <TextBlock.Background>
+                        <ImageBrush ImageSource="/KT.Visitor.SelfApp;component/Resources/icons/@3x/标题1@3x.png"  />
+                    </TextBlock.Background>
+                </TextBlock>
+            </StackPanel>
+            <!--<Image Source="/KT.Visitor.SelfApp;component/Resources/icons/@2x/exit5.png" 
+                   Width="114" 
+                   Height="90" 
+                   Name="img_exit" 
+                   MouseLeftButtonDown="Img_exit_MouseLeftButtonDown" 
+                   HorizontalAlignment="Right"/>-->
+            <StackPanel>
+                <Label FontSize="36" Content="返回首页" BorderBrush="Wheat"
+                           HorizontalAlignment="Right"
+                                 BorderThickness="2" MouseLeftButtonDown="Img_exit_MouseLeftButtonDown" 
+                           Foreground="White" Margin="0,-2,0,2"></Label>
+            </StackPanel>
+        </Grid>
+
+        <Grid Grid.Row="1" Margin="20">
+            <Grid HorizontalAlignment="Center" 
+                  VerticalAlignment="Center">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <TextBlock Grid.Row="0" Text="欢迎来访,请将您的身份证放置在证件阅读区" FontSize="28" Foreground="White" TextAlignment="Center"/>
+                <StackPanel Grid.Row="1" Width="578" Height="399" Margin="0,40,0,0" Orientation="Vertical">
+                    <StackPanel.Background>
+                        <ImageBrush ImageSource="/KT.Visitor.SelfApp;component/Resources/icons/@3x/证件阅读@3x.png"/>
+                    </StackPanel.Background>
+                    <StackPanel Orientation="Vertical" Height="399" >
+                        <TextBlock  Background="#4EFBFC" Height="0" Margin="0,30,0,0" Opacity="0.3" Name="txb_am" Width="510" HorizontalAlignment="Center"/>
+                    </StackPanel>
+                </StackPanel>
+            </Grid>
+        </Grid>
+    </Grid>
+</Page>

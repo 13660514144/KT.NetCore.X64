@@ -1,0 +1,105 @@
+<FlowDocument xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+              FontSize="12" 
+              FontFamily="Microsoft YaHei"
+              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+              TextOptions.TextFormattingMode="Display" PagePadding="0">
+    <FlowDocument.Resources>
+        <Style TargetType="Table" x:Key="BorderedTable">
+            <Setter Property="CellSpacing" Value="0"></Setter>
+            <Setter Property="BorderThickness" Value="0"></Setter>
+        </Style>
+        <Style TargetType="TableCell" x:Key="BorderedCell">
+            <Setter Property="BorderThickness" Value="0"></Setter>
+            <Setter Property="Padding" Value="3"></Setter>
+        </Style>
+    </FlowDocument.Resources>
+
+    <Section TextAlignment="Center" Margin="0,0,0,0" Padding="0,0,0,0">
+        <Paragraph TextAlignment="Center" Margin="0" Padding="0,0,0,0">
+            <TextBlock FontSize="17" FontWeight="Bold" x:Name="run_EdificeName" TextWrapping="NoWrap"/>
+        </Paragraph>
+
+        <Paragraph TextAlignment="Center" Margin="0" Padding="0,5,0,0">
+            <TextBlock Text="请将二维码对准阅读器，识别距离5-10cm" TextWrapping="NoWrap"/>
+        </Paragraph>
+
+        <Paragraph TextAlignment="Center" Margin="0" Padding="0,5,0,0">
+            <TextBlock FontSize="10" Text="Please hold the QR code 5-10cm above the scanner" TextWrapping="NoWrap"/>
+        </Paragraph>
+
+        <Paragraph TextAlignment="Center" Margin="0" Padding="0,5,0,0">
+            <Image x:Name="image_QRCode" Width="160" Margin="0"/>
+            <TextBlock  Padding="0" Margin="0" Text="&quot;&quot;&quot;&quot;" Foreground="white"> </TextBlock>
+        </Paragraph>
+
+        <Table TextAlignment="Center" Margin="0" Padding="0">
+            <Table.Columns>
+                <TableColumn Width="32*"></TableColumn>
+                <TableColumn Width="120*"></TableColumn>
+            </Table.Columns>
+            <TableRowGroup>
+                <TableRow>
+                    <TableCell Padding="0,3,0,0">
+                        <Paragraph TextAlignment="Right" Padding="5,0,0,0" Margin="0">
+                            <TextBlock  Padding="0" Margin="0" Text="访客/Visitor：" ></TextBlock>
+                        </Paragraph>
+                    </TableCell>
+                    <TableCell Padding="0,3,0,0">
+                        <Paragraph TextAlignment="Left" Padding="5,0,0,0" Margin="0">
+                            <TextBlock x:Name="run_Name" Padding="0" Margin="0"></TextBlock>
+                        </Paragraph>
+                    </TableCell>
+                </TableRow>
+
+                <TableRow>
+                    <TableCell Padding="0,0,0,0">
+                        <Paragraph TextAlignment="Right" Padding="5,0,0,0" Margin="0">
+                            <TextBlock  Padding="0" Margin="0" Text="来访/Company：" ></TextBlock>
+                        </Paragraph>
+                    </TableCell>
+                    <TableCell Padding="0,0,0,0">
+                        <Section TextAlignment="Left" Padding="0" Margin="0">
+                            <Paragraph TextAlignment="Left" Padding="5,0,0,0" Margin="0">
+                                <TextBlock x:Name="run_FloorCompanyName1" Padding="0" Margin="0" TextWrapping="NoWrap"/>
+                            </Paragraph>
+                            <Paragraph TextAlignment="Left" Padding="5,0,0,0" Margin="0">
+                                <TextBlock x:Name="run_FloorCompanyName2" Padding="0,0,0,0" Margin="0" TextWrapping="NoWrap"/>
+                            </Paragraph>
+                        </Section>
+                    </TableCell>
+                </TableRow>
+            </TableRowGroup>
+        </Table>
+
+        <Paragraph TextAlignment="Center" Margin="0" Padding="0">
+            <TextBlock Text="-------------------------------" TextWrapping="NoWrap" />
+        </Paragraph>
+
+        <Paragraph TextAlignment="Center" Margin="0" Padding="0">
+            <TextBlock x:Name="run_DateTime" TextWrapping="NoWrap" />
+            <TextBlock x:Name="run_AuthMode" TextWrapping="NoWrap" />
+        </Paragraph>
+
+        <Paragraph TextAlignment="Center" Margin="0" Padding="0,0,0,0">
+            <TextBlock Text="进出闸需要此票，请勿丢失"/>
+        </Paragraph>
+
+        <!--<Paragraph Margin="20,0,0,0" FontSize="9.2">
+        乘梯指引：
+        <LineBreak/>
+        来访4-11楼：从1楼搭乘B1-B6梯；
+        <LineBreak/>
+        来访14-21楼：从1楼搭乘A1-A6梯；
+        <LineBreak/>
+        来访22-29楼：从1楼搭乘C1-C6梯；
+        <LineBreak/>
+        来访32-39楼：从2楼搭乘L1-L4梯至31楼转乘B7-B12梯；
+        <LineBreak/>
+        来访40-47楼：从1楼搭乘L1-14梯至30楼转乘A7-A12梯；
+        <LineBreak/>
+        来访50-57楼：从2楼搭乘U1-U4梯至49楼转乘B13-B18梯；
+        <LineBreak/>
+        来访58-65楼：从1楼乘坐U1-U4梯至48楼转乘C7-C12梯
+    </Paragraph>-->
+    </Section>
+</FlowDocument>

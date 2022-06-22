@@ -1,0 +1,288 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <Platforms>AnyCPU;x64;x86</Platforms>
+    <WcfConfigValidationEnabled>True</WcfConfigValidationEnabled>
+  </PropertyGroup>
+	
+ 
+	
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <PlatformTarget>x64</PlatformTarget>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x86'">
+    <PlatformTarget>x86</PlatformTarget>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <PlatformTarget>x64</PlatformTarget>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x86'">
+    <PlatformTarget>x86</PlatformTarget>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Device\Devices\aa.bb.cc\**" />
+    <EmbeddedResource Remove="Device\Devices\aa.bb.cc\**" />
+    <None Remove="Device\Devices\aa.bb.cc\**" />
+    <Page Remove="Device\Devices\aa.bb.cc\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Service\Helpers\SeekHandler.cs" />
+    <Compile Remove="Service\Helpers\SeekReceiveHelper.cs" />
+    <Compile Remove="Service\Helpers\SeekSendHelper.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="log4net.config" />
+    <None Remove="Resources\Images\Backgroup.png" />
+    <None Remove="Resources\Images\Button-1.png" />
+    <None Remove="Resources\Images\Button-2.png" />
+    <None Remove="Resources\Images\ElevatorUnit1-1.png" />
+    <None Remove="Resources\Images\ElevatorUnit1-2.png" />
+    <None Remove="Resources\Images\ElevatorUnit1-3.png" />
+    <None Remove="Resources\Images\ElevatorUnit2-1.png" />
+    <None Remove="Resources\Images\ElevatorUnit2-2.png" />
+    <None Remove="Resources\Images\ElevatorUnit2-3.png" />
+    <None Remove="Resources\Images\ElevatorUnit3-1.png" />
+    <None Remove="Resources\Images\ElevatorUnit3-2.png" />
+    <None Remove="Resources\Images\ElevatorUnit4-1.png" />
+    <None Remove="Resources\Images\ElevatorUnit4-2.png" />
+    <None Remove="Resources\Images\Error.png" />
+    <None Remove="Resources\Images\Exit.png" />
+    <None Remove="Resources\Images\FaceBackgroup.png" />
+    <None Remove="Resources\Images\FaceTarget.png" />
+    <None Remove="Resources\Images\HandleNoRight.png" />
+    <None Remove="Resources\Images\HandleNormal.png" />
+    <None Remove="Resources\Images\HandleNormalSelected.png" />
+    <None Remove="Resources\Images\HandlePublic.png" />
+    <None Remove="Resources\Images\HandlePublicSelected.png" />
+    <None Remove="Resources\Images\LiftFrame.png" />
+    <None Remove="Resources\Images\LiftResultFrame.png" />
+    <None Remove="Resources\Images\NoPass.png" />
+    <None Remove="Resources\Images\NormalFrame.png" />
+    <None Remove="Resources\Images\TopLeft.png" />
+    <None Remove="Resources\Images\TopRight.png" />
+    <None Remove="Resources\Images\WarnFrame.png" />
+    <None Remove="Ver.json" />
+    <None Remove="Views\MainWindowViewModel.cs~RF53268b7.TMP" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="log4net.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Ver.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FluentScheduler" Version="5.5.1" />
+    <PackageReference Include="Microsoft.AspNetCore.SignalR.Client" Version="3.1.7" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="3.1.7">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="3.1.7" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.7">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="MySql.Data" Version="8.0.25" />
+    <PackageReference Include="System.IO.Ports" Version="4.7.0" />
+    <PackageReference Include="WebSocket4Net" Version="0.15.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\KT.Common.Data\KT.Common.Data.csproj" />
+    <ProjectReference Include="..\KT.Common.Netty\KT.Common.Netty.csproj" />
+    <ProjectReference Include="..\KT.Common.Tool\KT.Common.Tool.csproj" />
+    <ProjectReference Include="..\KT.Common.WpfApp\KT.Common.WpfApp.csproj" />
+    <ProjectReference Include="..\KT.Device.Unit.Turnstile\KT.Device.Unit.Turnstile.csproj" />
+    <ProjectReference Include="..\KT.Elevator.Unit.Entity\KT.Elevator.Unit.Entity.csproj" />
+    <ProjectReference Include="..\KT.Quanta.Common\KT.Quanta.Common.csproj" />
+    <ProjectReference Include="..\KT.Quanta.Unit.Common\KT.Quanta.Unit.Common.csproj" />
+    <ProjectReference Include="..\KT.Quanta.Unit.Model\KT.Quanta.Unit.Model.csproj" />
+    <ProjectReference Include="..\KT.Turnstile.Unit.Entity\KT.Turnstile.Unit.Entity.csproj" />
+    <ProjectReference Include="..\ThirdParty\PanuonUI.Silver\Core30\Panuon.UI.Silver\Panuon.UI.Silver.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\Images\Backgroup.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\Button-1.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\Button-2.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\ElevatorUnit1-1.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\ElevatorUnit1-2.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\ElevatorUnit1-3.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\ElevatorUnit2-1.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\ElevatorUnit2-2.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\ElevatorUnit2-3.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\ElevatorUnit3-1.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\ElevatorUnit3-2.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\ElevatorUnit4-1.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\ElevatorUnit4-2.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\Error.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\Exit.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\FaceBackgroup.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\FaceTarget.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\HandleNoRight.png" />
+    <Resource Include="Resources\Images\HandleNormal.png" />
+    <Resource Include="Resources\Images\HandleNormalSelected.png" />
+    <Resource Include="Resources\Images\HandlePublic.png" />
+    <Resource Include="Resources\Images\HandlePublicSelected.png" />
+    <Resource Include="Resources\Images\LiftFrame.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\LiftResultFrame.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\NoPass.png" />
+    <Resource Include="Resources\Images\NormalFrame.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\TopLeft.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\TopRight.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\WarnFrame.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Views\Controls\DefaultLeavePassControl.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\Controls\DefaultEnterPassControl.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\Controls\DefaultNoRightPassControl.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\Controls\FaceLeavePassControl.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\Controls\FaceEnterPassControl.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\Controls\FaceNoRightPassControl.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="appsettings.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Resources\Images\Logo.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Update="Resources\Styles\SysStyles.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\Controls\DefaultLeavePassControl.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\Controls\DefaultEnterPassControl.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\Controls\DefaultNoRightPassControl.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\Controls\FaceLeavePassControl.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\Controls\FaceEnterPassControl.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\Controls\FaceNoRightPassControl.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\Controls\CopyrightControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\Controls\HeaderControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Update="Views\SuccessShowControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties appsettings_1json__JsonSchema="" />
+    </VisualStudio>
+  </ProjectExtensions>
+
+</Project>

@@ -1,0 +1,42 @@
+﻿<UserControl x:Class="KT.Visitor.Interface.Views.Auth.InviteAuthActiveControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" 
+      d:DesignHeight="600" d:DesignWidth="1000" >
+
+    <!--<ScrollViewer>-->
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition />
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" Grid.Column="0" Orientation="Horizontal">
+            <TextBlock Text="邀约验证" Style="{DynamicResource Tbk_NormalTextTitle}" Margin="30,30,0,30"/>
+            <TextBlock Text="（默认激活该访客今天所有的预约记录）" Style="{DynamicResource Tbk_SmallTextTitle}"/>
+        </StackPanel>
+
+        <!--记录列表-->
+        <Grid  Grid.Row="1" Grid.Column="0">
+            <!--陪同访客-->
+            <ListBox ItemsSource="{Binding AppointAuthDetailControls}" 
+                     Style="{DynamicResource lb_ContentVirtualListBoxStyle}"
+                     ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <ContentPresenter Content="{Binding }" Margin="0,0,0,30"/>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+        </Grid>
+
+        <StackPanel Grid.Row="2" Grid.Column="0" Orientation="Horizontal" HorizontalAlignment="Center">
+            <Button Content="取消" Style="{DynamicResource Btn_CancelButton}" Command="{Binding CancelCommand}"/>
+            <Button Content="确认授权" IsEnabled="{Binding IsSubmiting,Converter={StaticResource cvt_BoolAntonym}}" Style="{DynamicResource Btn_ConfirmButton}" Command="{Binding AuthAllCommand}"/>
+        </StackPanel>
+    </Grid>
+    <!--</ScrollViewer>-->
+
+</UserControl>

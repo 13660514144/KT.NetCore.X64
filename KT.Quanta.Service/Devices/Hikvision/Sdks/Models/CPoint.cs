@@ -1,0 +1,9 @@
+﻿namespace KT.Quanta.Service.Devices.Hikvision.Models
+{
+    public class CPoint
+    {
+        public float x { get; set; }
+        public float y { get; set; }
+    }
+
+}

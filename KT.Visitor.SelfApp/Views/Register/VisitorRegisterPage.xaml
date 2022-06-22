@@ -1,0 +1,194 @@
+﻿<Page x:Class="KT.Visitor.SelfApp.Register.VisitorRegisterPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:touchvistor="clr-namespace:KT.Visitor.SelfApp"
+      xmlns:pu="clr-namespace:Panuon.UI.Silver;assembly=Panuon.UI.Silver"
+      mc:Ignorable="d"
+        Title="VisitorRegisterPage" >
+    <Page.Background>
+        <ImageBrush ImageSource="/KT.Visitor.SelfApp;component/Resources/icons/bg/bg.png"/>
+    </Page.Background>
+    <Page.Resources>
+        <Style TargetType="RadioButton">
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="Width" Value="130"/>
+            <Setter Property="Margin" Value="0,20,0,0"/>
+        </Style>
+    </Page.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <!--顶部导航开始-->
+        <Grid Grid.Row="0" Margin="20">
+            <StackPanel Height="53" 
+                            HorizontalAlignment="Left" >
+                <TextBlock Text="访客登记系统" 
+                               FontSize="36" 
+                               TextAlignment="Center" 
+                               Foreground="White"
+                               Name="txb_title"
+                               Padding="50,0,0,0">
+                    <TextBlock.Background>
+                        <ImageBrush ImageSource="/KT.Visitor.SelfApp;component/Resources/icons/@3x/标题1@3x.png"  />
+                    </TextBlock.Background>
+                </TextBlock>
+            </StackPanel>
+            <!--<Image Source="/KT.Visitor.SelfApp;component/Resources/icons/@2x/退出@2x.png" 
+                           Width="114" 
+                           Height="90"
+                           Name="img_exit" 
+                           MouseLeftButtonDown="Img_exit_MouseLeftButtonDown" 
+                           HorizontalAlignment="Right"/>-->
+            <StackPanel>
+                <Label FontSize="36" Content="返回首页" BorderBrush="Wheat"
+                           HorizontalAlignment="Right"
+                                 BorderThickness="2" MouseLeftButtonDown="Img_exit_MouseLeftButtonDown" 
+                           Foreground="White" Margin="0,-2,0,2"></Label>
+            </StackPanel>
+        </Grid>
+
+        <Grid Grid.Row="1" Margin="20">
+            <Grid.Background>
+                <ImageBrush ImageSource="/KT.Visitor.SelfApp;component/Resources/icons/@3x/内容框@3x.png"/>
+            </Grid.Background>
+            <!--右侧UI-->
+            <StackPanel Orientation="Vertical" 
+                            VerticalAlignment="Center"
+                            HorizontalAlignment="Center"
+                            Margin="20">
+
+                <StackPanel Orientation="Horizontal" 
+                            Margin="20,30,0,0" 
+                            VerticalAlignment="Center">
+                    <Image Source="/KT.Visitor.SelfApp;component/Resources/icons/@2x/步骤@2x.png"/>
+                    <TextBlock Text="1"
+                               Foreground="White" 
+                               FontSize="20" 
+                               VerticalAlignment="Center" 
+                               Margin="-30,0,0,0"/>
+                    <TextBlock Text="输入手机号和选择来访事由" 
+                               FontSize="20" 
+                               Foreground="White" 
+                               Margin="20,0,0,0" 
+                               VerticalAlignment="Center"/>
+                </StackPanel>
+                <!--输入部分开始-->
+                <StackPanel Orientation="Vertical" 
+                            Margin="0,50,0,0">
+                    <StackPanel Orientation="Horizontal" 
+                                Margin="0,-15,0,0"  
+                                HorizontalAlignment="Left">
+                        <TextBlock Text="手机号" Foreground="White" FontSize="18" Margin="15,0,0,0" VerticalAlignment="Center"   />
+                        <TextBox Text="{Binding PhoneVM.Phone,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" 
+                                 Width="350"  
+                                 Background="Transparent"  
+                                 Margin="25,0,0,0" 
+                                 GotFocus="Txt_mobile_GotFocus" 
+                                 Name="txt_mobile" 
+                                 Foreground="White"
+                                 FontSize="18" 
+                                 TextAlignment="Center" 
+                                 VerticalAlignment="Center" 
+                                 Padding="0,5,0,5"  
+                                 pu:TextBoxHelper.Watermark="请输入您的手机号码"
+                                 Height="48"
+                                 PreviewMouseDown="txt_mobile_PreviewMouseDown"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Vertical" >
+                        <StackPanel Orientation="Horizontal" Margin="20,0,0,0" Visibility="{Binding PhoneVM.IsError}">
+                            <Image Source="/KT.Visitor.SelfApp;component/Resources/icons/@2x/异常icon@2x.png" Width="25" Margin="80,0,0,0"/>
+                            <TextBlock Text="{Binding PhoneVM.ErrorMsg}" 
+                                           Foreground="Yellow" 
+                                           FontSize="18" 
+                                           Margin="5,0,0,0" 
+                                           VerticalAlignment="Center"/>
+                        </StackPanel>
+                        <Button BorderThickness="0"
+                                Margin="0,0,0,0"
+                                Background="{x:Null}">
+                            <pu:PopupX x:Name="pop_NumberInput"
+                                       AllowsTransparency="True"
+                                       AllowDrop="True"
+                                       HorizontalAlignment="Center"
+                                       Placement="Bottom">
+                                <touchvistor:NumberBoardControl x:Name="uc_keybrod"
+                                                                TxtNumber="{Binding PhoneVM.Phone,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
+                            </pu:PopupX>
+                        </Button>
+                    </StackPanel>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal" 
+                                Margin="20,30,0,0" 
+                                VerticalAlignment="Center">
+                    <Image Source="/KT.Visitor.SelfApp;component/Resources/icons/@2x/步骤@2x.png"/>
+                    <TextBlock Text="2"
+                                   Foreground="White" 
+                                   FontSize="20" 
+                                   VerticalAlignment="Center" 
+                                   Margin="-30,0,0,0"/>
+                    <TextBlock Text="选择来访事由" 
+                                   FontSize="20" 
+                                   Foreground="White" 
+                                   Margin="20,0,0,0" 
+                                   VerticalAlignment="Center"/>
+                </StackPanel>
+
+                <StackPanel Orientation="Vertical" Margin="60,30,0,0">
+                    <ItemsControl ItemsSource="{Binding VisitReasons}"
+                                      Margin="0,0,0,0"
+                                      HorizontalAlignment="Left">
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <RadioButton Content="{Binding Name}"
+                                             GroupName="VisitReasonGroup" 
+                                             IsChecked="{Binding IsChecked,Mode=TwoWay}"
+                                             Style="{DynamicResource Rb_Style}" />
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                        <ItemsControl.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <WrapPanel />
+                            </ItemsPanelTemplate>
+                        </ItemsControl.ItemsPanel>
+                    </ItemsControl>
+
+                    <StackPanel Orientation="Horizontal" Name="st_reason" Visibility="Collapsed">
+                        <Image Source="/KT.Visitor.SelfApp;component/Resources/icons/@2x/异常icon@2x.png" Width="25" Margin="60,0,0,0"/>
+                        <TextBlock Text="来访事由不能为空" Foreground="White" FontSize="18" Margin="15,0,0,0" VerticalAlignment="Center" />
+                    </StackPanel>
+                </StackPanel>
+                <!--输入部分结尾-->
+            </StackPanel>
+        </Grid>
+        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center">
+            <Button  Content="取消" 
+                     Width="202" 
+                     Height="64" 
+                     FontSize="24" 
+                     Foreground="White"
+                     HorizontalAlignment="Right" 
+                     Margin="0,0,50,0" 
+                     Name="btnLastSetp" 
+                     Click="BtnLastSetp_Click"
+                     Style="{DynamicResource Btn_Jump}" />
+            <Button  Content="提交" 
+                     Width="202" 
+                     Height="64" 
+                     FontSize="24" 
+                     Foreground="White" 
+                     HorizontalAlignment="Right" 
+                     Margin="50,0,0,20" 
+                     Name="btn_next" 
+                     Click="Btn_next_Click"
+                     Style="{DynamicResource Btn_Jump}" />
+        </StackPanel>
+    </Grid>
+</Page>

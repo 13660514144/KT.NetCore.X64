@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE IDCARD SYSTEM "IDCARD.dtd">
+<IDCARD>
+	<CIDCardTemplate nMainDocumentID="35" chDocumentName="台湾地区居留证-照片页" engDocumentName="China Taiwan Area Resident Permit Portrait Page" imageSizeType="2">
+		<vecProcessImage>
+			<CProcessImage processType="3">
+				<CEraseBlackBorderEx>
+					<!--processRect要检测黑边的区域-->
+					<RECT Left="0" Top="0" Right="10000" Bottom="10000" />
+					<RECT Left="2000" Top="2000" Right="8900" Bottom="8000" />
+				</CEraseBlackBorderEx>
+			</CProcessImage>
+		</vecProcessImage>
+		<vecRegion>
+			<!--CRegion:区域信息
+				nIndex:区域编号
+				nRegionType:区域类型,0代表头像区域,1代表识别区域
+				nProcessOrder:该区域被处理的顺序
+				rcPosition 坐标均为占整张图像的百分比*10000
+			-->
+			<CRegion nIndex="0" nRegionType="0" nProcessOrder="0">
+				<!--处理该区域需要的图像信息的光的类型-->
+				<vecImageLightType>
+					<!--1:可见光图;2:红外光图;4:紫外光图 -->
+					<LIGHTTYPE>1</LIGHTTYPE>
+					<LIGHTTYPE>2</LIGHTTYPE>
+				</vecImageLightType>
+				<!--定义区域的定位信息,如果是头像区域还需要进一步精确定位，识别区域就不用了-->
+				<!--bAccurateLocate为1表示需要进一步精确定位,0代表不需要-->
+				<CLocateRegion bAccurateLocate="1">
+					<!--在定位前进行的预处理信息，一般是二值化-->
+					<vecProcessImage>
+						<CProcessImage processType="1">
+							<CTrueColorToGrayEx nFilter="0">
+								<RECT Top="0" Right="0" Bottom="0" Left="0" />
+							</CTrueColorToGrayEx>
+						</CProcessImage>
+					</vecProcessImage>
+					<!--rcMinRect:指定定位区域的最小范围，即定位后的区域范围必须包含这个区域-->
+					<RECT Left="7000" Top="3600" Right="9600" Bottom="8000" />
+					<vecAnchorLocateInfo>
+						<!--nDisToAnchor的值也是整图的百分比*10000计算出来的-->
+						<CAnchorLocateInfo nAnchorIndex="0" nDisToAnchor="6800" anchorType="1" />
+						<CAnchorLocateInfo nAnchorIndex="0" nDisToAnchor="9900" anchorType="2" />
+						<CAnchorLocateInfo nAnchorIndex="0" nDisToAnchor="3400" anchorType="3" />
+						<CAnchorLocateInfo nAnchorIndex="0" nDisToAnchor="9000" anchorType="4" />
+					</vecAnchorLocateInfo>
+					<!--该区域定义的区域类型基准点的信息-->
+					<vecCLocateAnchor>
+						<CLocateAnchor nDisToAnchor="0" nAnchorIndex="1" anchorType="1" />
+					</vecCLocateAnchor>
+				</CLocateRegion>
+				<!--区域内定位行的信息-->
+			</CRegion>
+
+		</vecRegion>
+		<vecDeriveUnit>
+		</vecDeriveUnit>
+		<!--vecAnchor:该证件的所有的基准点的信息-->
+		<!--anchorType:基准点类型，取值如下
+			ZEROANCHOR=0,//(0,0)基准
+			LEFT=1,//左边
+			RIGHT=2,//右边
+			TOP=3,//上边
+			BOTTOM=4,//下边 櫺建省
+		-->
+		<vecAnchor>
+			<!--0基准点-->
+			<CAnchor nIndex="0" anchorType="0" anchorPos="0" bEnable="0" nMinPos="-1" nMaxPos="-1" />
+			<!--头像区域定义左基准-->
+			<CAnchor nIndex="1" anchorPos="-1" anchorType="1" bEnable="0" nMinPos="-1" nMaxPos="-1" />
+			<!--头像区域定义下基准-->
+
+		</vecAnchor>
+		<vecOutPutResult>
+			<COutPutResult nIndex="0" cellRecogType="20" cellName="保留" cellNameEng="Reserve" nOutputThreshold="0" nOutputNumber="0" bFormatResult="0" />
+		</vecOutPutResult>
+	</CIDCardTemplate>
+</IDCARD>

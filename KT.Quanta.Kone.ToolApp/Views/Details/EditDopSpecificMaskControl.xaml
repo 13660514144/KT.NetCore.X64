@@ -1,0 +1,127 @@
+﻿<UserControl x:Class="KT.Quanta.Kone.ToolApp.Views.Details.EditDopSpecificMaskControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:prism="http://prismlibrary.com/" 
+             xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
+             prism:ViewModelLocator.AutoWireViewModel="True"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" 
+             d:DesignWidth="800">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <WrapPanel>
+                <Button Content="返回" 
+                        Command="{Binding ReturnCommand}" 
+                        MinWidth="50"/>
+
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="电梯组：" />
+                    <ComboBox ItemsSource="{Binding ElevatorGroups}"
+                              SelectedItem="{Binding DopSpecificDefaultAccessMask.ElevatorGroup}"
+                              MinWidth="200">
+                        <i:Interaction.Triggers>
+                            <i:EventTrigger EventName="SelectionChanged">
+                                <i:InvokeCommandAction Command="{Binding ElevatorGroupSelectedCommand}" />
+                            </i:EventTrigger>
+                        </i:Interaction.Triggers>
+                        <ComboBox.ItemTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Name}" />
+                            </DataTemplate>
+                        </ComboBox.ItemTemplate>
+                    </ComboBox>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="派梯设备：" />
+                    <ComboBox ItemsSource="{Binding HandleElevatorDevices}"
+                              SelectedItem="{Binding DopSpecificDefaultAccessMask.HandleElevatorDevice,Mode=TwoWay}"
+                              MinWidth="150">
+                        <ComboBox.ItemTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Name}" />
+                            </DataTemplate>
+                        </ComboBox.ItemTemplate>
+                    </ComboBox>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="连接状态：" />
+                    <ComboBox ItemsSource="{Binding ConnectedStates}"
+                              SelectedValue="{Binding DopSpecificDefaultAccessMask.ConnectedState,Mode=TwoWay}"
+                              MinWidth="150">
+                        <ComboBox.ItemTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Text}" />
+                            </DataTemplate>
+                        </ComboBox.ItemTemplate>
+                    </ComboBox>
+                </StackPanel>
+
+                <Button Content="刷新" 
+                        Command="{Binding RefreshCommand}" 
+                        MinWidth="50"/>
+
+                <CheckBox Content="目的楼层前门" 
+                          IsChecked="{Binding IsDestinationFront}" 
+                          Command="{Binding DestinationFrontAllCheckedCommand}" />
+                <CheckBox Content="目的楼层后门" 
+                          IsChecked="{Binding IsDestinationRear}" 
+                          Command="{Binding DestinationRearAllCheckedCommand}" />
+
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="测试：" />
+                    <ComboBox ItemsSource="{Binding DopSpecificMaskSelectList}"
+                              SelectedItem="{Binding DopSpecificMaskSelect}"
+                              MinWidth="200">
+                        <i:Interaction.Triggers>
+                            <i:EventTrigger EventName="SelectionChanged">
+                                <i:InvokeCommandAction Command="{Binding DopSpecificMaskSelectedCommand}" 
+                                                       CommandParameter="{Binding SelectedItem,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=ListBox}}" />
+                            </i:EventTrigger>
+                        </i:Interaction.Triggers>
+                        <ComboBox.ItemTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Name}" />
+                            </DataTemplate>
+                        </ComboBox.ItemTemplate>
+                    </ComboBox>
+                </StackPanel>
+
+            </WrapPanel>
+        </Grid>
+        <Grid Grid.Row="1">
+            <DataGrid ItemsSource="{Binding DopSpecificDefaultAccessMask.MaskFloors}"
+                      AutoGenerateColumns="False"
+                      CanUserAddRows="False">
+                <DataGrid.Columns>
+                    <DataGridTextColumn IsReadOnly="True" Header="楼层名称" Binding="{Binding Floor.Name}" />
+                    <DataGridTextColumn IsReadOnly="True" Header="真实楼层" Binding="{Binding Floor.RealFloorId}" />
+                    <DataGridCheckBoxColumn Header="目的楼层前门" Binding="{Binding IsDestinationFront,Mode=TwoWay}" />
+                    <DataGridCheckBoxColumn Header="目的楼层后门" Binding="{Binding IsDestinationRear,Mode=TwoWay}" />
+                </DataGrid.Columns>
+            </DataGrid>
+        </Grid>
+        <Grid Grid.Row="3">
+            <StackPanel Orientation="Horizontal">
+                <Button Content="保存" 
+                        Command="{Binding SaveCommand}" 
+                        MinWidth="200" 
+                        IsEnabled="{Binding IsSubmiting,Converter={StaticResource cvt_BoolAntonym}}" />
+
+                <Button Content="删除" 
+                        Command="{Binding DeleteCommand}" 
+                        MinWidth="200" 
+                        IsEnabled="{Binding IsSubmiting,Converter={StaticResource cvt_BoolAntonym}}" />
+            </StackPanel>
+        </Grid>
+    </Grid>
+
+</UserControl>

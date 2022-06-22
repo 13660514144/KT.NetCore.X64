@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <Title>Unity for Prism for Xamarin.Forms</Title>
+    <!-- Summary is not actually supported at this time. Including the summary for future support. -->
+    <!--<Summary>Unity extensions for Prism for Xamarin.Forms.</Summary>-->
+    <Description>Use these extensions to build Xamarin.Forms applications with Prism and Unity.</Description>
+    <PackageTags>prism;xamarin;xamarin.forms;ninject;dependency injection</PackageTags>
+    <Version Condition=" '$(PRISM_UNITY_FORMS_VERSION)' != '' ">$(PRISM_UNITY_FORMS_VERSION)</Version>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Unity.Container" Version="5.11.7" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="../Prism.Forms/Prism.Forms.csproj" />
+  </ItemGroup>
+
+  <Import Project="..\..\Containers\Prism.Unity.Shared\Prism.Unity.Shared.projitems" Label="Shared" />
+
+</Project>

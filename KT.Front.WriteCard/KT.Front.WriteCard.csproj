@@ -1,0 +1,58 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <Platforms>AnyCPU;x64;x86</Platforms>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Resources\correct.png" />
+    <None Remove="Resources\def_logo.png" />
+    <None Remove="Resources\one.png" />
+    <None Remove="Resources\two.png" />
+    <None Remove="Resources\write_card.png" />
+    <None Remove="Resources\wrong.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\KT.Proxy.BackendApi\KT.Proxy.BackendApi.csproj" />
+    <ProjectReference Include="..\KT.Visitor.Common\KT.Visitor.Common.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="MyLoadingLib">
+      <HintPath>Resources\Dlls\MyLoadingLib.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\correct.png" />
+    <Resource Include="Resources\def_logo.png" />
+    <Resource Include="Resources\one.png" />
+    <Resource Include="Resources\two.png" />
+    <Resource Include="Resources\write_card.png" />
+    <Resource Include="Resources\wrong.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="ReferenceFiles\D300M\CSkin.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="ReferenceFiles\D300M\D300M_MW 系列发卡器.exe">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="ReferenceFiles\D300M\ICReader.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="ReferenceFiles\D300M\TX.Framework.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="ReferenceFiles\D300M\TX.Framework.WindowUI.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Resources\Dlls\MyLoadingLib.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>

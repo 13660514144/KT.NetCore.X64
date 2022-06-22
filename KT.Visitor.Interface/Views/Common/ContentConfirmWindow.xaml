@@ -1,0 +1,30 @@
+﻿<pu:WindowX
+    x:Class="KT.Visitor.Interface.Views.Common.ContentConfirmWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:prism="http://prismlibrary.com/"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:pu="clr-namespace:Panuon.UI.Silver;assembly=Panuon.UI.Silver"
+    prism:ViewModelLocator.AutoWireViewModel="True"
+    mc:Ignorable="d"
+    Title="ContentConfirmWindow" 
+    Height="450" Width="800"
+    WindowStartupLocation ="CenterOwner" 
+    pu:WindowXCaption.Background="{DynamicResource Scb_Theme08}">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid Margin="35">
+            <ContentPresenter Content="{Binding ContentControl}"/>
+        </Grid>
+        <Grid Grid.Row="1">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <Button Content="取消" Style="{DynamicResource Btn_CancelButton}" Command="{Binding CloseDialogCommand}" CommandParameter="True"/>
+                <Button Content="确定" Style="{DynamicResource Btn_ConfirmButton}" Command="{Binding CloseDialogCommand}" CommandParameter="False"/>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</pu:WindowX>

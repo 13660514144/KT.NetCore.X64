@@ -1,0 +1,189 @@
+﻿<UserControl x:Class="KT.Visitor.Interface.Views.Integrate.InterateVisitorRegisterControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Border BorderBrush="{DynamicResource Scb_Gray02}"
+                BorderThickness="0.5" 
+                CornerRadius="4,4,0,0" 
+                Visibility="{Binding IntegrateCompanyControl.Visibility}">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <Grid Margin="10,10,3,10" Width="25" Height="25" >
+                    <Ellipse Fill="{DynamicResource Scb_Theme08}" Stroke="Black" StrokeThickness="0" />
+                    <TextBlock Text="1" FontSize="{DynamicResource FontSize_Normal}" 
+                               Foreground="{DynamicResource Scb_White01}" 
+                               VerticalAlignment="Center" 
+                               HorizontalAlignment="Center"/>
+                </Grid>
+                <TextBlock Text="访客登记" 
+                                   Foreground="{DynamicResource Scb_Theme08}" 
+                                   FontSize="{DynamicResource FontSize_Normal}" 
+                                   Margin="0,10,10,10" 
+                                   VerticalAlignment="Center"/>
+                <TextBlock Text=">>" 
+                                   Foreground="{DynamicResource Scb_Gray08}" 
+                                   FontSize="{DynamicResource FontSize_Normal}" 
+                                   Margin="10" 
+                                   VerticalAlignment="Center"/>
+                
+                <Grid Margin="10,10,3,10" Width="25" Height="25" >
+                    <Ellipse Fill="{DynamicResource Scb_White01}" Stroke="{DynamicResource Scb_Gray08}" StrokeThickness="1" />
+                    <TextBlock Text="2" FontSize="{DynamicResource FontSize_Normal}" 
+                               Foreground="{DynamicResource Scb_Gray08}" 
+                               VerticalAlignment="Center" 
+                               HorizontalAlignment="Center"/>
+                </Grid>
+                <TextBlock Text="选择授权方式" 
+                                   Foreground="{DynamicResource Scb_Gray08}" 
+                                   FontSize="{DynamicResource FontSize_Normal}" 
+                                   Margin="0,10,10,10"
+                                   VerticalAlignment="Center"/>
+                <TextBlock Text=">>" 
+                                   Foreground="{DynamicResource Scb_Gray08}" 
+                                   FontSize="{DynamicResource FontSize_Normal}" 
+                                   Margin="10" 
+                                   VerticalAlignment="Center"/>
+
+                <Grid Margin="10,10,3,10" Width="25" Height="25" >
+                    <Ellipse Fill="{DynamicResource Scb_White01}" Stroke="{DynamicResource Scb_Gray08}" StrokeThickness="1" />
+                    <TextBlock Text="3" FontSize="{DynamicResource FontSize_Normal}" 
+                               Foreground="{DynamicResource Scb_Gray08}" 
+                               VerticalAlignment="Center" 
+                               HorizontalAlignment="Center"/>
+                </Grid>
+                <TextBlock Text="登记访客信息" 
+                                   Foreground="{DynamicResource Scb_Gray08}"
+                                   FontSize="{DynamicResource FontSize_Normal}" 
+                                   Margin="0,10,10,10"
+                                   VerticalAlignment="Center"/>
+            </StackPanel>
+        </Border>
+        <Border BorderBrush="{DynamicResource Scb_Gray02}"
+                BorderThickness="0.5" 
+                CornerRadius="4,4,0,0" 
+                Visibility="{Binding IntegrateAuthModeControl.Visibility}">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <Grid Margin="10,10,3,10" Width="25" Height="25" >
+                    <Ellipse Fill="{DynamicResource Scb_Theme08}" Stroke="Black" StrokeThickness="0" />
+                    <TextBlock Text="1" FontSize="{DynamicResource FontSize_Normal}" 
+                               Foreground="{DynamicResource Scb_White01}" 
+                               VerticalAlignment="Center" 
+                               HorizontalAlignment="Center"/>
+                </Grid>
+                <TextBlock Text="访客登记" 
+                                   Foreground="{DynamicResource Scb_Theme08}" 
+                                   FontSize="{DynamicResource FontSize_Normal}" 
+                                   Margin="0,10,10,10" 
+                                   VerticalAlignment="Center"/>
+                <TextBlock Text=">>" 
+                                   Foreground="{DynamicResource Scb_Theme08}" 
+                                   FontSize="{DynamicResource FontSize_Normal}" 
+                                   Margin="10" 
+                                   VerticalAlignment="Center"/>
+
+                <Grid Margin="10,10,3,10" Width="25" Height="25" >
+                    <Ellipse Fill="{DynamicResource Scb_Theme08}" Stroke="Black" StrokeThickness="0" />
+                    <TextBlock Text="2" FontSize="{DynamicResource FontSize_Normal}" 
+                               Foreground="{DynamicResource Scb_White01}" 
+                               VerticalAlignment="Center" 
+                               HorizontalAlignment="Center"/>
+                </Grid>
+                <TextBlock Text="选择授权方式" 
+                                   Foreground="{DynamicResource Scb_Theme08}" 
+                                   FontSize="{DynamicResource FontSize_Normal}" 
+                                   Margin="0,10,10,10" 
+                                   VerticalAlignment="Center"/>
+                <TextBlock Text=">>" 
+                                   Foreground="{DynamicResource Scb_Gray08}" 
+                                   FontSize="{DynamicResource FontSize_Normal}" 
+                                   Margin="10" 
+                                   VerticalAlignment="Center"/>
+
+                <Grid Margin="10,10,3,10" Width="25" Height="25" >
+                    <Ellipse Fill="{DynamicResource Scb_White01}" Stroke="{DynamicResource Scb_Gray08}" StrokeThickness="1" />
+                    <TextBlock Text="3" FontSize="{DynamicResource FontSize_Normal}" 
+                               Foreground="{DynamicResource Scb_Gray08}" 
+                               VerticalAlignment="Center" 
+                               HorizontalAlignment="Center"/>
+                </Grid>
+                <TextBlock Text="登记访客信息" 
+                                   Foreground="{DynamicResource Scb_Gray08}"
+                                   FontSize="{DynamicResource FontSize_Normal}" 
+                                   Margin="0,10,10,10" 
+                                   VerticalAlignment="Center"/>
+            </StackPanel>
+        </Border>
+        <Border BorderBrush="{DynamicResource Scb_Gray02}"
+                BorderThickness="0.5" 
+                CornerRadius="4,4,0,0" 
+                Visibility="{Binding IntegrateVisitorControl.Visibility}">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <Grid Margin="10,10,3,10" Width="25" Height="25" >
+                    <Ellipse Fill="{DynamicResource Scb_Theme08}" Stroke="Black" StrokeThickness="0" />
+                    <TextBlock Text="1" FontSize="{DynamicResource FontSize_Normal}" 
+                               Foreground="{DynamicResource Scb_White01}" 
+                               VerticalAlignment="Center" 
+                               HorizontalAlignment="Center"/>
+                </Grid>
+                <TextBlock Text="访客登记" 
+                                   Foreground="{DynamicResource Scb_Theme08}" 
+                                   FontSize="{DynamicResource FontSize_Normal}" 
+                                   Margin="0,10,10,10" 
+                                   VerticalAlignment="Center"/>
+                <TextBlock Text=">>" 
+                                   Foreground="{DynamicResource Scb_Theme08}" 
+                                   FontSize="{DynamicResource FontSize_Normal}" 
+                                   Margin="10" 
+                                   VerticalAlignment="Center"/>
+                
+                <Grid Margin="10,10,3,10" Width="25" Height="25" >
+                    <Ellipse Fill="{DynamicResource Scb_Theme08}" Stroke="Black" StrokeThickness="0" />
+                    <TextBlock Text="2" FontSize="{DynamicResource FontSize_Normal}" 
+                               Foreground="{DynamicResource Scb_White01}" 
+                               VerticalAlignment="Center" 
+                               HorizontalAlignment="Center"/>
+                </Grid>
+                <TextBlock Text="选择授权方式" 
+                                   Foreground="{DynamicResource Scb_Theme08}" 
+                                   FontSize="{DynamicResource FontSize_Normal}" 
+                                   Margin="0,10,10,10" 
+                                   VerticalAlignment="Center"/>
+                <TextBlock Text=">>" 
+                                   Foreground="{DynamicResource Scb_Theme08}" 
+                                   FontSize="{DynamicResource FontSize_Normal}" 
+                                   Margin="10" 
+                                   VerticalAlignment="Center"/>
+                
+                <Grid Margin="10,10,3,10" Width="25" Height="25" >
+                    <Ellipse Fill="{DynamicResource Scb_Theme08}" Stroke="Black" StrokeThickness="0" />
+                    <TextBlock Text="3" FontSize="{DynamicResource FontSize_Normal}" 
+                               Foreground="{DynamicResource Scb_White01}" 
+                               VerticalAlignment="Center" 
+                               HorizontalAlignment="Center"/>
+                </Grid>
+                <TextBlock Text="登记访客信息" 
+                                   Foreground="{DynamicResource Scb_Theme08}"
+                                   FontSize="{DynamicResource FontSize_Normal}" 
+                                   Margin="0,10,10,10" 
+                                   VerticalAlignment="Center"/>
+            </StackPanel>
+        </Border>
+        <Border Grid.Row="1" BorderBrush="{DynamicResource Scb_Gray02}" 
+                        BorderThickness="0.5,0,0.5,0.5" 
+                        CornerRadius="0,0,4,4">
+            <Grid Margin="0,10,0,0">
+                <ContentPresenter Content="{Binding IntegrateCompanyControl}"/>
+                <ContentPresenter Content="{Binding IntegrateAuthModeControl}"/>
+                <ContentPresenter Content="{Binding IntegrateVisitorControl}"/>
+            </Grid>
+        </Border>
+
+    </Grid>
+</UserControl>

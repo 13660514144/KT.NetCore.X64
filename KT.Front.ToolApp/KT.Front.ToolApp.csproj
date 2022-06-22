@@ -1,0 +1,58 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <AssemblyName>KT.Front.ToolApp</AssemblyName>
+    <Platforms>AnyCPU;x64;x86</Platforms>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Remove="appsettings.json" />
+    <None Remove="log4net.config" />
+    <None Remove="Resources\correct.png" />
+    <None Remove="Resources\def_logo.png" />
+    <None Remove="Resources\one.png" />
+    <None Remove="Resources\two.png" />
+    <None Remove="Resources\write_card.png" />
+    <None Remove="Resources\wrong.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="appsettings.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="log4net.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\KT.Common.Tool\KT.Common.Tool.csproj" />
+    <ProjectReference Include="..\KT.Common.WpfApp\KT.Common.WpfApp.csproj" />
+    <ProjectReference Include="..\KT.Front.WriteCard\KT.Front.WriteCard.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="MyLoadingLib">
+      <HintPath>..\KT.Front.WriteCard\Resources\Dlls\MyLoadingLib.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\correct.png" />
+    <Resource Include="Resources\def_logo.png" />
+    <Resource Include="Resources\one.png" />
+    <Resource Include="Resources\two.png" />
+    <Resource Include="Resources\write_card.png" />
+    <Resource Include="Resources\wrong.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="Views\ConfirmToInitWindow.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+    </Page>
+    <Page Update="Views\MainWindow.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Update="Views\MessageWarnBox.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+</Project>

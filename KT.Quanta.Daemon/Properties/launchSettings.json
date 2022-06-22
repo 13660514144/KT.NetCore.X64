@@ -1,0 +1,10 @@
+﻿{
+  "profiles": {
+    "KT.Quanta.Daemon": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "DOTNET_ENVIRONMENT": "Development"
+      }
+    }
+  }
+}

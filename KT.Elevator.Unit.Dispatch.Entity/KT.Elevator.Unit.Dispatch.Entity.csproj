@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <Platforms>AnyCPU;x86;x64</Platforms>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Models\UnitFloorDistributeModel.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\KT.Common.Data\KT.Common.Data.csproj" />
+    <ProjectReference Include="..\KT.Device.Unit\KT.Device.Unit.csproj" />
+    <ProjectReference Include="..\KT.Elevator.Unit.Entity\KT.Elevator.Unit.Entity.csproj" />
+    <ProjectReference Include="..\KT.Quanta.Common\KT.Quanta.Common.csproj" />
+  </ItemGroup>
+
+</Project>

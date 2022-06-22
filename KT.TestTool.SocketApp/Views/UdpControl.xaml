@@ -1,0 +1,35 @@
+﻿<UserControl x:Class="KT.TestTool.SocketApp.Views.UdpControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" Orientation="Horizontal">
+            <Label Content="Ip地址："/>
+            <TextBox Text="{Binding SocketInfo.LocalIp,Mode=TwoWay}" Width="200"/>
+            <Label Content="端口："/>
+            <TextBox Text="{Binding SocketInfo.LocalPort,Mode=TwoWay}" Width="80"/>
+            <Button Height="30" Width="150" Content="启动UDP" Click="Btn_StartReceiveUdpData_Click"/>
+            <Button Height="30" Width="150" Content="关闭UDP" Click="Btn_CloseReceiveTcpData_Click"/>
+        </StackPanel>
+        <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="0,5">
+            <Label Content="Ip地址："/>
+            <TextBox Text="{Binding SocketInfo.SendIp,Mode=TwoWay}" Width="100"/>
+            <Label Content="端口："/>
+            <TextBox Text="{Binding SocketInfo.SendPort,Mode=TwoWay}" Width="50"/>
+            <Label Content="发送数据："/>
+            <TextBox Text="{Binding SocketInfo.SendText,Mode=TwoWay}" Width="325"/>
+            <Button Height="30" Width="150" Content="发送UDP数据" Click="Btn_SendUdpData_Click"/>
+        </StackPanel>
+        <Grid Grid.Row="2">
+            <TextBox TextWrapping="Wrap" Text="{Binding ScrollMessage.Message}" VerticalContentAlignment="Top"/>
+        </Grid>
+    </Grid>
+</UserControl>

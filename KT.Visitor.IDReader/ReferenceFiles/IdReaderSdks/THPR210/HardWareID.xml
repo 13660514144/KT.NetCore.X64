@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<HareWareID>
+	<Elem name = "扫描仪AVA5" type = "Scanner" id = "USB\VID_0638&PID_0AD7&REV_0100" />
+	<Elem name = "扫描仪AVA5 Plus" type = "Scanner" id = "USB\VID_0638&PID_1A2A&REV_0001" />
+	<Elem name = "扫描仪AVA5+" type = "Scanner" id = "USB\VID_0638&PID_2D53&REV_0001" />
+	<Elem name = "扫描仪A600" type = "Scanner" id = "" />
+	<Elem name = "扫描仪AVA6" type = "Scanner" id = "USB\VID_0638&PID_0A7E&REV_0100" />
+	<Elem name = "扫描仪AVA6 Plus2" type = "Scanner" id = "USB\VID_0638&PID_2DE9&REV_0115" />
+	<Elem name = "扫描仪AW570" type = "Scanner" id = "USB\VID_0638&PID_2B14&REV_0001" />
+	<Elem name = "扫描仪B660" type = "Scanner" id = "USB\VID_0638&PID_1A76&REV_0100" />
+	<Elem name = "扫描仪B660+" type = "Scanner" id = "USB\VID_0638&PID_2E2A&REV_0115" />
+
+	<Elem name = "扫描仪B6680" type = "Scanner" id = "USB\VID_0638&PID_2CD0&REV_0115" />
+	<Elem name = "扫描仪CR620+" type = "Scanner" id = "USB\VID_0AC8&PID_C456&REV_0102&MI_00" />
+	
+	<Elem name = "扫描仪D120+" type = "Scanner" id = "USB\VID_0638&PID_2BF3&REV_0702" />
+	<Elem name = "扫描仪D300+"  type = "Scanner" id = "USB\VID_0638&PID_0ADA&REV_0100" />	
+    <Elem name = "扫描仪L2230"  type = "Scanner" id = "USB\VID_0638&PID_2BAE&REV_0705" />
+	<Elem name = "扫描仪D600+"  type = "Scanner" id = "" />
+	<Elem name = "扫描仪D800II" type = "Scanner" id = "USB\VID_0638&PID_0ADC&REV_0100" />
+	<Elem name = "扫描仪D800II+" type = "Scanner" id = "USB\VID_0638&PID_2D56&REV_0001" />
+	<Elem name = "扫描仪DSL3100" type = "Scanner" id = "USB\VID_0638&PID_0AC0&REV_0001" />
+	<Elem name = "扫描仪DSL62" type = "Scanner" id = "USB\VID_0638&PID_2C95&REV_0115" />
+	
+	<Elem name = "扫描仪E2000" type = "Scanner" id = "USB\VID_0638&PID_2BAB&REV_0702" />
+	<Elem name = "扫描仪FB200" type = "Scanner" id = "" />
+	<Elem name = "扫描仪J1200+" type = "Scanner" id = "" />
+	
+	<Elem name = "扫描仪L1250" type = "Scanner" id = "USB\VID_0638&PID_2B59&REV_0100" />
+	<Elem name = "扫描仪L1250+" type = "Scanner" id = "USB\VID_0638&PID_2C00&REV_0702" />
+	<Elem name = "扫描仪L1250+" type = "Scanner" id = "USB\VID_0638&PID_2C00&REV_0705" />
+	<Elem name = "扫描仪L6250" type = "Scanner" id = "" />
+	<Elem name = "扫描仪L7280+" type = "Scanner" id = "USB\VID_0638&PID_2C60&REV_0115" />
+	
+	<Elem name = "扫描仪M110" type = "Scanner" id = "USB\VID_0638&PID_2BAF&REV_0702" />
+	<Elem name = "扫描仪M1260" type = "Scanner" id = "USB\VID_0638&PID_2C55&REV_0115" />
+	<Elem name = "扫描仪Q1210" type = "Scanner" id = "" />
+	<Elem name = "扫描仪TR581" type = "Scanner" id = "" />
+	<Elem name = "扫描仪TR582" type = "Scanner" id = "USB\VID_0638&PID_2B15&REV_0100" />
+	<Elem name = "扫描仪U350II" type = "Scanner" id = "USB\VID_0638&PID_2CE6&REV_0115" />
+	
+	<Elem name = "一代、二代设备自有摄像头" type = "EZUsbDevice" id = "USB\VID_0828&PID_1002&REV_0000" />
+	<Elem name = "一代设备凯世佳摄像头" type = "KSJDevice" id = "USB\VID_0816&PID_0555&REV_0100" />
+	
+</HareWareID>

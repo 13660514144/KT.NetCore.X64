@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE IDCARD SYSTEM "IDCARD.dtd">
+<IDCARD>
+	<CIDCardTemplate nMainDocumentID="1010" chDocumentName="名片" engDocumentName="Business Card" imageSizeType="2">
+		<vecProcessImage>
+		</vecProcessImage>
+		<vecRegion>
+		</vecRegion>
+		<vecDeriveUnit>
+		</vecDeriveUnit>
+		<vecAnchor>
+		</vecAnchor>
+		<vecOutPutResult>
+			<COutPutResult nIndex="0" cellRecogType="20" cellNameEng="Reserve" cellName="保留" nOutputThreshold="0" nOutputNumber="0" bFormatResult="0" />
+			<COutPutResult nIndex="1" cellRecogType="0" cellNameEng="Name" cellName="姓名" nOutputThreshold="0" nOutputNumber="0" bFormatResult="0" />
+			<COutPutResult nIndex="2" cellRecogType="20" cellNameEng="Unit name" cellName="单位名称" nOutputThreshold="0" nOutputNumber="0" bFormatResult="0" />
+			<COutPutResult nIndex="3" cellRecogType="20" cellNameEng="Post" cellName="职务" nOutputThreshold="0" nOutputNumber="0" bFormatResult="0" />
+			<COutPutResult nIndex="4" cellRecogType="20" cellNameEng="Mobile phone" cellName="手机" nOutputThreshold="0" nOutputNumber="0" bFormatResult="0"/> 
+			<COutPutResult nIndex="5" cellRecogType="20" cellNameEng="Telephone" cellName="电话" nOutputThreshold="0" nOutputNumber="0" bFormatResult="0" />
+			<COutPutResult nIndex="6" cellRecogType="20" cellNameEng="E-mail" cellName="电子邮件" nOutputThreshold="0" nOutputNumber="0" bFormatResult="0" />
+			<COutPutResult nIndex="7" cellRecogType="20" cellNameEng="Company homepage" cellName="公司主页" nOutputThreshold="0" nOutputNumber="0" bFormatResult="0"/>
+			<COutPutResult nIndex="8" cellRecogType="20" cellNameEng="Postal address" cellName="通讯地址" nOutputThreshold="0" nOutputNumber="0" bFormatResult="0"/> 
+			<COutPutResult nIndex="9" cellRecogType="20" cellNameEng="Postal Code" cellName="邮政编码" nOutputThreshold="0" nOutputNumber="0" bFormatResult="0"/> 
+			<COutPutResult nIndex="10" cellRecogType="20" cellNameEng="Fax" cellName="传真" nOutputThreshold="0" nOutputNumber="0" bFormatResult="0"/> 
+			<COutPutResult nIndex="11" cellRecogType="20" cellNameEng="Pager" cellName="呼机" nOutputThreshold="0" nOutputNumber="0" bFormatResult="0"/> 
+			<COutPutResult nIndex="12" cellRecogType="20" cellNameEng="Remarks" cellName="备注" nOutputThreshold="0" nOutputNumber="0" bFormatResult="0"/>
+
+		</vecOutPutResult>
+	</CIDCardTemplate>
+
+</IDCARD>

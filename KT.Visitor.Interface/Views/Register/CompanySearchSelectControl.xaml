@@ -1,0 +1,57 @@
+﻿<UserControl x:Class="KT.Visitor.Interface.Views.Register.CompanySearchSelectControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:pu="clr-namespace:Panuon.UI.Silver;assembly=Panuon.UI.Silver"
+             mc:Ignorable="d" 
+              d:DesignWidth="1000">
+
+    <Grid >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid Margin="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <TextBox pu:TextBoxHelper.Watermark="输入单元号/公司名称搜索公司" 
+                     Height="42" 
+                     Text="{Binding SearchText,Mode=TwoWay}"
+                     Margin="0"
+                     FontSize="{DynamicResource FontSize_Normal}"/>
+            <Button Grid.Column="1" 
+                    Background="{DynamicResource Scb_Theme08}"
+                    Margin="20,0" 
+                    Width="100" 
+                    Height="42" 
+                    Padding="3" 
+                    BorderThickness="0"
+                    Command="{Binding SearchCommand}">
+                <StackPanel Orientation="Horizontal">
+                    <Image Width="15" 
+                           Source="/KT.Visitor.Interface;component/Resources/Images/SearchIcon.png" 
+                           Margin="0,0,5,0" />
+                    <TextBlock Text="搜索" 
+                               FontSize="{DynamicResource FontSize_Normal}" 
+                               VerticalAlignment="Center"
+                               Foreground="White"/>
+                </StackPanel>
+            </Button>
+            <!--<Button Grid.Column="2" 
+                    Background="#F2B230" 
+                    Content="隐藏" 
+                    Height="42" 
+                    FontSize="{DynamicResource FontSize_Normal}" 
+                    Name="btnCompanyList" 
+                    BorderThickness="0"
+                    Padding="10"    
+                    Margin="0" 
+                    Command="{Binding HidenSearchCommand}"/>-->
+        </Grid>
+    </Grid>
+
+</UserControl>

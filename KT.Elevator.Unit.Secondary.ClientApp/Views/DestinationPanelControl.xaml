@@ -1,0 +1,130 @@
+﻿<UserControl x:Class="KT.Elevator.Unit.Secondary.ClientApp.Views.DestinationPanelControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:KT.Elevator.Unit.Secondary.ClientApp.Views" 
+             xmlns:controls="clr-namespace:KT.Elevator.Unit.Secondary.ClientApp.Views.Controls"
+             mc:Ignorable="d" 
+             d:DesignHeight="1000" d:DesignWidth="600">
+    <Grid>
+        <!--<Grid.Background>
+            <ImageBrush ImageSource="/KT.Elevator.Unit.Secondary.ClientApp;component/Resources/Images/ElevatorUnit3-1.png" />
+        </Grid.Background>-->
+        <Grid.Background>
+            <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                <GradientStop Offset="0" Color="#0B148C" />
+                <GradientStop Offset="1" Color="#060A45" />
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition />
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <controls:HeaderControl Grid.Row="0"/>
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0" Margin="30,10">
+                <Grid.Background>
+                    <ImageBrush ImageSource="/KT.Elevator.Unit.Secondary.ClientApp;component/Resources/Images/LiftFrame.png" />
+                </Grid.Background>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0" Height="40" VerticalAlignment="Top">
+                    <TextBlock Text="请在下方点击选择您要去的楼层" Foreground="#CDFCFF" FontSize="15" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                </Grid>
+                <Grid Grid.Row="1" Margin="0,38,0,0">
+                    <ItemsControl ItemsSource="{Binding PageData.List}">
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <Grid>
+                                    <Button Content="{Binding Name}" 
+                                            Foreground="{DynamicResource Scb_White01}"
+                                            FontSize="28"
+                                            Style="{DynamicResource Btn_HandleNormal}" 
+                                            Visibility="{Binding HasRight,Converter={StaticResource cvt_TrueVisbile}}" 
+                                            Command="{Binding DataContext.HandleElevatorCommand, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}"
+                                            CommandParameter="{Binding Id}" />
+                                    <Button Content="{Binding Name}" 
+                                            Foreground="{DynamicResource Scb_White01}"
+                                            FontSize="28"
+                                            Style="{DynamicResource Btn_HandleNormal}" 
+                                            Visibility="{Binding HasRight,Converter={StaticResource cvt_TrueCollapsed}}"
+                                            Command="{Binding DataContext.HandleElevatorCommand, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}"
+                                            CommandParameter="{Binding Id}" />
+                                    <Button Content="{Binding Name}" 
+                                            Foreground="{DynamicResource Scb_White01}"
+                                            FontSize="28"
+                                            Style="{DynamicResource Btn_HandleNormal}" 
+                                            Visibility="{Binding IsPublic,Converter={StaticResource cvt_TrueVisbile}}"
+                                            Command="{Binding DataContext.HandleElevatorCommand, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}"
+                                            CommandParameter="{Binding Id}" />
+                                </Grid>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                        <ItemsControl.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <WrapPanel HorizontalAlignment="Center"/>
+                            </ItemsPanelTemplate>
+                        </ItemsControl.ItemsPanel>
+                    </ItemsControl>
+                </Grid>
+                <Grid Grid.Row="2" Height="60">
+                    <ItemsControl ItemsSource="{Binding PageData.PageDetails}">
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <Grid>
+                                    <!--, ConverterParameter={Binding PageData.CurrentPage ,RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl}}}-->
+                                    <!--<Ellipse Fill="#04ECFF" Visibility="{Binding Path=DataContent,RelativeSource={RelativeSource FindAncestor, AncestorType=ItemContainerTemplate}, Converter={StaticResource cvt_NumParVisible}, ConverterParameter={Binding PageData.CurrentPage ,RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl}}}" Height="12" Width="12" StrokeThickness="1" Stroke="#04ECFF" Margin="12,0" />-->
+                                    <!--<Ellipse Fill="{x:Null}" Visibility="{Binding Path=DataContent,RelativeSource={RelativeSource FindAncestor, AncestorType=ItemContainerTemplate}, Converter={StaticResource cvt_NumParCollapsed}, ConverterParameter={Binding PageData.CurrentPage ,RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl}}}" Height="12" Width="12" StrokeThickness="1" Stroke="#04ECFF" Margin="12,0" />-->
+                                    <Ellipse Fill="#04ECFF" Visibility="{Binding IsCurrent,Converter={StaticResource cvt_TrueVisbile}}" Height="12" Width="12" StrokeThickness="1" Stroke="#04ECFF" Margin="12,0" />
+                                    <Ellipse Fill="{x:Null}" Visibility="{Binding IsCurrent,Converter={StaticResource cvt_TrueCollapsed}}" Height="12" Width="12" StrokeThickness="1" Stroke="#04ECFF" Margin="12,0" />
+                                </Grid>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                        <ItemsControl.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <WrapPanel HorizontalAlignment="Center" Margin="0,15,0,0"/>
+                            </ItemsPanelTemplate>
+                        </ItemsControl.ItemsPanel>
+                    </ItemsControl>
+                </Grid>
+            </Grid>
+
+            <Grid Grid.Row="1" Height="120">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="3*"/>
+                    <ColumnDefinition Width="3*"/>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="3*"/>
+                    <ColumnDefinition Width="3*"/>
+                </Grid.ColumnDefinitions>
+                <!--<Grid Grid.Column="1" VerticalAlignment="Center">
+                    <Grid.Background>
+                        <ImageBrush ImageSource="/KT.Elevator.Unit.Secondary.ClientApp;component/Resources/Images/LiftFrame.png" />
+                    </Grid.Background>
+                </Grid>-->
+                <Button Grid.Column="1" 
+                        Content="上一页" 
+                        VerticalAlignment="Center" 
+                        Padding="0,16" 
+                        Style="{DynamicResource Btn_Jump}" 
+                        Command="{Binding PreviousPageCommand}"/>
+                <Button Grid.Column="3" 
+                        Content="下一页" 
+                        VerticalAlignment="Center" 
+                        Padding="0,16" 
+                        Style="{DynamicResource Btn_Jump}" 
+                        Command="{Binding NextPageCommand}"/>
+            </Grid>
+        </Grid>
+        <controls:CopyrightControl Grid.Row="4"/>
+    </Grid>
+</UserControl>

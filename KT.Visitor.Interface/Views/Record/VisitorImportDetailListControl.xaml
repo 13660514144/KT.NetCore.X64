@@ -1,0 +1,177 @@
+﻿<UserControl x:Class="KT.Visitor.Interface.Views.VisitorImportDetailListControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:pu="clr-namespace:Panuon.UI.Silver;assembly=Panuon.UI.Silver"
+             mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="1336" >
+    <Grid Background="{DynamicResource Scb_Theme01}">
+        <Grid Background="{DynamicResource Scb_White01}" Margin="20">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0">
+                <StackPanel Orientation="Horizontal"
+                            Margin="30,30,0,0">
+                    <Button FontSize="{DynamicResource FontSize_Normal}" 
+                            Padding="0" 
+                            Foreground="{DynamicResource Scb_Theme08}" 
+                            Content="导入访客" 
+                            Style="{DynamicResource Btn_ContentButton}"
+                            Command="{Binding LinkVisitorImportRecordListCommand}" />
+                    <TextBlock Text="{Binding VisitorImport.CompanyStaffName}" 
+                               VerticalAlignment="Center" 
+                               FontSize="{DynamicResource FontSize_Normal}" 
+                               Margin="20,0,0,0"/>
+                </StackPanel>
+            </Grid>
+            <WrapPanel Grid.Row="1" Margin="10,20,20,0">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="姓名" 
+                               Style="{DynamicResource Tbk_SmallTextTitle}"/>
+                    <TextBox Width="180"
+                             Style="{DynamicResource Tb_SmallTextInput}"
+                             Text="{Binding VisitorImportDetailQuery.Name,Mode=TwoWay}"
+                             pu:TextBoxHelper.Watermark="请输入访客姓名" />
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="手机号" 
+                               Style="{DynamicResource Tbk_SmallTextTitle}"/>
+                    <TextBox Width="180"
+                             Style="{DynamicResource Tb_SmallTextInput}"
+                             Text="{Binding VisitorImportDetailQuery.Phone,Mode=TwoWay}"
+                             pu:TextBoxHelper.Watermark="请输入访客手机号" />
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="卡号" 
+                               Style="{DynamicResource Tbk_SmallTextTitle}"/>
+                    <TextBox Width="180"
+                             Style="{DynamicResource Tb_SmallTextInput}"
+                             Text="{Binding VisitorImportDetailQuery.IcCard,Mode=TwoWay}"
+                             pu:TextBoxHelper.Watermark="请输入访客卡号" />
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="状态" 
+                               Style="{DynamicResource Tbk_SmallTextTitle}"/>
+                    <ComboBox ItemsSource="{Binding VisitorImportDetailQuery.Statuses}" 
+                              SelectedValue="{Binding VisitorImportDetailQuery.Status,Mode=TwoWay}"
+                              Width="180"
+                              Style="{DynamicResource Cb_Small}"
+                              DisplayMemberPath="Text"
+                              SelectedValuePath="Value"/>
+                </StackPanel>
+
+                <Button Content="搜索" Style="{DynamicResource Btn_SmallTextButton}" Width="112" Margin="30,15,15,15" Name="btnSeach" Click="BtnSeach_Click"/>
+
+                <StackPanel Orientation="Horizontal">
+                    <Button Content="全部打印" 
+                            Style="{DynamicResource Btn_SmallTextButton}" 
+                            Width="112" 
+                            Margin="30,15,15,15" 
+                            Command="{Binding PrintAllCommand}"/>
+                    <Button Content="部分打印" 
+                            Style="{DynamicResource Btn_SmallTextButton}" 
+                            Width="112" 
+                            Margin="30,15,15,15" 
+                            Command="{Binding PrintPartCommand}"/>
+                </StackPanel>
+            </WrapPanel>
+            <DataGrid Grid.Row="2"  
+                      Margin="20,10,25,0" 
+                      Style="{DynamicResource Dg_SmallText}" 
+                      ItemsSource="{Binding VisitorImportDetails}">
+                <DataGrid.Columns>
+                    <DataGridTemplateColumn Width="40*">
+                        <DataGridTemplateColumn.Header>
+                            <CheckBox IsChecked="False" Style="{DynamicResource Cb_Style}" Checked="CheckBox_Checked" Unchecked="CheckBox_Unchecked">
+                                <!--<i:Interaction.Triggers>
+                                    <i:EventTrigger EventName="Checked">
+                                        <i:InvokeCommandAction Command="{Binding DataContext.CheckedAllCommand,
+                                                               RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}}" />
+                                    </i:EventTrigger>
+                                    <i:EventTrigger EventName="Unchecked">
+                                        <i:InvokeCommandAction Command="{Binding DataContext.UncheckedAllCommand,
+                                                               RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}}" />
+                                    </i:EventTrigger>
+                                </i:Interaction.Triggers>-->
+                            </CheckBox>
+                        </DataGridTemplateColumn.Header>
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <CheckBox Visibility="{Binding Status,Converter={StaticResource cvt_TrueVisbile}}" 
+                                          IsChecked="{Binding IsChecked,Mode=TwoWay}" 
+                                          Style="{DynamicResource Cb_Style}">
+                                    <i:Interaction.Triggers>
+                                        <i:EventTrigger EventName="Checked">
+                                            <i:InvokeCommandAction Command="{Binding DataContext.CheckedCommand,RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=DataGrid}}"
+                                                                   CommandParameter="{Binding }"/>
+                                        </i:EventTrigger>
+                                        <i:EventTrigger EventName="Unchecked">
+                                            <i:InvokeCommandAction Command="{Binding DataContext.UncheckedCommand,RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=DataGrid}}"
+                                                                   CommandParameter="{Binding }"/>
+                                        </i:EventTrigger>
+                                    </i:Interaction.Triggers>
+                                </CheckBox>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTextColumn IsReadOnly="True" Header="访客姓名" Width="40*" Binding="{Binding Name, Mode=OneWay}" />
+                    <DataGridTemplateColumn Width="40*" Header="访客头像">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Image MaxHeight="50" MaxWidth="50" Source="{Binding ServerFaceImg}" />
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+
+                    <DataGridTextColumn IsReadOnly="True" Header="手机号" Width="50*" Binding="{Binding Phone, Mode=OneWay}"/>
+                    <DataGridTextColumn IsReadOnly="True" Header="卡号" Width="60*" Binding="{Binding IcCard, Mode=OneWay}"/>
+                    <DataGridTextColumn IsReadOnly="True" Header="被访人" Width="40*" Binding="{Binding BeVisitStaffName, Mode=OneWay}"/>
+                    <DataGridTextColumn IsReadOnly="True" Header="被访人公司" Width="60*" Binding="{Binding BeVisitCompanyName, Mode=OneWay}"/>
+                    <DataGridTextColumn IsReadOnly="True" Header="来访事由" Width="40*" Binding="{Binding Reason, Mode=OneWay}"/>
+                    <DataGridTextColumn IsReadOnly="True" Header="来访时间" Width="70*" Binding="{Binding FullVisitDate, Mode=OneWay}"/>
+                    <DataGridTextColumn IsReadOnly="True" Header="授权方式" Width="50*" Binding="{Binding AuthMsg, Mode=OneWay}"/>
+                    <DataGridTextColumn IsReadOnly="True" Header="状态" Width="30*" Binding="{Binding StatusText, Mode=OneWay}"/>
+                    <DataGridTextColumn IsReadOnly="True" Header="失败原因" Width="60*" Binding="{Binding Failure, Mode=OneWay}"/>
+                    <DataGridTemplateColumn Width="100" Header="操作">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                                    <Grid>
+                                        <Button Visibility="{Binding Status,Converter={StaticResource cvt_TrueVisbile}}" 
+                                                BorderBrush="{x:Null}" 
+                                                Style="{DynamicResource Btn_ContentButton}" 
+                                                FontSize="{DynamicResource FontSize_Small}" 
+                                                Content="打印二维码" 
+                                                Foreground="{DynamicResource Scb_Theme08}"  
+                                                Command="{Binding DataContext.PrintOneCommand,RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=DataGrid}}"
+                                                CommandParameter="{Binding }" />
+                                        <Button Visibility="{Binding Status,Converter={StaticResource cvt_TrueCollapsed}}" 
+                                                BorderBrush="{x:Null}" 
+                                                Style="{DynamicResource Btn_ContentButton}" 
+                                                FontSize="{DynamicResource FontSize_Small}" 
+                                                Content="查看失败原因" 
+                                                Foreground="{DynamicResource Scb_Red08}"  
+                                                Command="{Binding DataContext.ShowErrorCommand,RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=DataGrid}}"
+                                                CommandParameter="{Binding }" />
+                                    </Grid>
+                                </StackPanel>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+            <Grid Grid.Row="3" Margin="20,15,25,32">
+                <ContentPresenter Content="{Binding NavPageControl}" />
+            </Grid>
+        </Grid>
+    </Grid>
+</UserControl>

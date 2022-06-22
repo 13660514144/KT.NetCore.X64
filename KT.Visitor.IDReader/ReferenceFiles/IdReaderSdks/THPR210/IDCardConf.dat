@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Config>
+	<!--是否初始化读卡器，若不需要读取芯片信息可以选择不初始化。0表示不初始化，1初始化-->  
+	<E-Passport value="1"/>
+	<!--写日志属性，0不写日志，1每次用覆盖的方式写日志，2追加方式写日志不会覆盖已有内容-->
+	<LogFlag value="1"/>
+	<!--是否保存样本-->
+	<SaveSample value="0" path="c:\Wintone\Samples\"/>
+	<!--是否保存裁切前图片-->
+	<StatusBeforeCrop value="0" path=""/>
+	<!--样本及裁切前图片保存最大数量-->
+	<MaxNum value="200"/>
+</Config>

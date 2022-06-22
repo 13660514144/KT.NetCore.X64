@@ -1,0 +1,22 @@
+﻿<prism:PrismApplication
+    x:Class="KT.Prowatch.PushApp.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:prism="http://prismlibrary.com/"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Application.Resources>
+        <ResourceDictionary>
+            <!--<converts:StringAppendConverter x:Key="cvt_StringAppend" />
+            <converts:StringInsertConverter x:Key="cvt_StringInsert" />
+            <converts:DateTimeShowConverter x:Key="cvt_DateTimeShow" />-->
+
+            <!--自定义样式-结束-->
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/Panuon.UI.Silver;component/Control.xaml" />
+                <!--插件资源-->
+                <!--Fla主题样式-->
+                <ResourceDictionary Source="/KT.Common.WpfApp;component/Resources/CommonUiResources.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+
+    </Application.Resources>
+</prism:PrismApplication>

@@ -1,0 +1,44 @@
+﻿<Page x:Class="KT.Visitor.Interface.Views.Auth.IdentityAuthPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+           xmlns:pu="clr-namespace:Panuon.UI.Silver;assembly=Panuon.UI.Silver"
+      mc:Ignorable="d" 
+      d:DesignHeight="700" d:DesignWidth="1200"
+      Title="authIndex">
+
+    <StackPanel Orientation="Vertical" Background="#F3F7F9">
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,39,0,0">
+            <Button Content="身份验证"  Width="212" Height="48" Background="{DynamicResource Scb_Theme08}" Name="btn_auth_sf" Click="Btn_auth_sf_Click"/>
+            <Button Content="邀约验证" Width="212" Height="48" Background="{DynamicResource Scb_White01}" Foreground="Black" Name="btnActive" Click="BtnActive_Click"/>
+        </StackPanel>
+        <Grid Margin="50,36,50,0" Background="{DynamicResource Scb_White01}"> 
+            <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="0,50,0,0" >
+                    <TextBlock  Text="请输入访客手机号码" FontSize="{DynamicResource FontSize_Normal}"  Name="titleMag"/>
+                    <TextBlock  Text="(仅匹配当天的预约记录)" FontSize="{DynamicResource FontSize_Small}" Foreground="#001833" VerticalAlignment="Bottom"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,0,0,15">
+                    <TextBox pu:TextBoxHelper.Watermark="请输入您的手机号码" FontSize="{DynamicResource FontSize_Normal}" Width="345" Height="36" Margin="0,25,0,0" pu:TextBoxHelper.CanClear="True" x:Name="txt_code" GotFocus="Txt_code_GotFocus" />
+                    <Button Content="确认"  Width="112" Height="36" Background="{DynamicResource Scb_Theme08}" Margin="30,25,0,0" Name="btn_SearchOK" Click="Btn_SearchOK_Click"/>
+                </StackPanel>
+                <WrapPanel Width="345" Height="300" Margin="0,0,0,60" Name="wpbtns" HorizontalAlignment="Left" Visibility="Collapsed">
+                    <Button Content="1" Width="106" Height="68" Background="{DynamicResource Scb_White01}" Foreground="{DynamicResource Scb_Gray14}" FontSize="{DynamicResource FontSize_Normal}" Margin="4" BorderBrush="#D7DAE2" BorderThickness="1" Name="btn_1"/>
+                    <Button Content="2" Width="106" Height="68" Background="{DynamicResource Scb_White01}" Foreground="{DynamicResource Scb_Gray14}" FontSize="{DynamicResource FontSize_Normal}" Margin="4" BorderBrush="#D7DAE2" BorderThickness="1" Name="btn_2"/>
+                    <Button Content="3" Width="106" Height="68" Background="{DynamicResource Scb_White01}" Foreground="{DynamicResource Scb_Gray14}" FontSize="{DynamicResource FontSize_Normal}" Margin="4" BorderBrush="#D7DAE2" BorderThickness="1" Name="btn_3"/>
+                    <Button Content="4" Width="106" Height="68" Background="{DynamicResource Scb_White01}" Foreground="{DynamicResource Scb_Gray14}" FontSize="{DynamicResource FontSize_Normal}" Margin="4" BorderBrush="#D7DAE2" BorderThickness="1" Name="btn_4"/>
+                    <Button Content="5" Width="106" Height="68" Background="{DynamicResource Scb_White01}" Foreground="{DynamicResource Scb_Gray14}" FontSize="{DynamicResource FontSize_Normal}" Margin="4" BorderBrush="#D7DAE2" BorderThickness="1"  Name="btn_5"/>
+                    <Button Content="6" Width="106" Height="68" Background="{DynamicResource Scb_White01}" Foreground="{DynamicResource Scb_Gray14}" FontSize="{DynamicResource FontSize_Normal}" Margin="4" BorderBrush="#D7DAE2" BorderThickness="1" Name="btn_6"/>
+                    <Button Content="7" Width="106" Height="68" Background="{DynamicResource Scb_White01}" Foreground="{DynamicResource Scb_Gray14}" FontSize="{DynamicResource FontSize_Normal}" Margin="4" BorderBrush="#D7DAE2" BorderThickness="1" Name="btn_7"/>
+                    <Button Content="8" Width="106" Height="68" Background="{DynamicResource Scb_White01}" Foreground="{DynamicResource Scb_Gray14}" FontSize="{DynamicResource FontSize_Normal}" Margin="4" BorderBrush="#D7DAE2" BorderThickness="1" Name="btn_8"/>
+                    <Button Content="9" Width="106" Height="68" Background="{DynamicResource Scb_White01}" Foreground="{DynamicResource Scb_Gray14}" FontSize="{DynamicResource FontSize_Normal}" Margin="4" BorderBrush="#D7DAE2" BorderThickness="1" Name="btn_9"/>
+                    <Button Content="删除" Width="106" Height="68" Background="#F2B230" Foreground="{DynamicResource Scb_White01}" FontSize="{DynamicResource FontSize_Normal}" Margin="4" Name="btn_Del"/>
+                    <Button Content="0" Width="106" Height="68" Background="{DynamicResource Scb_White01}" Foreground="{DynamicResource Scb_Gray14}" FontSize="{DynamicResource FontSize_Normal}" Margin="4" BorderBrush="#D7DAE2" BorderThickness="1" Name="btn_0"/>
+                    <Button Content="确定" Width="106" Height="68" Background="{DynamicResource Scb_Theme08}" Foreground="{DynamicResource Scb_White01}" FontSize="{DynamicResource FontSize_Normal}" Margin="4" Name="btn_OK"/>
+                </WrapPanel>
+
+            </StackPanel>
+        </Grid>
+    </StackPanel>
+</Page>

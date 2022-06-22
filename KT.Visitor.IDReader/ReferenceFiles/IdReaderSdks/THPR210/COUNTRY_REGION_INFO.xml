@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE IDCARD SYSTEM "IDCARD.dtd">
+<IDCARD>
+<RegionInfo chnName="通用机读旅行证件" engName="Machine Readable Travel Documents" code="0"/>
+<RegionInfo chnName="中国大陆证件" engName="China" code="1"/>
+<RegionInfo chnName="法国证件" engName="France" code="13"/>
+<RegionInfo chnName="港澳台证件" engName="HK,Macao and Taiwan Regions of China" code="2"/>
+<RegionInfo chnName="印度尼西亚" engName="Indonesia" code="7"/>
+<RegionInfo chnName="日本" engName="Japan" code="11"/>
+<RegionInfo chnName="马来西亚" engName="Malaysia" code="3"/>
+<RegionInfo chnName="墨西哥" engName="Mexico" code="9"/>
+<RegionInfo chnName="新西兰" engName="New Zealand" code="5"/>
+<RegionInfo chnName="新加坡" engName="Singapore" code="6"/>
+<RegionInfo chnName="瑞典" engName="Sweden" code="10"/>
+<RegionInfo chnName="泰国" engName="Thailand" code="8"/>
+<RegionInfo chnName="美国" engName="USA" code="4"/>
+<RegionInfo chnName="越南" engName="Vietnam" code="12"/>
+</IDCARD>

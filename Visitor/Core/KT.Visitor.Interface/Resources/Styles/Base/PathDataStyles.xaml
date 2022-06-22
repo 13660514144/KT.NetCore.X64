@@ -1,0 +1,31 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:converter1="clr-namespace:KT.Visitor.Interface.Converters">
+
+    <converter1:LengthPathWidthConverter x:Key="cvt_LengthPathWidth"/>
+    <converter1:LengthPathHeightConverter x:Key="cvt_LengthPathHeight"/>
+
+    <Style x:Key="BasePathData" TargetType="{x:Type Path}">
+        <Setter Property="Stretch" Value="Fill"/>
+        <Setter Property="Width" Value="18"/>
+        <Setter Property="Height" Value="18"/>
+    </Style>
+    <Geometry x:Key="Geometry_Cross">M3.211679,0 L9.2956257,6.0839467 15.379572,0 18.591251,3.2116785 12.507305,9.2956255 18.591251,15.379572 15.379572,18.591251 9.2956257,12.507304 3.211679,18.591251 0,15.379572 6.0839467,9.2956255 0,3.2116785 z</Geometry>
+    <Style x:Key="PathData_Cross" TargetType="{x:Type Path}" BasedOn="{StaticResource BasePathData}">
+        <Setter Property="Data" Value="{DynamicResource Geometry_Cross}"/>
+    </Style>
+    <Geometry x:Key="Geometry_RestoreSmall">M1.9728088,9.0980005 L1.9728088,16.625999 12.424671,16.625999 12.424671,13.351 12.417,13.351 12.417,11.51 12.424671,11.51 12.424671,9.0980005 5.9338283,9.0980005 5.9338283,9.1070004 3.9620902,9.1070004 3.9620902,9.0980005 z M5.9338283,3.9809999 L5.9338283,5.1160002 14.351089,5.1160002 14.351089,5.1338444 14.397481,5.1338444 14.397481,11.51 16.295261,11.51 16.295261,3.9809999 z M3.9559452,0 L18.221144,0 18.221144,0.017343868 18.266998,0.017343868 18.266998,13.325656 18.221144,13.325656 18.221144,13.351 14.397481,13.351 14.397481,18.442156 14.351089,18.442156 14.351089,18.468 0.085891832,18.468 0.085891832,18.442623 0,18.442623 0,5.133378 0.085891832,5.133378 0.085891832,5.1160002 3.9620902,5.1160002 3.9620902,3.9809999 3.9559452,3.9809999 z</Geometry>
+    <Style x:Key="PathData_RestoreSmall" TargetType="{x:Type Path}" BasedOn="{StaticResource BasePathData}">
+        <Setter Property="Data" Value="{DynamicResource Geometry_RestoreSmall}"/>
+    </Style>
+    <Geometry x:Key="Geometry_RestoreLarge">M2.4115001,5.026 L2.4115001,15.456 15.2875,15.456 15.2875,5.026 z M0,0 L17.715,0 17.715,5.026 17.675501,5.026 17.675501,15.456 17.715,15.456 17.715,17.844 0,17.844 0,15.456 0.023500182,15.456 0.023500182,5.026 0,5.026 z</Geometry>
+    <Style x:Key="PathData_RestoreLarge" TargetType="{x:Type Path}" BasedOn="{StaticResource BasePathData}">
+        <Setter Property="Data" Value="{DynamicResource Geometry_RestoreLarge}"/>
+    </Style>
+    <Geometry x:Key="Geometry_Lineae">M75.168161,241.1435 L209.02482,237.10812 225.16795,244.50753 223.15018,266.70575 56.334266,269.39652 47.589969,258.63334 58.351987,239.79845 z</Geometry>
+    <Style x:Key="PathData_Lineae" TargetType="{x:Type Path}" BasedOn="{StaticResource BasePathData}">
+        <Setter Property="Height" Value="{Binding ConverterParameter=0.2, Converter={StaticResource cvt_LengthPathHeight}}"/>
+        <Setter Property="Data" Value="{DynamicResource Geometry_Lineae}"/>
+    </Style>
+  
+</ResourceDictionary>

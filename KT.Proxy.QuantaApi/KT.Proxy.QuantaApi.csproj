@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <Platforms>AnyCPU;x86;x64</Platforms>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Models\**" />
+    <EmbeddedResource Remove="Models\**" />
+    <None Remove="Models\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\KT.Common.Data\KT.Common.Data.csproj" />
+    <ProjectReference Include="..\KT.Common.WebApi\KT.Common.WebApi.csproj" />
+    <ProjectReference Include="..\KT.Quanta.Model\KT.Quanta.Model.csproj" />
+  </ItemGroup>
+
+</Project>

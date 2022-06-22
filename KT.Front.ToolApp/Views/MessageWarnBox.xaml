@@ -1,0 +1,29 @@
+﻿<pu:WindowX
+    x:Class="KT.Front.ToolApp.Views.MessageWarnBox"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:pu="clr-namespace:Panuon.UI.Silver;assembly=Panuon.UI.Silver"
+    Title="{Binding Title}"
+    Height="370"
+    Width="600" 
+    WindowStartupLocation ="CenterOwner" 
+    pu:WindowXCaption.Background="{DynamicResource Scb_Theme08}">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <!--框头End-->
+        <Grid Grid.Row="0">
+            <ScrollViewer VerticalScrollBarVisibility="Auto">
+                <TextBox Text="{Binding Message}" Foreground="Red" Style="{DynamicResource Tb_Lable_Normal}" TextWrapping="Wrap" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10,0,10,0"/>
+            </ScrollViewer>
+        </Grid>
+        <Grid Grid.Row="1" >
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <Button x:Name="btn_Cance" Click="btn_Cancel_Click" HorizontalAlignment="Center" Style="{DynamicResource Btn_BoxCancelButton}" Content="{Binding CancelName}" Visibility="{Binding Path=CancelName, Converter={StaticResource cvt_StringNullCollapsed}}" Margin="30"/>
+                <Button x:Name="btn_Confirm" Click="btn_Confirm_Click" HorizontalAlignment="Center" Style="{DynamicResource Btn_BoxConfirmButton}" Content="{Binding ConfirmName}" Visibility="{Binding Path=ConfirmName, Converter={StaticResource cvt_StringNullCollapsed}}" Margin="30"/>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</pu:WindowX>

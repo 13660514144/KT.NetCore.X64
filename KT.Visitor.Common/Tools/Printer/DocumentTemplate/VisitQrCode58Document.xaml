@@ -1,0 +1,117 @@
+﻿<FlowDocument xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+              FontSize="12" FontFamily="宋体"
+              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+              TextOptions.TextFormattingMode="Display"
+              ColumnWidth="200">
+    <FlowDocument.Resources>
+        <Style TargetType="Table" x:Key="BorderedTable">
+            <Setter Property="CellSpacing" Value="0"></Setter>
+            <Setter Property="BorderThickness" Value="0"></Setter>
+        </Style>
+        <Style TargetType="TableCell" x:Key="BorderedCell">
+            <Setter Property="BorderThickness" Value="0"></Setter>
+            <Setter Property="Padding" Value="3"></Setter>
+        </Style>
+    </FlowDocument.Resources>
+
+    <Paragraph Margin="0,15,0,10" >
+        <TextBlock FontSize="17" FontWeight="Bold" x:Name="run_EdificeName"/>
+    </Paragraph>
+
+    <Paragraph Margin="0,0,0,0" >
+        <Image VerticalAlignment="Center" x:Name="image_QRCode" Width="150"/>
+    </Paragraph>
+
+    <Table Margin="0,0,0,0" >
+        <Table.Columns>
+            <TableColumn Width="40"></TableColumn>
+            <TableColumn Width="140"></TableColumn>
+        </Table.Columns>
+        <TableRowGroup>
+            <TableRow>
+                <TableCell>
+                    <Paragraph Padding="0,5,0,0" >
+                        访客：
+                    </Paragraph>
+                </TableCell>
+                <TableCell>
+                    <Paragraph Padding="0,5,0,0">
+                        <TextBlock x:Name="run_Name"></TextBlock>
+                    </Paragraph>
+                </TableCell>
+            </TableRow>
+
+            <TableRow>
+                <TableCell>
+                    <Paragraph Padding="0,5,0,0">
+                        手机：
+                    </Paragraph>
+                </TableCell>
+                <TableCell>
+                    <Paragraph Padding="0,5,0,0">
+                        <TextBlock x:Name="run_Phone"></TextBlock>
+                    </Paragraph>
+                </TableCell>
+            </TableRow>
+
+            <TableRow>
+                <TableCell>
+                    <Paragraph Padding="0,5,0,0">
+                        来访：
+                    </Paragraph>
+                </TableCell>
+                <TableCell>
+                    <Paragraph Padding="0,5,0,0">
+                        <TextBlock x:Name="run_CompanyName" TextWrapping="Wrap"></TextBlock>
+                    </Paragraph>
+                </TableCell>
+            </TableRow>
+
+            <TableRow>
+                <TableCell>
+                    <Paragraph Padding="0,5,0,0">
+                        楼层：
+                    </Paragraph>
+                </TableCell>
+                <TableCell Padding="0">
+                    <Paragraph Padding="0,5,0,0" Margin="0">
+                        <TextBlock x:Name ="run_FloorName" Padding="0" Margin="0"></TextBlock>
+                    </Paragraph>
+                </TableCell>
+            </TableRow>
+        </TableRowGroup>
+    </Table>
+
+    <Table Margin="0,0,0,0">
+        <Table.Columns>
+            <TableColumn Width="1*"></TableColumn>
+            <TableColumn Width="1*"></TableColumn>
+        </Table.Columns>
+        <TableRowGroup>
+            <TableRow>
+                <TableCell ColumnSpan="2">
+                    <Paragraph>
+                        <TextBlock Text="-----------------------------------" TextWrapping="Wrap" />
+                    </Paragraph>
+                </TableCell>
+            </TableRow>
+
+            <TableRow>
+                <TableCell>
+                    <Paragraph>
+                        <TextBlock x:Name="run_DateTime" TextWrapping="Wrap" />
+                    </Paragraph>
+                </TableCell>
+            </TableRow>
+
+            <TableRow>
+                <TableCell>
+                    <Paragraph>
+                        <TextBlock x:Name="run_AuthMode" TextWrapping="Wrap" />
+                    </Paragraph>
+                </TableCell>
+            </TableRow>
+        </TableRowGroup>
+    </Table>
+
+</FlowDocument>

@@ -1,0 +1,61 @@
+﻿<UserControl x:Class="KT.Elevator.Unit.Secondary.ClientApp.Views.Controls.CopyrightControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:sh="clr-namespace:KT.Common.Core.Helpers;assembly=KT.Common.Core"
+             xmlns:prism="http://prismlibrary.com/"
+             prism:ViewModelLocator.AutoWireViewModel="True"
+             mc:Ignorable="d">
+    <Grid Height="40">
+        <Border Background="#00FFF8" Opacity="0.1"/>
+        <Grid>
+            <StackPanel HorizontalAlignment="Left"
+                        VerticalAlignment="Center"
+                        Orientation="Horizontal">
+                <Grid>
+                    <Ellipse Height="15" 
+                             Width="15" 
+                             Fill="Green"
+                             Margin="10,0,0,0"
+                             Visibility="{Binding State.IsOnline,Converter={StaticResource cvt_TrueVisbile}}"/>
+                    <Ellipse Height="15" 
+                             Width="15" 
+                             Fill="Red"
+                             Margin="10,0,0,0"
+                             Visibility="{Binding State.IsOnline,Converter={StaticResource cvt_TrueCollapsed}}"/>
+                </Grid>
+                <Grid>
+                    <Ellipse Height="15" 
+                             Width="15" 
+                             Fill="Yellow"
+                             Margin="10,0,0,0"
+                             Visibility="{Binding State.IsLoadingData,Converter={StaticResource cvt_TrueVisbile}}"/>
+                    <Ellipse Height="15" 
+                             Width="15" 
+                             Fill="Green"
+                             Margin="10,0,0,0"
+                             Visibility="{Binding State.IsLoadingData,Converter={StaticResource cvt_TrueCollapsed}}"/>
+                </Grid>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center">
+                <TextBlock Text="2016-"
+                           Foreground="{DynamicResource Scb_Gray03}"
+                           FontSize="10"/>
+                <TextBlock Text="{Binding NowYear}"
+                           Foreground="{DynamicResource Scb_Gray03}"
+                           FontSize="10"/>
+                <TextBlock Text="{Binding SystemCopyright}"
+                           Foreground="{DynamicResource Scb_Gray03}"
+                           FontSize="10"/>
+                <TextBlock Text="{x:Static sh:VersionSetting.Text}"
+                           TextAlignment="Center"
+                           Foreground="{DynamicResource Scb_Gray03}"
+                           FontSize="10"/>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</UserControl>

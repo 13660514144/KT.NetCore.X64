@@ -1,0 +1,154 @@
+﻿<UserControl x:Class="KT.Visitor.Interface.Views.Integrate.IntegrateVisitorControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:pu="clr-namespace:Panuon.UI.Silver;assembly=Panuon.UI.Silver"
+             mc:Ignorable="d"
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition />
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <!--陪同访客-->
+        <ContentPresenter Content="{Binding AccompanyVisitorControl}" Margin="0,10"/>
+
+        <StackPanel Grid.Row="1" Orientation="Vertical">
+            <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="15,15,0,0" >
+                <TextBlock Text="陪同访客" 
+                           FontSize="{DynamicResource FontSize_Normal}" 
+                           Margin="0,5,0,0" 
+                           VerticalAlignment="Center"/>
+                <Grid>
+                    <StackPanel Orientation="Horizontal" Visibility="{Binding VisibilityNormalCompany}">
+                        <Button Content="陪同访客" 
+                                Margin="48,30,0,30" Width="308"
+                                Background="{DynamicResource Scb_White01}"
+                                BorderBrush="{DynamicResource Scb_Theme08}" 
+                                BorderThickness="1" 
+                                FontSize="{DynamicResource FontSize_Normal}" 
+                                Foreground="{DynamicResource Scb_Theme08}"
+                                Height="42"
+                                pu:ButtonHelper.ButtonStyle="Outline"
+                                pu:ButtonHelper.HoverBrush="{DynamicResource Scb_Theme10}"
+                                Command="{Binding AddAccompanyCommand}"
+                                pu:ButtonHelper.Icon="/Resources/Images/add.png"
+                                pu:IconHelper.Height="10"/>
+                        <Button Style="{DynamicResource Btn_ContentButton}"
+                                Content="点击陪同访客证件交互"
+                                Margin="20,0"
+                                Padding="10"
+                                Command="{Binding ChangeSimpleAccompanyCommand}"/>
+                    </StackPanel>
+                    <Grid Visibility="{Binding VisibilityNormalCompany,Converter={StaticResource cvt_VisibleCollapsedInverse}}">
+                        <StackPanel Orientation="Horizontal" Visibility="{Binding AuthModel,Converter={StaticResource cvt_StringParVisible},ConverterParameter=QR}">
+                            <TextBox Margin="48,30,0,30" 
+                                 Width="250" 
+                                 pu:TextBoxHelper.Watermark="请输入陪同访客人数" 
+                                 Text="{Binding VisitorNum,Mode=TwoWay}" 
+                                 Style="{DynamicResource Tb_NormalTextInput}" />
+                            <TextBlock Text="人" 
+                                   Foreground="{DynamicResource Scb_Gray12}" 
+                                   FontSize="{DynamicResource FontSize_Normal}" 
+                                   Margin="10,0" 
+                                   VerticalAlignment="Center"/>
+                            <Button Style="{DynamicResource Btn_ContentButton}"
+                                Content="点击陪同访客证件交互"
+                                Margin="20,0"
+                                Padding="10"
+                                Command="{Binding ChangeNormalAccompanyCommand}"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Visibility="{Binding AuthModel,Converter={StaticResource cvt_StringParVisible},ConverterParameter=IC}">
+                            <TextBox Margin="48,30,0,30" 
+                                 Width="250" 
+                                 pu:TextBoxHelper.Watermark="请输入陪同访客人数" 
+                                 Text="{Binding VisitorNum,Mode=TwoWay}" 
+                                 Style="{DynamicResource Tb_NormalTextInput}" />
+                            <TextBlock Text="人" 
+                                   Foreground="{DynamicResource Scb_Gray12}" 
+                                   FontSize="{DynamicResource FontSize_Normal}" 
+                                   Margin="10,0" 
+                                   VerticalAlignment="Center"/>
+                            <Button Style="{DynamicResource Btn_SmallButton}"
+                                Content="发卡"
+                                VerticalAlignment="Center"
+                                Margin="10"
+                                Command="{Binding AddAccompanyCardCommand}"/>
+                            <Button Style="{DynamicResource Btn_ContentButton}"
+                                Content="点击陪同访客证件交互"
+                                Margin="20,0"
+                                Padding="10"
+                                Command="{Binding ChangeNormalAccompanyCommand}"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Visibility="{Binding AuthModel,Converter={StaticResource cvt_StringParVisible},ConverterParameter=FACE}">
+                            <TextBox Margin="48,30,0,30" 
+                                 Width="250" 
+                                 pu:TextBoxHelper.Watermark="请输入陪同访客人数" 
+                                 Text="{Binding VisitorNum,Mode=TwoWay}" 
+                                 Style="{DynamicResource Tb_NormalTextInput}" />
+                            <TextBlock Text="人" 
+                                   Foreground="{DynamicResource Scb_Gray12}" 
+                                   FontSize="{DynamicResource FontSize_Normal}" 
+                                   Margin="10,0" 
+                                   VerticalAlignment="Center"/>
+                            <Button Style="{DynamicResource Btn_SmallButton}"
+                                Content="拍照"
+                                VerticalAlignment="Center"
+                                Margin="10"
+                                Command="{Binding AddAccompanyPhotoCommand}"/>
+                            <Button Style="{DynamicResource Btn_ContentButton}"
+                                Content="点击陪同访客证件交互"
+                                Margin="20,0"
+                                Padding="10"
+                                Command="{Binding ChangeNormalAccompanyCommand}"/>
+                        </StackPanel>
+                    </Grid>
+
+                </Grid>
+            </StackPanel>
+
+        </StackPanel>
+        <StackPanel Grid.Row="2" Orientation="Horizontal">
+            <StackPanel Grid.Row="0" Grid.Column="0" Orientation="Horizontal" Margin="15,15,0,0">
+                <TextBlock Text="" Foreground="Red" VerticalAlignment="Center"/>
+                <TextBlock Text="来访事由" FontSize="{DynamicResource FontSize_Normal}" VerticalAlignment="Center"/>
+            </StackPanel>
+            <ItemsControl Grid.Row="0" Grid.Column="1" Margin="48,30,15,30" ItemsSource="{Binding VisitReasons}">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <RadioButton Content="{Binding Name}"
+                                     GroupName="VisitReasonGroup" 
+                                     IsChecked="{Binding IsChecked,Mode=TwoWay}"
+                                     Style="{DynamicResource Rb_Style}" />
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <WrapPanel />
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+            </ItemsControl>
+        </StackPanel>
+
+        <Grid Grid.Row="4">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <Button Content="上一步" Style="{DynamicResource Btn_CancelButton}" Click="Btn_Cancel_Click"/>
+                <Button Style="{DynamicResource Btn_ConfirmButton}" x:Name="Btn_Submit" Click="Btn_Confirm_Click">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="授权" VerticalAlignment="Center" Foreground="{DynamicResource Scb_White01}"/>
+                        <pu:Loading Visibility="{Binding ElementName=Btn_Submit,Path=IsEnabled,Converter={StaticResource cvt_TrueCollapsed}}" 
+                                    VerticalAlignment="Center" 
+                                    HorizontalAlignment="Center" 
+                                    Width="30" 
+                                    Height="30" 
+                                    IsRunning="True"/>
+                    </StackPanel>
+                </Button>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</UserControl>

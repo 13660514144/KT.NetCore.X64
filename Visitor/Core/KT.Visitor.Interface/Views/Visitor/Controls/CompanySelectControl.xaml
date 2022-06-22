@@ -1,0 +1,50 @@
+﻿<UserControl x:Class="KT.Visitor.Interface.Views.Visitor.Controls.CompanySelectControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <ContentPresenter Content="{Binding CompanySearchSelectControl}"/>
+
+        <Grid Grid.Row="1">
+            <!--公司查询列表选择器-->
+            <ContentPresenter Content="{Binding CompanyShowSelectControl}" Visibility="{Binding CompanyShowSelectControlVisibility}" Margin="0,15,0,0"/>
+
+            <!--浏览选择公司模块-->
+            <ContentPresenter Content="{Binding CompanySelectListControl}" Visibility="{Binding CompanySelectListControlVisibility}" Margin="0,15,0,0"/>
+
+            <!--错误信息显示-->
+            <ContentPresenter Content="{Binding CompanyWarnControl}" Visibility="{Binding CompanyWarnControlVisibility}" Margin="0,30,0,0"/>
+
+            <!--公司详情展示-->
+            <ContentPresenter Content="{Binding CompanyShowDetailControl}" Visibility="{Binding CompanyShowDetailControlVisibility}" Margin="0,15,0,0"/>
+        </Grid>
+    </Grid>
+</UserControl>
+
+
+<!--公司查询列表选择器--><!--
+<Grid Visibility="{Binding CompanyShowSelectControlVisibility}" Margin="0,15,0,0">
+    <ContentPresenter Content="{Binding CompanyShowSelectControlVisibility}" />
+</Grid>
+
+--><!--浏览选择公司模块--><!--
+<Grid Visibility="{Binding CompanySelectListControlVisibility}" Margin="0,15,0,0">
+    <ContentPresenter Content="{Binding CompanySelectListControl}" />
+</Grid>
+
+--><!--错误信息显示--><!--
+<Grid Visibility="{Binding CompanyWarnControlVisibility}" Margin="0,30,0,0">
+    <ContentPresenter Content="{Binding CompanyWarnControl}" />
+</Grid>
+
+--><!--公司详情展示--><!--
+<Grid Visibility="{Binding CompanyShowDetailControlVisibility}" Margin="0,15,0,0">
+    <ContentPresenter Content="{Binding CompanyShowDetailControl}" />
+</Grid>-->

@@ -1,0 +1,58 @@
+﻿<pu:WindowX   x:Class="KT.Visitor.Interface.Views.Register.MultiRegisterWarnWindow"
+              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+              xmlns:pu="clr-namespace:Panuon.UI.Silver;assembly=Panuon.UI.Silver"
+              mc:Ignorable="d"
+        Title="温馨提示" Height="450" Width="800" 
+    WindowStartupLocation ="CenterOwner" 
+    pu:WindowXCaption.Background="{DynamicResource Scb_Theme08}">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Vertical"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center">
+            <StackPanel Orientation="Horizontal"
+                               Margin="0,00,0,0">
+                <TextBlock Text="您已登记于"
+                           Style="{DynamicResource Tbk_NormalText}"/>
+                <TextBlock Text="{Binding VisitorInfo.VisitDate}"
+                           Style="{DynamicResource Tbk_NormalText}"/>
+                <TextBlock Text="访问" 
+                           Style="{DynamicResource Tbk_NormalText}"/>
+                <TextBlock Text="{Binding VisitorInfo.BeVisitCompanyName}"
+                           Style="{DynamicResource Tbk_NormalText}"/>
+                <TextBlock Text="{Binding VisitorInfo.BeVisitStaffName}" 
+                           Style="{DynamicResource Tbk_NormalText}"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal"
+                               Margin="0,10,0,0">
+                <TextBlock Text="当前状态："
+                           Style="{DynamicResource Tbk_NormalText}"/>
+                <TextBlock Text="{Binding VisitorInfo.VisitorStatusName}"
+                           Style="{DynamicResource Tbk_NormalText}"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal"
+                               Margin="0,10,0,0">
+                <TextBlock Text="继续登记将结束上述访问，是否登记？"
+                           Style="{DynamicResource Tbk_NormalText}"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal"
+                               Margin="0,10,0,0">
+                <TextBlock Text="*系统每人每天仅支持同时生效1条访问记录"
+                                       Foreground="Red" 
+                           Style="{DynamicResource Tbk_NormalText}"/>
+            </StackPanel>
+        </StackPanel>
+        <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center">
+            <Button Content="取消" Style="{DynamicResource Btn_CancelButton}" Click="btn_Cancel_Click" />
+            <Button Content="预约" Style="{DynamicResource Btn_ConfirmButton}" IsEnabled="{Binding IsSubmiting,Converter={StaticResource cvt_BoolAntonym}}" Click="btn_OK_Click" />
+            <!--<Button Content="取消" Style="{DynamicResource Btn_CancelButton}" Command="{Binding CancelCommand}" />
+            <Button Content="预约" Style="{DynamicResource Btn_ConfirmButton}" Command="{Binding ConfirmCommand}" />-->
+        </StackPanel>
+    </Grid>
+</pu:WindowX>

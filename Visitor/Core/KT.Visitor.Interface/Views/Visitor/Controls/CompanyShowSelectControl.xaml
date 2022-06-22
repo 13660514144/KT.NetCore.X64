@@ -1,0 +1,73 @@
+﻿<UserControl x:Class="KT.Visitor.Interface.Views.Visitor.Controls.CompanyShowSelectControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+
+    <!--公司查询列表选择器-->
+    <Grid x:Name="sp_CompanySelectList" Visibility="Collapsed" Margin="0,15,0,0" >
+        <DataGrid  
+            GridLinesVisibility="None" 
+            BorderThickness="0" 
+            AutoGenerateColumns="False" 
+            HeadersVisibility="None" 
+            FontSize="{DynamicResource FontSize_Normal}" 
+            MaxHeight="800" 
+            SelectionUnit="FullRow" 
+            ScrollViewer.VerticalScrollBarVisibility="Auto" 
+            ScrollViewer.HorizontalScrollBarVisibility="Hidden" 
+            CanUserAddRows="False" 
+            Background="#F3F4F9"
+            CanUserDeleteRows="False" 
+            Padding="20"
+            ItemsSource="{Binding Companies}"
+            SelectedItem="{Binding Company}">
+
+            <DataGrid.CellStyle>
+                <Style TargetType="DataGridCell">
+                    <Setter Property="BorderThickness" Value="0"/>
+                    <Style.Triggers>
+                        <Trigger Property="IsSelected" Value="True">
+                            <Setter Property="Background" Value="#F3F4F9"/>
+                            <Setter Property="Foreground" Value="Black"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </DataGrid.CellStyle>
+            <DataGrid.RowStyle>
+                <Style TargetType="DataGridRow">
+                    <Setter Property="Height" Value="35"/>
+                    <Setter Property="VerticalContentAlignment" Value="Center"/>
+                    <Setter Property="Margin" Value="0,20,0,0"/>
+                    <Setter Property="Background" Value="Transparent"/>
+                </Style>
+            </DataGrid.RowStyle>
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="序号" Width="Auto" Binding="{Binding Order}"/>
+                <DataGridTextColumn Header="单元号" Width="Auto" Binding="{Binding Unit}"/>
+                <DataGridTextColumn Header="公司名称" Width="*" MinWidth="300" Binding="{Binding Name}">
+                    <DataGridTextColumn.ElementStyle>
+                        <Style TargetType="TextBlock">
+                            <Setter Property="TextWrapping" Value="WrapWithOverflow"/>
+                            <Setter Property="HorizontalAlignment" Value="Left"/>
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+
+                <DataGridTemplateColumn Header="操作" Width="Auto">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button VerticalAlignment="Center" HorizontalAlignment="Center" 
+                                                         Margin="20,0" Background="{DynamicResource Scb_White01}" Foreground="Blue"
+                                                         Height="30" Width="60" Content="访问" Name="btnOperate" 
+                                                         BorderThickness="1" BorderBrush="Blue" 
+                                                         FontSize="14" Click="BtnOperate_Click"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</UserControl>

@@ -1,0 +1,23 @@
+﻿<Page x:Class="KT.Visitor.Interface.Views.Auth.AuthMsgPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+        xmlns:pu="clr-namespace:Panuon.UI.Silver;assembly=Panuon.UI.Silver"
+      mc:Ignorable="d" 
+      d:DesignHeight="800" d:DesignWidth="1300"
+      Title="pAuthMsg" Background="#F3F7F9" Loaded="Page_Loaded">
+
+    <StackPanel Orientation="Vertical">
+        <TextBlock Text="身份验证"  FontSize="{DynamicResource FontSize_Normal}" Margin="60,30,0,0" Name="txb_title"/>
+        <StackPanel Orientation="Vertical" Margin="35,20,0,0" Width="1200" Height="505" Background="{DynamicResource Scb_White01}">
+            <Image Source="/Resources/Images/warning.png" Width="60" Height="60" Margin="0,200,0,20"/>
+            <TextBlock Text="身份证姓名与预约访客姓名不一致" TextAlignment="Center" FontSize="{DynamicResource FontSize_Normal}" Name="txb_msg"/>
+            <TextBlock Text="*邀请码仅来访当天输入有效" TextAlignment="Center" FontSize="{DynamicResource FontSize_Small}" Foreground="{DynamicResource Scb_Gray10}" Margin="0,10,0,0" Name="txb_warning" Visibility="Hidden"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" >
+            <Button Content="返回"  Style="{DynamicResource Btn_CancelButton}" Name="btn_goback" Click="Btn_goback_Click"/>
+            <Button Content="现在登记" Style="{DynamicResource Btn_ConfirmButton}" Name="btn_register" Click="Btn_register_Click"/>
+        </StackPanel>
+    </StackPanel>
+</Page>

@@ -1,0 +1,1 @@
+﻿####指定分发设备 => IRemoteDevice

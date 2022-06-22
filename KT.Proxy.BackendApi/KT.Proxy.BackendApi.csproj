@@ -1,0 +1,27 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <Platforms>AnyCPU;x86;x64</Platforms>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Apis\SelfSettingApi.cs" />
+    <Compile Remove="Helpers\HeaderHelper.cs" />
+    <Compile Remove="Models\BackendResponse.cs" />
+    <Compile Remove="Models\ResponseData.cs" />
+    <Compile Remove="Models\VisitorImportQuery.cs" />
+    <Compile Remove="Models\VisitorTeamModel.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\KT.Common.WebApi\KT.Common.WebApi.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="PresentationCore">
+      <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\PresentationCore.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

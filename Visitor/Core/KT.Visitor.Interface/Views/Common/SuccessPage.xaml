@@ -1,0 +1,24 @@
+﻿<Page x:Class="KT.Visitor.Interface.Views.Common.SuccessPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"  
+      mc:Ignorable="d" 
+      d:DesignHeight="800" d:DesignWidth="1200"
+      Title="SuccessPage" Loaded="Page_Loaded">
+
+    <Grid Background="#F3F7F9">
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <StackPanel Orientation="Vertical" HorizontalAlignment="Center" >
+                <Image Source="/Resources/Images/finish.png" Width="100"/>
+                <TextBlock Text="预约授权成功" FontSize="50" FontWeight="Bold" VerticalAlignment="Center" Margin="20" Foreground="{DynamicResource Scb_Theme08}"/>
+            </StackPanel>
+            <TextBlock Text="请提醒访客收好身份证及通行凭证" FontSize="40" Foreground="{DynamicResource Scb_Gray10}" HorizontalAlignment="Center" Margin="0,50"/>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <TextBlock Text="10秒后自动返回" VerticalAlignment="Center" FontSize="30"/>
+                <Button Content="首页" Click="Btn_Home_Click" Style="{DynamicResource Btn_ContentButton}" VerticalAlignment="Center" FontSize="30" Margin="30,0,0,0" Foreground="{DynamicResource Scb_Theme08}"/>
+                <Button Content="身份认证" Click="Btn_Auth_Click" x:Name="btn_Auth" Visibility="Collapsed" Style="{DynamicResource Btn_ContentButton}" VerticalAlignment="Center" FontSize="30" Margin="30,0" Foreground="Blue"/>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Page>

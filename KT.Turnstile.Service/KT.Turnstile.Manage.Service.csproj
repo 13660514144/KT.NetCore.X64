@@ -1,0 +1,43 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <Platforms>AnyCPU;x64;x86</Platforms>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Handlers\DistributeHandler.cs" />
+    <Compile Remove="Handlers\SeekHandler.cs" />
+    <Compile Remove="Helpers\DistributeHttpHelper.cs" />
+    <Compile Remove="Helpers\SeekBroadcastHelper.cs" />
+    <Compile Remove="Helpers\SeekMasterHelper.cs" />
+    <Compile Remove="Helpers\SeekReceiveHelper.cs" />
+    <Compile Remove="Hubs\ClientDistributeHub.cs" />
+    <Compile Remove="Models\DistributeModel.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.SignalR" Version="1.1.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="3.1.2" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.2">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\KT.Common.Core\KT.Common.Core.csproj" />
+    <ProjectReference Include="..\KT.Common.Data\KT.Common.Data.csproj" />
+    <ProjectReference Include="..\KT.Proxy.BackendApi\KT.Proxy.BackendApi.csproj" />
+    <ProjectReference Include="..\KT.Quanta.Common\KT.Quanta.Common.csproj" />
+    <ProjectReference Include="..\KT.Turnstile.Common\KT.Turnstile.Common.csproj" />
+    <ProjectReference Include="..\KT.Turnstile.Unit.Entity\KT.Turnstile.Unit.Entity.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="KT.Common.Core">
+      <HintPath>..\KT.Common.Core\bin\Debug\netcoreapp3.1\KT.Common.Core.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

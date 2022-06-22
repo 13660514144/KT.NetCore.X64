@@ -1,0 +1,296 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+                    xmlns:pu="clr-namespace:Panuon.UI.Silver;assembly=Panuon.UI.Silver">
+
+    <Style TargetType="{x:Type Button}" BasedOn="{StaticResource {x:Type Button}}">
+        <Setter Property="pu:ButtonHelper.CornerRadius" Value="4"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="Background" Value="{DynamicResource Scb_Theme08}"/>
+        <Setter Property="pu:ButtonHelper.HoverBrush" Value="{DynamicResource Scb_Theme06}"/>
+    </Style>
+
+    <Style TargetType="{x:Type TextBox}" BasedOn="{StaticResource {x:Type TextBox}}">
+        <Setter Property="pu:ButtonHelper.CornerRadius" Value="4"/>
+    </Style>
+
+    <!--默认操作按钮-->
+    <Style x:Key="Btn_BaseSetButton" TargetType="{x:Type Button}"  BasedOn="{StaticResource {x:Type Button}}">
+        <Setter Property="pu:ButtonHelper.CornerRadius" Value="4"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="Background" Value="#F2B230"/>
+    </Style>
+
+    <Style x:Key="Btn_BaseCancelButton" TargetType="{x:Type Button}"  BasedOn="{StaticResource {x:Type Button}}">
+        <Setter Property="pu:ButtonHelper.CornerRadius" Value="4"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="Background" Value="{DynamicResource Scb_White01}"/>
+        <Setter Property="BorderBrush" Value="{DynamicResource Scb_Gray12}"/>
+        <Setter Property="Foreground" Value="{DynamicResource Scb_Gray12}"/>
+        <Setter Property="pu:ButtonHelper.HoverBrush" Value="{DynamicResource Scb_Gray01}"/>
+    </Style>
+
+    <Style x:Key="Btn_BaseConfirmButton" TargetType="{x:Type Button}" BasedOn="{StaticResource {x:Type Button}}">
+        <Setter Property="pu:ButtonHelper.CornerRadius" Value="4"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="Background" Value="{DynamicResource Scb_Theme08}"/>
+        <Setter Property="Foreground" Value="{DynamicResource Scb_White01}"/>
+        <Setter Property="pu:ButtonHelper.HoverBrush" Value="{DynamicResource Scb_Theme07}"/>
+    </Style>
+
+    <Style x:Key="Btn_SmallButton" TargetType="{x:Type Button}" BasedOn="{StaticResource Btn_BaseConfirmButton}">
+        <Setter Property="Padding" Value="20,10"/>
+        <Setter Property="FontSize" Value="{DynamicResource FontSize_Normal}"/>
+    </Style>
+
+    <Style x:Key="Btn_NormalButton" TargetType="{x:Type Button}" BasedOn="{StaticResource Btn_BaseConfirmButton}">
+        <Setter Property="Padding" Value="20,10"/>
+        <Setter Property="FontSize" Value="{DynamicResource FontSize_Normal}"/>
+    </Style>
+
+    <Style x:Key="Btn_NormalCancelButton" TargetType="{x:Type Button}" BasedOn="{StaticResource Btn_BaseCancelButton}">
+        <Setter Property="HorizontalAlignment" Value="Left"/>
+        <Setter Property="Padding" Value="20,10"/>
+        <Setter Property="Height" Value="42"/>
+        <Setter Property="FontSize" Value="{DynamicResource FontSize_Normal}"/>
+    </Style>
+
+    <Style x:Key="Btn_NormalRedButton" TargetType="{x:Type Button}" BasedOn="{StaticResource {x:Type Button}}">
+        <Setter Property="Padding" Value="20,10"/>
+        <Setter Property="FontSize" Value="{DynamicResource FontSize_Normal}"/>
+        <Setter Property="pu:ButtonHelper.CornerRadius" Value="4"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="Background" Value="{DynamicResource Scb_Red10}"/>
+        <Setter Property="Foreground" Value="{DynamicResource Scb_White01}"/>
+        <Setter Property="pu:ButtonHelper.HoverBrush" Value="{DynamicResource Scb_Red09}"/>
+    </Style>
+
+    <Style x:Key="Btn_NormalTextButton" TargetType="{x:Type Button}" BasedOn="{StaticResource Btn_BaseConfirmButton}">
+        <Setter Property="Padding" Value="20,10"/>
+        <Setter Property="Height" Value="42"/>
+        <Setter Property="FontSize" Value="{DynamicResource FontSize_Normal}"/>
+    </Style>
+
+    <Style x:Key="Btn_SmallTextButton" TargetType="{x:Type Button}" BasedOn="{StaticResource Btn_BaseConfirmButton}">
+        <Setter Property="Padding" Value="15,0"/>
+        <Setter Property="Height" Value="35"/>
+        <Setter Property="FontSize" Value="{DynamicResource FontSize_Small}"/>
+    </Style>
+
+    <Style x:Key="Btn_SetButton" TargetType="{x:Type Button}" BasedOn="{StaticResource Btn_BaseSetButton}">
+        <Setter Property="Height" Value="54"/>
+        <Setter Property="Width" Value="200"/>
+        <Setter Property="FontSize" Value="{DynamicResource FontSize_Large}"/>
+        <Setter Property="Margin" Value="50,35"/>
+    </Style>
+
+    <Style x:Key="Btn_CancelButton" TargetType="{x:Type Button}" BasedOn="{StaticResource Btn_BaseCancelButton}">
+        <Setter Property="Height" Value="50"/>
+        <Setter Property="Width" Value="200"/>
+        <Setter Property="FontSize" Value="{DynamicResource FontSize_Large}"/>
+        <Setter Property="Margin" Value="50,35"/>
+    </Style>
+
+    <Style x:Key="Btn_ConfirmButton" TargetType="{x:Type Button}" BasedOn="{StaticResource Btn_BaseConfirmButton}">
+        <Setter Property="Height" Value="54"/>
+        <Setter Property="Width" Value="200"/>
+        <Setter Property="FontSize" Value="{DynamicResource FontSize_Large}"/>
+        <Setter Property="Margin" Value="50,35"/>
+    </Style>
+
+
+    <Style x:Key="Btn_PageSelected" TargetType="{x:Type Button}" BasedOn="{StaticResource {x:Type Button}}">
+        <Setter Property="Height" Value="32"/>
+        <Setter Property="MinWidth" Value="40"/>
+        <Setter Property="Padding" Value="5,0"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="Background" Value="{DynamicResource Scb_Theme08}"/>
+    </Style>
+
+    <!--<Style x:Key="Btn_PageNoSelected" TargetType="{x:Type Button}" BasedOn="{StaticResource    {x:Type Button}}">-->
+    <Style x:Key="Btn_PageNoSelected" TargetType="{x:Type Button}" BasedOn="{StaticResource {x:Type Button}}">
+        <Setter Property="Height" Value="32"/>
+        <Setter Property="MinWidth" Value="40"/>
+        <Setter Property="Padding" Value="5,0"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="Background" Value="{DynamicResource Scb_White01}"/>
+        <Setter Property="Foreground" Value="{DynamicResource Scb_Gray14}"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="BorderBrush" Value="LightGray"/>
+        <Setter Property="pu:ButtonHelper.HoverBrush" Value="{DynamicResource Scb_Gray01}"/>
+    </Style>
+
+    <Style x:Key="Btn_SmallCancelButton" TargetType="{x:Type Button}" BasedOn="{StaticResource Btn_BaseCancelButton}">
+        <Setter Property="Height" Value="30"/>
+        <Setter Property="Width" Value="100"/>
+        <Setter Property="FontSize" Value="{DynamicResource FontSize_Normal}"/>
+        <Setter Property="Margin" Value="20,10"/>
+    </Style>
+
+    <Style x:Key="Btn_SmallConfirmButton" TargetType="{x:Type Button}" BasedOn="{StaticResource Btn_BaseConfirmButton}">
+        <Setter Property="Height" Value="30"/>
+        <Setter Property="Width" Value="100"/>
+        <Setter Property="FontSize" Value="{DynamicResource FontSize_Normal}"/>
+        <Setter Property="Margin" Value="20,10"/>
+    </Style>
+
+    <Style x:Key="Cb_Style" TargetType="{x:Type CheckBox}" BasedOn="{StaticResource {x:Type CheckBox}}">
+        <Setter Property="pu:ButtonHelper.CornerRadius" Value="4"/>
+        <Setter Property="FontSize" Value="{DynamicResource FontSize_Normal}"/>
+        <Setter Property="BorderBrush" Value="{DynamicResource Scb_Theme08}"/>
+        <Setter Property="pu:CheckBoxHelper.CheckedBorderBrush" Value="{DynamicResource Scb_Theme08}"/>
+        <Setter Property="pu:CheckBoxHelper.CheckedGlyphBrush" Value="{DynamicResource Scb_Theme08}"/>
+        <Setter Property="pu:CheckBoxHelper.BoxHeight" Value="18"/>
+        <Setter Property="pu:CheckBoxHelper.BoxWidth" Value="18"/>
+        <Setter Property="BorderThickness" Value="2"/>
+        <Setter Property="Margin" Value="10,5"/>
+        <Setter Property="Cursor" Value="Hand"/>
+    </Style>
+
+    <Style x:Key="Cb_SwitchStyle" TargetType="{x:Type CheckBox}" BasedOn="{StaticResource {x:Type CheckBox}}">
+        <Setter Property="pu:ButtonHelper.CornerRadius" Value="4"/>
+        <Setter Property="FontSize" Value="{DynamicResource FontSize_Normal}"/>
+        <Setter Property="BorderBrush" Value="{DynamicResource Scb_Theme08}"/>
+        <Setter Property="BorderThickness" Value="2"/>
+        <Setter Property="Foreground" Value="Red"/>
+        <Setter Property="pu:CheckBoxHelper.CheckedBackground" Value="{DynamicResource Scb_Theme08}"/>
+        <Setter Property="pu:CheckBoxHelper.CheckedBorderBrush" Value="{DynamicResource Scb_Theme08}"/>
+        <Setter Property="pu:CheckBoxHelper.CheckBoxStyle" Value="Switch"/>
+        <Setter Property="pu:CheckBoxHelper.BoxHeight" Value="18"/>
+        <Setter Property="pu:CheckBoxHelper.BoxWidth" Value="18"/>
+        <Setter Property="Margin" Value="10,5"/>
+        <Setter Property="Cursor" Value="Hand"/>
+    </Style>
+
+    <Style x:Key="Rb_Style" TargetType="{x:Type RadioButton}" BasedOn="{StaticResource {x:Type RadioButton}}">
+        <Setter Property="pu:ButtonHelper.CornerRadius" Value="4"/>
+        <Setter Property="FontSize" Value="{DynamicResource FontSize_Normal}"/>
+        <Setter Property="BorderBrush" Value="{DynamicResource Scb_Theme08}"/>
+        <Setter Property="pu:RadioButtonHelper.CheckedBorderBrush" Value="{DynamicResource Scb_Theme08}"/>
+        <Setter Property="pu:RadioButtonHelper.CheckedGlyphBrush" Value="{DynamicResource Scb_Theme08}"/>
+        <Setter Property="pu:RadioButtonHelper.BoxHeight" Value="18"/>
+        <Setter Property="pu:RadioButtonHelper.BoxWidth" Value="18"/>
+        <Setter Property="BorderThickness" Value="2"/>
+        <Setter Property="Margin" Value="10,5"/>
+        <Setter Property="Cursor" Value="Hand"/>
+    </Style>
+
+    <Style x:Key="Btn_PanelNoSelectedButton" TargetType="{x:Type Button}"  BasedOn="{StaticResource {x:Type Button}}">
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="Foreground" Value="{DynamicResource Scb_Theme08}"/>
+        <Setter Property="FontSize" Value="{DynamicResource FontSize_Normal}"/>
+        <Setter Property="Width" Value="80"/>
+        <Setter Property="Height" Value="42"/>
+        <Setter Property="Content" Value="1F"/>
+        <Setter Property="pu:ButtonHelper.CornerRadius" Value="4"/>
+        <Setter Property="BorderBrush" Value="{DynamicResource Scb_Theme08}"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="Margin" Value="10"/>
+    </Style>
+    <Style x:Key="Btn_PanelSelectedButton" TargetType="{x:Type Button}"  BasedOn="{StaticResource {x:Type Button}}">
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="Foreground" Value="{DynamicResource Scb_Theme08}"/>
+        <Setter Property="FontSize" Value="{DynamicResource FontSize_Normal}"/>
+        <Setter Property="Width" Value="80"/>
+        <Setter Property="Height" Value="42"/>
+        <Setter Property="Content" Value="1F"/>
+        <Setter Property="pu:ButtonHelper.CornerRadius" Value="4"/>
+        <Setter Property="BorderBrush" Value="{DynamicResource Scb_Theme08}"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="Margin" Value="10"/>
+    </Style>
+
+    <Style x:Key="Btn_NavButton" TargetType="{x:Type Button}"  BasedOn="{StaticResource {x:Type Button}}">
+        <Setter Property="BorderBrush" Value="{x:Null}"/>
+        <Setter Property="FontSize" Value="{DynamicResource FontSize_Small}"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="Background" Value="{DynamicResource Scb_White01}"/>
+        <Setter Property="Margin" Value="0,0,0,0"/>
+        <Setter Property="Padding" Value="0,0,0,0"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="pu:ButtonHelper.HoverBrush" Value="{DynamicResource Scb_Theme02}"/>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="BorderThickness" Value="0"/>
+                <Setter Property="Background" Value="{DynamicResource Scb_Theme02}"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+
+    <Style x:Key="Tb_NormalTextInput" TargetType="{x:Type TextBox}"  BasedOn="{StaticResource {x:Type TextBox}}">
+        <Setter Property="Height" Value="42"/>
+        <Setter Property="HorizontalAlignment" Value="Left"/>
+        <Setter Property="pu:TextBoxHelper.CanClear" Value="True"/>
+        <Setter Property="FontSize" Value="{DynamicResource FontSize_Normal}"/>
+        <Setter Property="Foreground" Value="{DynamicResource Scb_Gray12}"/>
+        <Setter Property="pu:TextBoxHelper.CornerRadius" Value="4"/>
+        <Setter Property="pu:TextBoxHelper.FocusedBorderBrush" Value="{DynamicResource Scb_Gray06}"/>
+    </Style>
+
+    <Style x:Key="Tb_SmallTextInput" TargetType="{x:Type TextBox}"  BasedOn="{StaticResource {x:Type TextBox}}">
+        <Setter Property="Height" Value="35"/>
+        <Setter Property="pu:TextBoxHelper.CanClear" Value="True"/>
+        <Setter Property="FontSize" Value="{DynamicResource FontSize_Small}"/>
+        <Setter Property="Foreground" Value="{DynamicResource Scb_Gray12}"/>
+        <Setter Property="pu:TextBoxHelper.CornerRadius" Value="4"/>
+        <Setter Property="pu:TextBoxHelper.FocusedBorderBrush" Value="{DynamicResource Scb_Gray06}"/>
+    </Style>
+
+    <Style x:Key="Cb_Normal" TargetType="{x:Type ComboBox}"  BasedOn="{StaticResource {x:Type ComboBox}}">
+        <Setter Property="Height" Value="42"/>
+        <Setter Property="FontSize" Value="{DynamicResource FontSize_Normal}"/>
+        <Setter Property="Foreground" Value="{DynamicResource Scb_Gray12}"/>
+        <Setter Property="pu:ComboBoxHelper.CornerRadius" Value="4"/>
+        <Setter Property="pu:ComboBoxHelper.ItemsHeight" Value="42"/>
+    </Style>
+
+    <Style x:Key="Cb_Small" TargetType="{x:Type ComboBox}"  BasedOn="{StaticResource {x:Type ComboBox}}">
+        <Setter Property="Height" Value="35"/>
+        <Setter Property="FontSize" Value="{DynamicResource FontSize_Small}"/>
+        <Setter Property="Foreground" Value="{DynamicResource Scb_Gray12}"/>
+        <Setter Property="pu:ComboBoxHelper.CornerRadius" Value="4"/>
+        <Setter Property="pu:ComboBoxHelper.ItemsHeight" Value="35"/>
+    </Style>
+
+    <Style x:Key="Btn_AppendNum" TargetType="{x:Type Button}" BasedOn="{StaticResource {x:Type Button}}">
+        <Setter Property="Background" Value="{DynamicResource Scb_White01}"/>
+        <Setter Property="Foreground" Value="{DynamicResource Scb_Gray12}"/>
+        <Setter Property="FontSize" Value="{DynamicResource FontSize_Normal}"/>
+        <Setter Property="BorderBrush" Value="{DynamicResource Scb_Theme08}"/>
+        <Setter Property="BorderThickness" Value="1"/>
+    </Style>
+
+    <Style x:Key="Tbk_NormalTextTitle" TargetType="{x:Type TextBlock}"  BasedOn="{StaticResource {x:Type TextBlock}}">
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="FontSize" Value="{DynamicResource FontSize_Normal}"/>
+        <Setter Property="Foreground" Value="{DynamicResource Scb_Gray12}"/>
+    </Style>
+
+    <Style x:Key="Tbk_SmallTextTitle" TargetType="{x:Type TextBlock}" BasedOn="{StaticResource {x:Type TextBlock}}">
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="FontSize" Value="{DynamicResource FontSize_Small}"/>
+        <Setter Property="Margin" Value="10"/>
+        <Setter Property="Foreground" Value="{DynamicResource Scb_Gray10}"/>
+    </Style>
+
+    <Style x:Key="Dg_SmallText" TargetType="{x:Type DataGrid}" BasedOn="{StaticResource {x:Type DataGrid}}">
+        <Setter Property="AutoGenerateColumns" Value="False"/>
+        <Setter Property="IsReadOnly" Value="True"/> 
+        <Setter Property="CanUserAddRows" Value="False"/> 
+        <Setter Property="ColumnHeaderHeight" Value="50"/>
+        <Setter Property="HeadersVisibility" Value="Column"/>
+        <Setter Property="GridLinesVisibility" Value="Horizontal"/>
+        <Setter Property="VerticalScrollBarVisibility" Value="Auto"/>
+        <Setter Property="HorizontalScrollBarVisibility" Value="Disabled"/>  
+        <Setter Property="FontSize" Value="{DynamicResource FontSize_Small}"/>
+        <Setter Property="Foreground" Value="{DynamicResource Scb_Gray12}"/>
+        <Setter Property="HorizontalGridLinesBrush" Value="{DynamicResource Scb_Gray02}"/>
+        <Setter Property="pu:DataGridHelper.HeaderBackground" Value="{DynamicResource Scb_Gray01}"/> 
+        <Setter Property="BorderThickness" Value="0"/> 
+        <Setter Property="VerticalGridLinesBrush" Value="{x:Null}"/>
+        <Setter Property="pu:DataGridHelper.CellFocusedHightlightBorderBrush" Value="{x:Null}"/>
+    </Style>
+
+</ResourceDictionary>

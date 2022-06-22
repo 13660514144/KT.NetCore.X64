@@ -1,0 +1,125 @@
+﻿<FlowDocument xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+              FontSize="12" FontFamily="宋体"
+              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+              TextOptions.TextFormattingMode="Display">
+    <FlowDocument.Resources>
+        <Style TargetType="Table" x:Key="BorderedTable">
+            <Setter Property="CellSpacing" Value="0"></Setter>
+            <Setter Property="BorderThickness" Value="0"></Setter>
+        </Style>
+        <Style TargetType="TableCell" x:Key="BorderedCell">
+            <Setter Property="BorderThickness" Value="0"></Setter>
+            <Setter Property="Padding" Value="3"></Setter>
+        </Style>
+    </FlowDocument.Resources>
+
+    <Paragraph TextAlignment="Center">
+        <TextBlock FontSize="17" FontWeight="Bold" x:Name="run_EdificeName"></TextBlock>
+    </Paragraph>
+
+    <Table>
+        <Table.Columns>
+            <TableColumn Width="18*"></TableColumn>
+            <TableColumn  Width="6*"></TableColumn>
+            <TableColumn Width="12*"></TableColumn>
+        </Table.Columns>
+        <TableRowGroup>
+            <TableRow>
+                <TableCell RowSpan="4">
+                    <Paragraph>
+                        <Image VerticalAlignment="Center" x:Name="image_QRCode"/>
+                    </Paragraph>
+                </TableCell>
+
+                <TableCell>
+                    <Paragraph TextAlignment="Center" Padding="0,10,0,5" >
+                        访客：
+                    </Paragraph>
+                </TableCell>
+                <TableCell>
+                    <Paragraph Padding="0,10,0,5">
+                        <TextBlock x:Name="run_Name"></TextBlock>
+                    </Paragraph>
+                </TableCell>
+            </TableRow>
+
+            <TableRow>
+                <TableCell>
+                    <Paragraph Padding="0,5,0,5">
+                        手机：
+                    </Paragraph>
+                </TableCell>
+                <TableCell>
+                    <Paragraph Padding="0,5,0,5">
+                        <TextBlock x:Name="run_Phone"></TextBlock>
+                    </Paragraph>
+                </TableCell>
+            </TableRow>
+
+            <TableRow>
+                <TableCell>
+                    <Paragraph Padding="0,5,0,5">
+                        来访：
+                    </Paragraph>
+                </TableCell>
+                <TableCell>
+                    <Paragraph Padding="0,5,0,5">
+                        <TextBlock x:Name="run_CompanyName" TextWrapping="Wrap"></TextBlock>
+                    </Paragraph>
+                </TableCell>
+            </TableRow>
+
+            <TableRow>
+                <TableCell>
+                    <Paragraph Padding="0,5,0,5">
+                        楼层：
+                    </Paragraph>
+                </TableCell>
+                <TableCell Padding="0">
+                    <Paragraph Padding="0,5,0,5" Margin="0">
+                        <TextBlock x:Name ="run_FloorName" Padding="0" Margin="0"></TextBlock>
+                    </Paragraph>
+                </TableCell>
+            </TableRow>
+        </TableRowGroup>
+    </Table>
+
+
+
+    <Table>
+        <Table.Columns>
+            <TableColumn Width="1*"></TableColumn>
+            <TableColumn Width="3*"></TableColumn>
+            <TableColumn Width="3*"></TableColumn>
+            <TableColumn Width="1*"></TableColumn>
+        </Table.Columns>
+        <TableRowGroup>
+            <TableRow>
+                <TableCell>
+                    <Paragraph TextAlignment="Left">
+                        <Run Text="****" ></Run>
+                    </Paragraph>
+                </TableCell>
+
+                <TableCell>
+                    <Paragraph TextAlignment="Center">
+                        <TextBlock x:Name="run_DateTime" TextWrapping="Wrap"/>
+                    </Paragraph>
+                </TableCell>
+
+                <TableCell TextAlignment="Center">
+                    <Paragraph>
+                        刷码通行
+                    </Paragraph>
+                </TableCell>
+
+                <TableCell>
+                    <Paragraph TextAlignment="Right">
+                        <Run Text="****"></Run>
+                    </Paragraph>
+                </TableCell>
+            </TableRow>
+        </TableRowGroup>
+    </Table>
+
+</FlowDocument>

@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <Platforms>AnyCPU;x64;x86</Platforms>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Base\BaseDataDao.cs" />
+    <Compile Remove="Base\IBaseDataDao.cs" />
+    <Compile Remove="Daos\BaseDataDao.cs" />
+    <Compile Remove="IDaos\IBaseDataDao.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.7" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="3.1.7" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\KT.Common.Core\KT.Common.Core.csproj" />
+    <ProjectReference Include="..\KT.Common.Data\KT.Common.Data.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,326 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+	<PropertyGroup>
+		<OutputType>WinExe</OutputType>
+		<TargetFramework>netcoreapp3.1</TargetFramework>
+		<UseWPF>true</UseWPF>
+		<ApplicationIcon></ApplicationIcon>
+		<Platforms>AnyCPU;x86;x64</Platforms>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+		<PlatformTarget>AnyCPU</PlatformTarget>
+		<Prefer32Bit>true</Prefer32Bit>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+		<PlatformTarget>x64</PlatformTarget>
+		<Prefer32Bit>true</Prefer32Bit>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x86'">
+		<PlatformTarget>x86</PlatformTarget>
+		<Prefer32Bit>true</Prefer32Bit>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+		<PlatformTarget>AnyCPU</PlatformTarget>
+		<Prefer32Bit>true</Prefer32Bit>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+		<PlatformTarget>x64</PlatformTarget>
+		<Prefer32Bit>true</Prefer32Bit>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x86'">
+		<PlatformTarget>x86</PlatformTarget>
+		<Prefer32Bit>true</Prefer32Bit>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<Compile Remove="BLL\**" />
+		<Compile Remove="Models\**" />
+		<Compile Remove="Tools\**" />
+		<Compile Remove="Utils\**" />
+		<Compile Remove="ViewModels\Base\**" />
+		<EmbeddedResource Remove="BLL\**" />
+		<EmbeddedResource Remove="Models\**" />
+		<EmbeddedResource Remove="Tools\**" />
+		<EmbeddedResource Remove="Utils\**" />
+		<EmbeddedResource Remove="ViewModels\Base\**" />
+		<None Remove="BLL\**" />
+		<None Remove="Models\**" />
+		<None Remove="Tools\**" />
+		<None Remove="Utils\**" />
+		<None Remove="ViewModels\Base\**" />
+		<Page Remove="BLL\**" />
+		<Page Remove="Models\**" />
+		<Page Remove="Tools\**" />
+		<Page Remove="Utils\**" />
+		<Page Remove="ViewModels\Base\**" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Compile Remove="P_3DLogo.xaml.cs" />
+		<Compile Remove="ViewModels\SettingViewModel.cs" />
+		<Compile Remove="Views\Auth\AuthListPage.xaml.cs" />
+		<Compile Remove="Views\Common\FaceSuccessControl.xaml.cs" />
+		<Compile Remove="Views\Common\MessageWarnBox.xaml.cs" />
+		<Compile Remove="Views\Common\MessageWarnBoxViewModel.cs" />
+		<Compile Remove="Views\Common\QrCodeSuccessControl.xaml.cs" />
+		<Compile Remove="Views\Register\RollSelectCompanyPage.xaml.cs" />
+		<Compile Remove="Views\Register\RollSelectCompanyPageViewModel.cs" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<None Remove="86V1117KR3EGLQ32.dat" />
+		<None Remove="appsettings.json" />
+		<None Remove="fontawesome.ttf" />
+		<None Remove="log4net.config" />
+		<None Remove="Resources\icons\%401x\logo.png" />
+		<None Remove="Resources\icons\%401x\下.png" />
+		<None Remove="Resources\icons\%401x\内容框.png" />
+		<None Remove="Resources\icons\%401x\加载中.png" />
+		<None Remove="Resources\icons\%401x\异常.png" />
+		<None Remove="Resources\icons\%401x\异常icon.png" />
+		<None Remove="Resources\icons\%401x\拍照.png" />
+		<None Remove="Resources\icons\%401x\按钮未选中.png" />
+		<None Remove="Resources\icons\%401x\按钮选中.png" />
+		<None Remove="Resources\icons\%401x\未选.png" />
+		<None Remove="Resources\icons\%401x\标题1.png" />
+		<None Remove="Resources\icons\%401x\标题bg.png" />
+		<None Remove="Resources\icons\%401x\楼层未选中.png" />
+		<None Remove="Resources\icons\%401x\楼层选中.png" />
+		<None Remove="Resources\icons\%401x\步骤.png" />
+		<None Remove="Resources\icons\%401x\温馨提示bg.png" />
+		<None Remove="Resources\icons\%401x\访客登记.png" />
+		<None Remove="Resources\icons\%401x\证件阅读.png" />
+		<None Remove="Resources\icons\%401x\身份验证.png" />
+		<None Remove="Resources\icons\%401x\退出.png" />
+		<None Remove="Resources\icons\%401x\选中.png" />
+		<None Remove="Resources\icons\%401x\通过icon.png" />
+		<None Remove="Resources\icons\%401x\邀约验证.png" />
+		<None Remove="Resources\icons\%402x\exit2.png" />
+		<None Remove="Resources\icons\%402x\exit3.png" />
+		<None Remove="Resources\icons\%402x\exit5.png" />
+		<None Remove="Resources\icons\%402x\logo%402x.png" />
+		<None Remove="Resources\icons\%402x\下%402x.png" />
+		<None Remove="Resources\icons\%402x\内容框%402x.png" />
+		<None Remove="Resources\icons\%402x\加载中%402x.png" />
+		<None Remove="Resources\icons\%402x\异常%402x.png" />
+		<None Remove="Resources\icons\%402x\异常icon%402x.png" />
+		<None Remove="Resources\icons\%402x\拍照%402x.png" />
+		<None Remove="Resources\icons\%402x\按钮未选中%402x.png" />
+		<None Remove="Resources\icons\%402x\按钮选中%402x.png" />
+		<None Remove="Resources\icons\%402x\未选%402x.png" />
+		<None Remove="Resources\icons\%402x\标题1%402x.png" />
+		<None Remove="Resources\icons\%402x\标题bg%402x.png" />
+		<None Remove="Resources\icons\%402x\楼层未选中%402x.png" />
+		<None Remove="Resources\icons\%402x\楼层选中%402x.png" />
+		<None Remove="Resources\icons\%402x\步骤%402x.png" />
+		<None Remove="Resources\icons\%402x\温馨提示bg%402x.png" />
+		<None Remove="Resources\icons\%402x\访客登记%402x.png" />
+		<None Remove="Resources\icons\%402x\证件阅读%402x.png" />
+		<None Remove="Resources\icons\%402x\身份验证%402x.png" />
+		<None Remove="Resources\icons\%402x\退出%402x.png" />
+		<None Remove="Resources\icons\%402x\选中%402x.png" />
+		<None Remove="Resources\icons\%402x\通过icon%402x.png" />
+		<None Remove="Resources\icons\%402x\邀约验证%402x.png" />
+		<None Remove="Resources\icons\%403x\logo%403x.png" />
+		<None Remove="Resources\icons\%403x\下%403x.png" />
+		<None Remove="Resources\icons\%403x\内容框%403x.png" />
+		<None Remove="Resources\icons\%403x\加载中%403x.png" />
+		<None Remove="Resources\icons\%403x\异常%403x.png" />
+		<None Remove="Resources\icons\%403x\异常icon%403x.png" />
+		<None Remove="Resources\icons\%403x\拍照%403x.png" />
+		<None Remove="Resources\icons\%403x\按钮未选中%403x.png" />
+		<None Remove="Resources\icons\%403x\按钮选中%403x.png" />
+		<None Remove="Resources\icons\%403x\未选%403x.png" />
+		<None Remove="Resources\icons\%403x\标题1%403x.png" />
+		<None Remove="Resources\icons\%403x\标题bg%403x.png" />
+		<None Remove="Resources\icons\%403x\楼层未选中%403x.png" />
+		<None Remove="Resources\icons\%403x\楼层选中%403x.png" />
+		<None Remove="Resources\icons\%403x\步骤%403x.png" />
+		<None Remove="Resources\icons\%403x\温馨提示bg%403x.png" />
+		<None Remove="Resources\icons\%403x\访客登记%403x.png" />
+		<None Remove="Resources\icons\%403x\证件阅读%403x.png" />
+		<None Remove="Resources\icons\%403x\身份验证%403x.png" />
+		<None Remove="Resources\icons\%403x\退出%403x.png" />
+		<None Remove="Resources\icons\%403x\选中%403x.png" />
+		<None Remove="Resources\icons\%403x\通过icon%403x.png" />
+		<None Remove="Resources\icons\%403x\邀约验证%403x.png" />
+		<None Remove="Resources\icons\bg\bg%402x.png" />
+		<None Remove="Resources\icons\bg\bg.png" />
+		<None Remove="Resources\icons\bg\logo.png" />
+		<None Remove="Resources\icons\bg\logoBlue.png" />
+		<None Remove="Resources\icons\bg\标题bg%402x.png" />
+		<None Remove="Resources\icons\bg\标题bg.png" />
+		<None Remove="Ver.json" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Page Remove="P_3DLogo.xaml" />
+		<Page Remove="Views\Auth\AuthListPage.xaml" />
+		<Page Remove="Views\Common\FaceSuccessControl.xaml" />
+		<Page Remove="Views\Common\MessageWarnBox.xaml" />
+		<Page Remove="Views\Common\QrCodeSuccessControl.xaml" />
+		<Page Remove="Views\Register\RollSelectCompanyPage.xaml" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Content Include="86V1117KR3EGLQ32.dat">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Include="appsettings.json">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Content>
+		<Content Include="log4net.config">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Content>
+		<Content Include="Ver.json">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		  <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+		  <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+		</Content>
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\KT.Common.Core\KT.Common.Core.csproj" />
+		<ProjectReference Include="..\KT.Common.Tool\KT.Common.Tool.csproj" />
+		<ProjectReference Include="..\KT.Common.WpfApp\KT.Common.WpfApp.csproj" />
+		<ProjectReference Include="..\KT.Face.Check\KT.Face.Check.csproj" />
+		<ProjectReference Include="..\KT.Visitor.Common\KT.Visitor.Common.csproj" />
+		<ProjectReference Include="..\KT.Visitor.IDReader\KT.Visitor.IdReader.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Resource Include="fontawesome.ttf" />
+		<Resource Include="Resources\icons\@1x\logo.png" />
+		<Resource Include="Resources\icons\@1x\下.png" />
+		<Resource Include="Resources\icons\@1x\内容框.png" />
+		<Resource Include="Resources\icons\@1x\加载中.png" />
+		<Resource Include="Resources\icons\@1x\异常.png" />
+		<Resource Include="Resources\icons\@1x\异常icon.png" />
+		<Resource Include="Resources\icons\@1x\拍照.png" />
+		<Resource Include="Resources\icons\@1x\按钮未选中.png" />
+		<Resource Include="Resources\icons\@1x\按钮选中.png" />
+		<Resource Include="Resources\icons\@1x\未选.png" />
+		<Resource Include="Resources\icons\@1x\标题1.png" />
+		<Resource Include="Resources\icons\@1x\标题bg.png" />
+		<Resource Include="Resources\icons\@1x\楼层未选中.png" />
+		<Resource Include="Resources\icons\@1x\楼层选中.png" />
+		<Resource Include="Resources\icons\@1x\步骤.png" />
+		<Resource Include="Resources\icons\@1x\温馨提示bg.png" />
+		<Resource Include="Resources\icons\@1x\访客登记.png" />
+		<Resource Include="Resources\icons\@1x\证件阅读.png" />
+		<Resource Include="Resources\icons\@1x\身份验证.png" />
+		<Resource Include="Resources\icons\@1x\退出.png" />
+		<Resource Include="Resources\icons\@1x\选中.png" />
+		<Resource Include="Resources\icons\@1x\通过icon.png" />
+		<Resource Include="Resources\icons\@1x\邀约验证.png" />
+		<Resource Include="Resources\icons\@2x\exit2.png" />
+		<Resource Include="Resources\icons\@2x\exit3.png" />
+		<Resource Include="Resources\icons\@2x\exit5.png" />
+		<Resource Include="Resources\icons\@2x\logo@2x.png" />
+		<Resource Include="Resources\icons\@2x\下@2x.png" />
+		<Resource Include="Resources\icons\@2x\内容框@2x.png" />
+		<Resource Include="Resources\icons\@2x\加载中@2x.png" />
+		<Resource Include="Resources\icons\@2x\异常@2x.png" />
+		<Resource Include="Resources\icons\@2x\异常icon@2x.png" />
+		<Resource Include="Resources\icons\@2x\拍照@2x.png" />
+		<Resource Include="Resources\icons\@2x\按钮未选中@2x.png" />
+		<Resource Include="Resources\icons\@2x\按钮选中@2x.png" />
+		<Resource Include="Resources\icons\@2x\未选@2x.png" />
+		<Resource Include="Resources\icons\@2x\标题1@2x.png" />
+		<Resource Include="Resources\icons\@2x\标题bg@2x.png" />
+		<Resource Include="Resources\icons\@2x\楼层未选中@2x.png" />
+		<Resource Include="Resources\icons\@2x\楼层选中@2x.png" />
+		<Resource Include="Resources\icons\@2x\步骤@2x.png" />
+		<Resource Include="Resources\icons\@2x\温馨提示bg@2x.png" />
+		<Resource Include="Resources\icons\@2x\访客登记@2x.png" />
+		<Resource Include="Resources\icons\@2x\证件阅读@2x.png" />
+		<Resource Include="Resources\icons\@2x\身份验证@2x.png" />
+		<Resource Include="Resources\icons\@2x\退出@2x.png" />
+		<Resource Include="Resources\icons\@2x\选中@2x.png" />
+		<Resource Include="Resources\icons\@2x\通过icon@2x.png" />
+		<Resource Include="Resources\icons\@2x\邀约验证@2x.png" />
+		<Resource Include="Resources\icons\@3x\logo@3x.png" />
+		<Resource Include="Resources\icons\@3x\下@3x.png" />
+		<Resource Include="Resources\icons\@3x\内容框@3x.png" />
+		<Resource Include="Resources\icons\@3x\加载中@3x.png" />
+		<Resource Include="Resources\icons\@3x\异常@3x.png" />
+		<Resource Include="Resources\icons\@3x\异常icon@3x.png" />
+		<Resource Include="Resources\icons\@3x\拍照@3x.png" />
+		<Resource Include="Resources\icons\@3x\按钮未选中@3x.png" />
+		<Resource Include="Resources\icons\@3x\按钮选中@3x.png" />
+		<Resource Include="Resources\icons\@3x\未选@3x.png" />
+		<Resource Include="Resources\icons\@3x\标题1@3x.png" />
+		<Resource Include="Resources\icons\@3x\标题bg@3x.png" />
+		<Resource Include="Resources\icons\@3x\楼层未选中@3x.png" />
+		<Resource Include="Resources\icons\@3x\楼层选中@3x.png" />
+		<Resource Include="Resources\icons\@3x\步骤@3x.png" />
+		<Resource Include="Resources\icons\@3x\温馨提示bg@3x.png" />
+		<Resource Include="Resources\icons\@3x\访客登记@3x.png" />
+		<Resource Include="Resources\icons\@3x\证件阅读@3x.png" />
+		<Resource Include="Resources\icons\@3x\身份验证@3x.png" />
+		<Resource Include="Resources\icons\@3x\退出@3x.png" />
+		<Resource Include="Resources\icons\@3x\选中@3x.png" />
+		<Resource Include="Resources\icons\@3x\通过icon@3x.png" />
+		<Resource Include="Resources\icons\@3x\邀约验证@3x.png" />
+		<Resource Include="Resources\icons\bg\bg.png" />
+		<Resource Include="Resources\icons\bg\logo.png" />
+		<Resource Include="Resources\icons\bg\logoBlue.png" />
+		<Resource Include="Resources\icons\bg\标题bg.png" />
+		<Resource Include="Resources\icons\bg\标题bg@2x.png" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Page Update="Views\Auth\InviteAuthPage.xaml">
+			<SubType>Designer</SubType>
+		</Page>
+		<Page Update="Views\Auth\IdentityReadIdCardPage.xaml">
+			<SubType>Designer</SubType>
+		</Page>
+		<Page Update="Views\Auth\InviteReadIdCardPage.xaml">
+			<SubType>Designer</SubType>
+		</Page>
+		<Page Update="Views\Register\RegisterReadIdCardPage.xaml">
+			<SubType>Designer</SubType>
+		</Page>
+	</ItemGroup>
+
+	<ItemGroup>
+		<Folder Include="obj\" />
+		<Folder Include="ProDLL\" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <PackageReference Include="Core.System.Configuration.Install" Version="1.1.0" />
+	  <PackageReference Include="FluentScheduler" Version="5.5.1" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <None Update="PartShowPictures\logo.png">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </None>
+	  <None Update="PartShowPictures\timg %281%29.png">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </None>
+	  <None Update="PartShowPictures\timg %282%29.jpg">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </None>
+	  <None Update="PartShowPictures\timg %283%29.jpg">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </None>
+	  <None Update="PartShowPictures\timg %284%29.jpg">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </None>
+	  <None Update="Resources\Images\logo.png">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </None>
+	</ItemGroup>
+
+	<ProjectExtensions><VisualStudio><UserProperties appsettings_1json__JsonSchema="" /></VisualStudio></ProjectExtensions>
+
+</Project>

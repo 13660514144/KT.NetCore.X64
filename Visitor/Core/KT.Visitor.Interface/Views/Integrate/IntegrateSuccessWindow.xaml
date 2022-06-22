@@ -1,0 +1,29 @@
+﻿<Window x:Class="KT.Visitor.Interface.Views.Integrate.IntegrateSuccessWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:KT.Visitor.Interface.Views.Integrate"
+        mc:Ignorable="d"
+        Title="IntegrateSuccessWindow" Height="500" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid >
+            <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <StackPanel Orientation="Vertical" HorizontalAlignment="Center" >
+                    <Image Source="/Resources/Images/finish.png" Width="80"/>
+                    <TextBlock Text="预约授权成功" FontSize="40" FontWeight="Bold" VerticalAlignment="Center" Margin="20" Foreground="{DynamicResource Scb_Theme08}"/>
+                </StackPanel>
+                <TextBlock Text="请提醒访客收好身份证及通行凭证" FontSize="30" Foreground="{DynamicResource Scb_Gray10}" HorizontalAlignment="Center" Margin="0,20"/>
+            </StackPanel>
+        </Grid>
+        <Grid Grid.Row="1">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center"> 
+                <Button Content="确定" Style="{DynamicResource Btn_ConfirmButton}" Click="Btn_Confirm_Click"/>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Window>

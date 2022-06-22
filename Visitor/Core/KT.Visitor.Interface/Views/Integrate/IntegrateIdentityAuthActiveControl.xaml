@@ -1,0 +1,46 @@
+﻿<UserControl x:Class="KT.Visitor.Interface.Views.Auth.IntegrateIdentityAuthActiveControl"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+          xmlns:pu="clr-namespace:Panuon.UI.Silver;assembly=Panuon.UI.Silver"
+      mc:Ignorable="d" 
+      d:DesignHeight="600" d:DesignWidth="1000"
+       Background="#F3F7F9" FontSize="{DynamicResource FontSize_Normal}" Loaded="VistorList_Loaded">
+
+    <Grid >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition />
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" Grid.Column="0" Orientation="Vertical">
+            <TextBlock  Text="身份验证" FontSize="{DynamicResource FontSize_Normal}" Margin="36,36,0,0"/>
+            <TextBlock  Text="默认激活该访客今天所有的预约记录" FontSize="{DynamicResource FontSize_Normal}" Margin="36,15,0,0"/>
+        </StackPanel>
+        <!--记录列表-->
+        <Grid  Grid.Row="1" Grid.Column="0">
+            <ScrollViewer>
+                <StackPanel Orientation="Vertical" Background="{DynamicResource Scb_White01}" Margin="36,15,0,0" Name="StvistorList">
+                </StackPanel>
+            </ScrollViewer>
+        </Grid>
+        <Grid Grid.Row="2" Grid.Column="0">
+            <StackPanel Orientation="Horizontal"  Background="{DynamicResource Scb_White01}"  VerticalAlignment="Top">
+                <TextBlock Text="授权方式" Margin="33,15,15,15" VerticalAlignment="Center"/>
+                <ItemsControl ItemsSource="{Binding AuthTypes}" Style="{DynamicResource BaseItemsControlStyle}" VerticalAlignment="Center">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <CheckBox Content="{Binding Name}" IsChecked="{Binding IsChecked,Mode=TwoWay}" Style="{DynamicResource Cb_Style}"/>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+            </StackPanel>
+        </Grid>
+        <StackPanel Grid.Row="3" Grid.Column="0" Orientation="Horizontal" HorizontalAlignment="Center">
+            <Button Content="取消" Style="{DynamicResource Btn_CancelButton}"/>
+            <Button Content="确认授权" Style="{DynamicResource Btn_ConfirmButton}" Name="btn_authAll" Click="btn_authAll_Click"/>
+        </StackPanel>
+    </Grid>
+</UserControl>

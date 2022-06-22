@@ -1,0 +1,221 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <Platforms>AnyCPU;x64;x86</Platforms>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Devices\Kone\Requests\**" />
+    <EmbeddedResource Remove="Devices\Kone\Requests\**" />
+    <None Remove="Devices\Kone\Requests\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Devices\Common\RemoteServiceModel.cs" />
+    <Compile Remove="Devices\Hikvision\HikvisionOptionModel.cs" />
+    <Compile Remove="Devices\Hikvision\HikvisionSdkQueue.cs" />
+    <Compile Remove="Devices\Kone\IKoneServer.cs" />
+    <Compile Remove="Devices\Kone\KoneHandleDevice.cs" />
+    <Compile Remove="Devices\Kone\KoneHandleDeviceList.cs" />
+    <Compile Remove="Devices\Kone\KoneServer.cs" />
+    <Compile Remove="Devices\Kone\KoneServerGroup.cs" />
+    <Compile Remove="Devices\Kone\Models\KoneEliYourTransportationMessageResponse.cs" />
+    <Compile Remove="Devices\Kone\Models\KoneEntity.cs" />
+    <Compile Remove="Devices\Kone\Clients\SocketClient.cs" />
+    <Compile Remove="Devices\Kone\Clients\SocketInfo.cs" />
+    <Compile Remove="Devices\Kone\Clients\SocketServer.cs" />
+    <Compile Remove="Devices\Mitsubishi\Elsgw\Coders\MitsubishiElsgwAssistantEncoder.cs" />
+    <Compile Remove="Devices\Mitsubishi\Elsgw\Handlers\MitsubishiAssistantDecoder.cs" />
+    <Compile Remove="Devices\Mitsubishi\Elsgw\Clients\MitsubishiElsgwTcpClientHost.cs" />
+    <Compile Remove="Helpers\SeekSendHelper.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Devices\Kone\Clients\ve-4340.tmp" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="BigMathCore" Version="1.0.0" />
+    <PackageReference Include="DotNettySocket" Version="1.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.SignalR.Core" Version="1.1.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.7">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="3.1.2" />
+    <PackageReference Include="Pomelo.EntityFrameworkCore.MySql.Design" Version="1.1.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\KT.Common.Data\KT.Common.Data.csproj" />
+    <ProjectReference Include="..\KT.Common.Event\KT.Common.Event.csproj" />
+    <ProjectReference Include="..\KT.Common.Netty\KT.Common.Netty.csproj" />
+    <ProjectReference Include="..\KT.Device.Quanta\KT.Device.Quanta.csproj" />
+    <ProjectReference Include="..\KT.Elevator.Unit.Dispatch.Entity\KT.Elevator.Unit.Dispatch.Entity.csproj" />
+    <ProjectReference Include="..\KT.Elevator.Unit.Entity\KT.Elevator.Unit.Entity.csproj" />
+    <ProjectReference Include="..\KT.Proxy.BackendApi\KT.Proxy.BackendApi.csproj" />
+    <ProjectReference Include="..\KT.Quanta.Common\KT.Quanta.Common.csproj" />
+    <ProjectReference Include="..\KT.Quanta.Entity\KT.Quanta.Entity.csproj" />
+    <ProjectReference Include="..\KT.Quanta.IDao\KT.Quanta.IDao.csproj" />
+    <ProjectReference Include="..\KT.Quanta.Model\KT.Quanta.Model.csproj" />
+    <ProjectReference Include="..\KT.Turnstile.Unit.Entity\KT.Turnstile.Unit.Entity.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Devices\Hikvision\Files\AudioRender.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Devices\Hikvision\Files\ClientDemo.exe">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Devices\Hikvision\Files\ClientDemoDll\calib.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Devices\Hikvision\Files\ClientDemoDll\iconv.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Devices\Hikvision\Files\ClientDemoDll\libcrypto-1_1.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Devices\Hikvision\Files\ClientDemoDll\libcurl.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Devices\Hikvision\Files\ClientDemoDll\libssl-1_1.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Devices\Hikvision\Files\ClientDemoDll\libxml2.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Devices\Hikvision\Files\ClientDemoDll\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Devices\Hikvision\Files\ClientDemoDll\ReadMe.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Devices\Hikvision\Files\ClientDemoDll\zlib1.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Devices\Hikvision\Files\EagleEyeRender.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Devices\Hikvision\Files\gdiplus.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Devices\Hikvision\Files\GdiPlus.lib">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Devices\Hikvision\Files\HCCore.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Devices\Hikvision\Files\HCCore.lib">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Devices\Hikvision\Files\HCNetSDK.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Devices\Hikvision\Files\HCNetSDK.lib">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Devices\Hikvision\Files\HCNetSDKCom\AnalyzeData.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Devices\Hikvision\Files\HCNetSDKCom\AudioIntercom.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Devices\Hikvision\Files\HCNetSDKCom\HCAlarm.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Devices\Hikvision\Files\HCNetSDKCom\HCAlarm.lib">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Devices\Hikvision\Files\HCNetSDKCom\HCCoreDevCfg.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Devices\Hikvision\Files\HCNetSDKCom\HCDisplay.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Devices\Hikvision\Files\HCNetSDKCom\HCGeneralCfgMgr.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Devices\Hikvision\Files\HCNetSDKCom\HCGeneralCfgMgr.lib">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Devices\Hikvision\Files\HCNetSDKCom\HCIndustry.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Devices\Hikvision\Files\HCNetSDKCom\HCPlayBack.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Devices\Hikvision\Files\HCNetSDKCom\HCPreview.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Devices\Hikvision\Files\HCNetSDKCom\HCPreview.lib">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Devices\Hikvision\Files\HCNetSDKCom\HCVoiceTalk.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Devices\Hikvision\Files\HCNetSDKCom\libiconv2.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Devices\Hikvision\Files\HCNetSDKCom\msvcr90.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Devices\Hikvision\Files\HCNetSDKCom\OpenAL32.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Devices\Hikvision\Files\HCNetSDKCom\StreamTransClient.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Devices\Hikvision\Files\HCNetSDKCom\SystemTransform.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Devices\Hikvision\Files\hlog.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Devices\Hikvision\Files\hpr.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Devices\Hikvision\Files\HXVA.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Devices\Hikvision\Files\libeay32.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Devices\Hikvision\Files\LocalXml.zip">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Devices\Hikvision\Files\log4cxx.properties">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Devices\Hikvision\Files\MP_Render.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Devices\Hikvision\Files\MP_VIE.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Devices\Hikvision\Files\NPQos.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Devices\Hikvision\Files\PlayCtrl.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Devices\Hikvision\Files\PlayCtrl.lib">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Devices\Hikvision\Files\ssleay32.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Devices\Hikvision\Files\SuperRender.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Devices\Hikvision\Files\YUVProcess.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Devices\Hikvision\Files\zlib1.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>

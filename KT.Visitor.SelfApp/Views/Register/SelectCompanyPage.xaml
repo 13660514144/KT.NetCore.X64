@@ -1,0 +1,263 @@
+﻿<Page x:Class="KT.Visitor.SelfApp.Register.SelectCompanyPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:pu="clr-namespace:Panuon.UI.Silver;assembly=Panuon.UI.Silver"
+      mc:Ignorable="d"
+        Title="SelectCompanyPage"   >
+    <Page.Background>
+        <ImageBrush ImageSource="/KT.Visitor.SelfApp;component/Resources/icons/bg/bg.png"/>
+    </Page.Background>
+    <Page.Resources>
+        <Style x:Key="buildstyle" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="Foreground" Value="#2E9EC9"/>
+            <Setter Property="Margin" Value="30,15,0,0"/>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="Transparent"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+        <Style x:Key="floorstyle" TargetType="Button">
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Margin" Value="10"/>
+            <Setter Property="Width" Value="54"/>
+            <Setter Property="Padding" Value="0"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Height" Value="42"/>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="Transparent"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </Page.Resources>
+    <Page.Triggers>
+        <EventTrigger RoutedEvent="Window.Loaded" >
+            <BeginStoryboard>
+                <Storyboard>
+                    <DoubleAnimation Duration="00:00:01" Storyboard.TargetProperty="Opacity" From="0" To="1" />
+                </Storyboard>
+            </BeginStoryboard>
+        </EventTrigger>
+    </Page.Triggers>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <!--顶部导航开始-->
+        <Grid Grid.Row="0" Margin="20">
+            <StackPanel Height="53" 
+                            HorizontalAlignment="Left" >
+                <TextBlock Text="选择访问公司" 
+                               FontSize="36" 
+                               TextAlignment="Center" 
+                               Foreground="White"
+                               Name="txb_title"
+                               Padding="50,0,0,0">
+                    <TextBlock.Background>
+                        <ImageBrush ImageSource="/KT.Visitor.SelfApp;component/Resources/icons/@3x/标题1@3x.png"  />
+                    </TextBlock.Background>
+                </TextBlock>
+            </StackPanel>
+            <!--<Image Source="/KT.Visitor.SelfApp;component/Resources/icons/@2x/退出@2x.png" 
+                           Width="114" 
+                           Height="90"
+                           Name="img_exit" 
+                           MouseLeftButtonDown="Img_exit_MouseLeftButtonDown" 
+                           HorizontalAlignment="Right"/>-->
+            <StackPanel>
+                <Label FontSize="36" Content="返回首页" BorderBrush="Wheat"
+                           HorizontalAlignment="Right"
+                                 BorderThickness="2" MouseLeftButtonDown="Img_exit_MouseLeftButtonDown" 
+                           Foreground="White" Margin="0,-2,0,2"></Label>
+            </StackPanel>
+        </Grid>
+        <!--顶部导航结束-->
+        <Grid Grid.Row="1" Margin="20">
+            <Grid.Background>
+                <ImageBrush ImageSource="/KT.Visitor.SelfApp;component/Resources/icons/@3x/内容框@3x.png"/>
+            </Grid.Background>
+            <Grid Margin="20">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <!--顶部大厦选择开始-->
+                <WrapPanel Grid.Row="0" Orientation="Horizontal" Name="wp_build" />
+
+                <!--楼层和公司-->
+                <Grid Grid.Row="1" Margin="0,10,0,10">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                    </Grid.ColumnDefinitions>
+                    <!--楼层-->
+                    <Grid Grid.Column="0" x:Name="Grid_Floor">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <ScrollViewer Grid.Row="0" HorizontalScrollBarVisibility="Hidden" 
+                                       VerticalScrollBarVisibility="Hidden"
+                                       PanningMode="Both"
+                                       ManipulationBoundaryFeedback="dtg_Show_ManipulationBoundaryFeedback">
+                            <WrapPanel Name="wp_floor" Width="{Binding ElementName=Grid_Floor,Path=ActualWidth}"/>
+                        </ScrollViewer>
+                        <Grid Grid.Row="1">
+                            <StackPanel Orientation="Horizontal"
+                                        HorizontalAlignment="Center">
+                                <Button  Content="上一页" 
+                                         Padding="20,5"
+                                         FontSize="16" 
+                                         Foreground="White"
+                                         Style="{DynamicResource Btn_Jump}"
+                                         Click="BtnFloorPre_Click" />
+                                <StackPanel Orientation="Horizontal" 
+                                            VerticalAlignment="Center"
+                                            Margin="10">
+                                    <TextBlock Text="{Binding FloorPageData.Page}" 
+                                           FontSize="16" 
+                                           Foreground="White"/>
+                                    <TextBlock Text="/" 
+                                           FontSize="16" 
+                                           Foreground="White"/>
+                                    <TextBlock Text="{Binding FloorPageData.Pages}" 
+                                           FontSize="16" 
+                                           Foreground="White"/>
+                                    <TextBlock Text="页" 
+                                           FontSize="16" 
+                                           Foreground="White"/>
+                                </StackPanel>
+                                <Button  Content="下一页" 
+                                         Padding="20,5"
+                                         FontSize="16" 
+                                         Foreground="White"
+                                         Style="{DynamicResource Btn_Jump}"
+                                         Click="BtnFloorNext_Click"/>
+                            </StackPanel>
+                        </Grid>
+                    </Grid>
+
+                    <!--楼层-->
+                    <!--公司列表-->
+                    <Grid Grid.Column="1">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <DataGrid Grid.Column="0"  
+                                  GridLinesVisibility="None" 
+                                  BorderThickness="1" 
+                                  BorderBrush="#4EFCFD" 
+                                  Name="dtg_Show"   
+                                  AutoGenerateColumns="False"  
+                                  HeadersVisibility="None" 
+                                  FontSize="16"  
+                                  SelectionUnit="FullRow" 
+                                  ScrollViewer.VerticalScrollBarVisibility="Hidden" 
+                                  ScrollViewer.HorizontalScrollBarVisibility="Hidden"
+                                  CanUserAddRows="False" 
+                                  CanUserDeleteRows="False" 
+                                  Background="Transparent" 
+                                  Padding="10" >
+                            <DataGrid.CellStyle>
+                                <Style TargetType="DataGridCell">
+                                    <Setter Property="BorderThickness" Value="0"/>
+                                    <Setter Property="HorizontalAlignment" Value="left"/>
+                                    <Setter Property="MinWidth" Value="50"/>
+                                    <Style.Triggers>
+                                        <Trigger Property="IsSelected" Value="True">
+                                            <Setter Property="Background" Value="Transparent"/>
+                                            <Setter Property="Foreground" Value="White"/>
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </DataGrid.CellStyle>
+                            <DataGrid.RowStyle>
+                                <Style TargetType="DataGridRow">
+                                    <Setter Property="VerticalContentAlignment" Value="Center"/>
+                                    <Setter Property="Margin" Value="20,20,0,0"/>
+                                    <Setter Property="Background" Value="Transparent"/>
+                                </Style>
+                            </DataGrid.RowStyle>
+                            <DataGrid.Columns >
+                                <DataGridTextColumn IsReadOnly="True" Header="公司名称" Width="*" Binding="{Binding UnitNameText}" Foreground="White" >
+                                    <DataGridTextColumn.ElementStyle>
+                                        <Style TargetType="TextBlock" >
+                                            <Setter Property="TextWrapping" Value="WrapWithOverflow" />
+                                            <Setter Property="HorizontalAlignment" Value="Left" />
+                                        </Style>
+                                    </DataGridTextColumn.ElementStyle>
+                                </DataGridTextColumn>
+                                <DataGridTemplateColumn Header="操作" Width="60">
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <Button VerticalAlignment="Center" HorizontalAlignment="Center"  
+                                                    Content="访问" 
+                                                    Width="55" 
+                                                    Height="36" 
+                                                    Name="btnOperate" 
+                                                    BorderThickness="1" 
+                                                    BorderBrush="Blue"  
+                                                    FontSize="14" 
+                                                    Click="BtnOperate_Click" 
+                                                    Foreground="White"
+                                                    Margin="0,-15,0,0">
+                                                <Button.Background>
+                                                    <ImageBrush ImageSource="/KT.Visitor.SelfApp;component/Resources/icons/@2x/楼层未选中@2x.png"/>
+                                                </Button.Background>
+                                            </Button>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+                            </DataGrid.Columns>
+                        </DataGrid>
+
+                        <Grid Grid.Row="1">
+                            <StackPanel Orientation="Horizontal" 
+                                        HorizontalAlignment="Center">
+                                <Button  Content="上一页" 
+                                         Padding="20,5"
+                                         FontSize="16" 
+                                         Foreground="White"
+                                         Style="{DynamicResource Btn_Jump}"
+                                         Click="BtnCompanyPre_Click" />
+                                <StackPanel Orientation="Horizontal" 
+                                            VerticalAlignment="Center"
+                                            Margin="10">
+                                    <TextBlock Text="{Binding CompanyPageData.Page}" 
+                                               FontSize="16" 
+                                               Foreground="White"/>
+                                    <TextBlock Text="/" 
+                                               FontSize="16" 
+                                               Foreground="White"/>
+                                    <TextBlock Text="{Binding CompanyPageData.Pages}" 
+                                               FontSize="16" 
+                                               Foreground="White"/>
+                                    <TextBlock Text="页" 
+                                               FontSize="16" 
+                                               Foreground="White"/>
+                                </StackPanel>
+                                <Button  Content="下一页" 
+                                         Padding="20,5"
+                                         FontSize="16" 
+                                         Foreground="White"
+                                         Style="{DynamicResource Btn_Jump}"
+                                         Click="BtnCompanyNext_Click" />
+                            </StackPanel>
+                        </Grid>
+                    </Grid>
+
+
+                    <!--公司列表-->
+                </Grid>
+            </Grid>
+        </Grid>
+    </Grid>
+</Page>

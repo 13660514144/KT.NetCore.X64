@@ -1,0 +1,118 @@
+﻿<UserControl x:Class="KT.Quanta.Kone.ToolApp.Views.Details.EditEliCallTypeControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:prism="http://prismlibrary.com/"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             prism:ViewModelLocator.AutoWireViewModel="True"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" 
+             d:DesignWidth="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <WrapPanel>
+                <Button Content="返回" 
+                        Command="{Binding ReturnCommand}" 
+                        MinWidth="50"/>
+
+                <TextBlock Text="电梯组：" />
+                <ListBox ItemsSource="{Binding ElevatorGroups}"
+                         SelectedItem="{Binding ElevatorGroup,Mode=TwoWay}"
+                         MinWidth="200">
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="SelectionChanged">
+                            <i:InvokeCommandAction Command="{Binding ElevatorGroupSelectedCommand}" 
+                                                   CommandParameter="{Binding SelectedItem,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=ListBox}}" />
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Name}" />
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                    <ListBox.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <StackPanel Orientation="Horizontal" />
+                        </ItemsPanelTemplate>
+                    </ListBox.ItemsPanel>
+                </ListBox>
+                <TextBlock Text="派梯设备：" />
+                <ListBox ItemsSource="{Binding HandleElevatorDevices}"
+                         SelectedItem="{Binding HandleElevatorDevice,Mode=TwoWay}"
+                         MinWidth="200">
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="SelectionChanged">
+                            <i:InvokeCommandAction Command="{Binding HandleElevatorDeviceSelectedCommand}" 
+                                                   CommandParameter="{Binding SelectedItem,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=ListBox}}" />
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Name}" />
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                    <ListBox.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <WrapPanel Orientation="Horizontal" />
+                        </ItemsPanelTemplate>
+                    </ListBox.ItemsPanel>
+                </ListBox>
+            </WrapPanel>
+        </Grid>
+        <Grid Grid.Row="1" Margin="10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="0" Grid.Column="0">
+                <TextBlock Text="派梯方式：" 
+                           HorizontalAlignment="Right"/>
+            </Grid>
+            <ComboBox Grid.Row="0" 
+                      Grid.Column="1"
+                      ItemsSource="{Binding StandardCallTypes}"
+                      SelectedValue="{Binding EliPassRightHandleElevatorDeviceCallType.CallType,Mode=TwoWay}"
+                      MinWidth="150">
+                <ComboBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="{Binding Text}" />
+                            <TextBlock Text="-" />
+                            <TextBlock Text="{Binding Code}" />
+                        </StackPanel>
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+            </ComboBox>
+        </Grid>
+        <Grid Grid.Row="3">
+            <StackPanel Orientation="Horizontal">
+                <Button Content="保存所有" 
+                        Command="{Binding SaveAllCommand}" 
+                        MinWidth="200" 
+                        IsEnabled="{Binding IsSubmiting,Converter={StaticResource cvt_BoolAntonym}}" />
+                <Button Content="保存当前" 
+                        Command="{Binding SaveCurrentCommand}" 
+                        MinWidth="200" 
+                        IsEnabled="{Binding IsSubmiting,Converter={StaticResource cvt_BoolAntonym}}" />
+                <Button Content="删除所有" 
+                        Command="{Binding DeleteAllCommand}" 
+                        MinWidth="200" 
+                        IsEnabled="{Binding IsSubmiting,Converter={StaticResource cvt_BoolAntonym}}" />
+                <Button Content="删除当前" 
+                        Command="{Binding DeleteCurrentCommand}" 
+                        MinWidth="200" 
+                        IsEnabled="{Binding IsSubmiting,Converter={StaticResource cvt_BoolAntonym}}" />
+            </StackPanel>
+        </Grid>
+    </Grid>
+</UserControl>

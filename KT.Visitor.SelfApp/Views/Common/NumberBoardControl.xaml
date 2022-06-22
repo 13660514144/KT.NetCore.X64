@@ -1,0 +1,44 @@
+﻿<UserControl x:Class="KT.Visitor.SelfApp.NumberBoardControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:pu="clr-namespace:Panuon.UI.Silver;assembly=Panuon.UI.Silver"
+             mc:Ignorable="d">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <Style x:Key="Btn_Number" TargetType="{x:Type Button}" BasedOn="{StaticResource {x:Type Button}}">
+                <Setter Property="Width" Value="115"/>
+                <Setter Property="Height" Value="68"/>
+                <Setter Property="Background" Value="White"/>
+                <Setter Property="Foreground" Value="Black"/>
+                <Setter Property="FontSize" Value="18"/>
+                <Setter Property="pu:ButtonHelper.CornerRadius" Value="4"/>
+                <Setter Property="Margin" Value="0"/>
+                <Setter Property="BorderBrush" Value="{DynamicResource Scb_Gray02}"/>
+                <Setter Property="BorderThickness" Value="1"/>
+                <Setter Property="pu:ButtonHelper.ButtonStyle" Value="Standard"/>
+            </Style>
+            <Style x:Key="Border_Number" TargetType="{x:Type Border}">
+                <Setter Property="Margin" Value="4"/>
+                <Setter Property="Background" Value="White"/>
+                <Setter Property="CornerRadius" Value="4"/>
+            </Style>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <WrapPanel Width="370" Height="304" >
+       <Border Style="{DynamicResource Border_Number}">   <Button Content="1" Style="{DynamicResource Btn_Number}" Name="btn_1"/>    </Border>
+       <Border Style="{DynamicResource Border_Number}">   <Button Content="2" Style="{DynamicResource Btn_Number}" Name="btn_2"/>                                                             </Border>                                                       
+       <Border Style="{DynamicResource Border_Number}">   <Button Content="3" Style="{DynamicResource Btn_Number}" Name="btn_3"/>                                                             </Border>
+       <Border Style="{DynamicResource Border_Number}">   <Button Content="4" Style="{DynamicResource Btn_Number}" Name="btn_4"/>                                                             </Border>
+       <Border Style="{DynamicResource Border_Number}">   <Button Content="5" Style="{DynamicResource Btn_Number}" Name="btn_5"/>                                                             </Border>
+       <Border Style="{DynamicResource Border_Number}">   <Button Content="6" Style="{DynamicResource Btn_Number}" Name="btn_6"/>                                                             </Border>
+       <Border Style="{DynamicResource Border_Number}">   <Button Content="7" Style="{DynamicResource Btn_Number}" Name="btn_7"/>                                                             </Border>
+       <Border Style="{DynamicResource Border_Number}">   <Button Content="8" Style="{DynamicResource Btn_Number}" Name="btn_8"/>                                                             </Border>
+       <Border Style="{DynamicResource Border_Number}">   <Button Content="9" Style="{DynamicResource Btn_Number}" Name="btn_9"/>                                                             </Border>
+       <Border Style="{DynamicResource Border_Number}">   <Button Content="删除" Style="{DynamicResource Btn_Number}" BorderThickness="0" Background="#F2B230" Foreground="White" Name="btn_Del"/>              </Border>
+       <Border Style="{DynamicResource Border_Number}">   <Button Content="0" Style="{DynamicResource Btn_Number}" Name="btn_0"/>                                                             </Border>
+       <Border Style="{DynamicResource Border_Number}">   <Button Content="确定" Style="{DynamicResource Btn_Number}" BorderThickness="0" Background="#3B86FF" Foreground="White" Name="btn_OK"/>                </Border>
+    </WrapPanel>
+
+</UserControl>

@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <Platforms>AnyCPU;x64;x86</Platforms>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="IServices\IInitService.cs" />
+    <Compile Remove="Models\LoginUser.cs" />
+    <Compile Remove="Services\InitService.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\KT.WinPak.Data.V48\KT.WinPak.Data.V48.csproj" />
+    <ProjectReference Include="..\KT.WinPak.SDK.V48\KT.WinPak.SDK.V48.csproj" />
+  </ItemGroup>
+
+</Project>

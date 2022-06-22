@@ -1,0 +1,88 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <Platforms>AnyCPU;x64;x86</Platforms>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Helpers\CameraHelper.cs" />
+    <Compile Remove="Helpers\MainFrameHelper.cs" />
+    <Compile Remove="ViewModels\SystemSettingViewModel.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.Drawing.Common" Version="4.7.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\KT.Common.WpfApp\KT.Common.WpfApp.csproj" />
+    <ProjectReference Include="..\KT.Proxy.BackendApi\KT.Proxy.BackendApi.csproj" />
+    <ProjectReference Include="..\KT.Visitor.Data\KT.Visitor.Data.csproj" />
+    <ProjectReference Include="..\KT.Visitor.IDReader\KT.Visitor.IdReader.csproj" />
+    <ProjectReference Include="..\ThirdParty\PanuonUI.Silver\Core30\Panuon.UI.Silver\Panuon.UI.Silver.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="ReferenceFiles\Face\ArcIdCard\libarcsoft_face.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="ReferenceFiles\Face\ArcIdCard\libarcsoft_face_engine.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="ReferenceFiles\Face\ArcIdCard\libarcsoft_idcardveri.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="ReferenceFiles\Face\ArcIdCard\libarcsoft_idcardveri.lib">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="ReferenceFiles\Face\ArcIdSdk\libarcsoft_face.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="ReferenceFiles\Face\ArcIdSdk\libarcsoft_face_engine.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="ReferenceFiles\Face\ArcIdSdk\libarcsoft_idcardveri.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="ReferenceFiles\Face\ArcIdSdk\libarcsoft_idcardveri.lib">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Tools\Printer\DocumentTemplate\VisitQrCode58Document.xaml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Tools\Printer\DocumentTemplate\FengLeVisitQrCodeDocument.xaml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Tools\Printer\DocumentTemplate\VisitQrCode200x200Document.xaml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Tools\Printer\DocumentTemplate\VisitQrCode180x180Document.xaml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Tools\Printer\DocumentTemplate\XingyeYinhangVisitQrCodeDocument.xaml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Tools\Printer\DocumentTemplate\XiTaQrCodeDocument.xaml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Tools\Printer\DocumentTemplate\VisitQrCodeDocument.xaml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+  </ItemGroup>
+
+</Project>

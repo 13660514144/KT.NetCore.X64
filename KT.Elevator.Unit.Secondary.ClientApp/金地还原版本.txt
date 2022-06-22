@@ -1,0 +1,12 @@
+﻿A：App.xaml.cs
+20:using KT.Elevator.Unit.Secondary.ClientApp.WsScoket;//金地还原版本
+96:var _JobChkVer = Container.Resolve<JobChkVer>();
+97:_JobChkVer.Init();
+233:containerRegistry.RegisterSingleton<WebSocket4net>();
+234:containerRegistry.RegisterSingleton<JobChkVer>();
+
+b:MainWindowViewModel.cs
+37：using KT.Elevator.Unit.Secondary.ClientApp.WsScoket;
+74：private WebSocket4net _WsSocket;
+102：_WsSocket = ContainerHelper.Resolve<WebSocket4net>();
+680：await _WsSocket.WebSocketInit();

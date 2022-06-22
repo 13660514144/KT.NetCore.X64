@@ -1,0 +1,179 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <Platforms>AnyCPU;x86;x64</Platforms>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <PlatformTarget>x64</PlatformTarget>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x86'">
+    <PlatformTarget>x86</PlatformTarget>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <PlatformTarget>x64</PlatformTarget>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x86'">
+    <PlatformTarget>x86</PlatformTarget>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Controls\**" />
+    <Compile Remove="Views\Turnstile\**" />
+    <EmbeddedResource Remove="Controls\**" />
+    <EmbeddedResource Remove="Views\Turnstile\**" />
+    <None Remove="Controls\**" />
+    <None Remove="Views\Turnstile\**" />
+    <Page Remove="Controls\**" />
+    <Page Remove="Views\Turnstile\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Migrations\DbContextFactory.cs" />
+    <Compile Remove="ViewModels\ScrollMessageViewModel.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="appsettings.json" />
+    <None Remove="Common\JsonData\WinPakCardData.Json" />
+    <None Remove="log4net.config" />
+    <None Remove="Resources\head.jpg" />
+    <None Remove="Resources\NeteaseExample\iconfont.ttf" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="appsettings.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Common\JsonData\WinPakCardData.Json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="log4net.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.7" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="3.1.7">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="3.1.7" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.7">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="3.1.7" />
+    <PackageReference Include="Microsoft.Extensions.Options" Version="3.1.7" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\KT.Common.Core\KT.Common.Core.csproj" />
+    <ProjectReference Include="..\KT.Common.Data\KT.Common.Data.csproj" />
+    <ProjectReference Include="..\KT.Common.WpfApp\KT.Common.WpfApp.csproj" />
+    <ProjectReference Include="..\KT.Prowatch.Service\KT.Prowatch.Service.csproj" />
+    <ProjectReference Include="..\KT.Visitor.Common\KT.Visitor.Common.csproj" />
+    <ProjectReference Include="..\KT.WinPak.SDK\KT.WinPak.SDK.V44.csproj" />
+    <ProjectReference Include="..\KT.WinPak.Service\KT.WinPak.Service.V44.csproj" />
+    <ProjectReference Include="..\KT.WinPak.WebApi\KT.WinPak.WebApi.V44.csproj" />
+    <ProjectReference Include="..\ThirdParty\MediaKit\Source\WPF MediaKit.csproj" />
+    <ProjectReference Include="..\ThirdParty\PanuonUI.Silver\Core30\Panuon.UI.Silver\Panuon.UI.Silver.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Migrations\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="x86\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="C:\Users\Administrator\.nuget\packages\emgu.cv.runtime.windows\4.3.0.3890\build\x86\concrt140.dll" Link="x86\concrt140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="C:\Users\Administrator\.nuget\packages\emgu.cv.runtime.windows\4.3.0.3890\build\x86\cvextern.dll" Link="x86\cvextern.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="C:\Users\Administrator\.nuget\packages\emgu.cv.runtime.windows\4.3.0.3890\build\x86\msvcp140.dll" Link="x86\msvcp140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="C:\Users\Administrator\.nuget\packages\emgu.cv.runtime.windows\4.3.0.3890\build\x86\msvcp140_1.dll" Link="x86\msvcp140_1.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="C:\Users\Administrator\.nuget\packages\emgu.cv.runtime.windows\4.3.0.3890\build\x86\msvcp140_2.dll" Link="x86\msvcp140_2.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="C:\Users\Administrator\.nuget\packages\emgu.cv.runtime.windows\4.3.0.3890\build\x86\msvcp140_codecvt_ids.dll" Link="x86\msvcp140_codecvt_ids.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="C:\Users\Administrator\.nuget\packages\emgu.cv.runtime.windows\4.3.0.3890\build\x86\opencv_videoio_ffmpeg430.dll" Link="x86\opencv_videoio_ffmpeg430.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="C:\Users\Administrator\.nuget\packages\emgu.cv.runtime.windows\4.3.0.3890\build\x86\vcruntime140.dll" Link="x86\vcruntime140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <Reference Include="ProwatchAPICS">
+      <HintPath>..\KT.Prowatch.Service\Files\ProwatchAPICS.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\head.jpg" />
+    <Resource Include="Resources\NeteaseExample\iconfont.ttf" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Update="Resources\Styles.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties appsettings_1json__JsonSchema="" />
+    </VisualStudio>
+  </ProjectExtensions>
+
+</Project>

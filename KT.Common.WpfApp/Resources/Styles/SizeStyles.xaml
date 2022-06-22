@@ -1,0 +1,14 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:sys="clr-namespace:System;assembly=System.Runtime">
+
+    <!--以字体24为标准-->
+    <sys:Double x:Key="FontSize_XXSmall">10</sys:Double>
+    <sys:Double x:Key="FontSize_XSmall">13</sys:Double>
+    <sys:Double x:Key="FontSize_Small">15</sys:Double>
+    <sys:Double x:Key="FontSize_Normal">18</sys:Double>
+    <sys:Double x:Key="FontSize_Large">21</sys:Double>
+    <sys:Double x:Key="FontSize_XLarge">24</sys:Double>
+    <sys:Double x:Key="FontSize_XXLarge">27</sys:Double>
+
+</ResourceDictionary>

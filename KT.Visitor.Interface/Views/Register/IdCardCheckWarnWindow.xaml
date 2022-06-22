@@ -1,0 +1,32 @@
+﻿<pu:WindowX x:Class="KT.Visitor.Interface.Views.Register.IdCardCheckWarnWindow"
+            xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+            xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+            xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+            xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+            xmlns:pu="clr-namespace:Panuon.UI.Silver;assembly=Panuon.UI.Silver"
+            mc:Ignorable="d"
+        Title="温馨提示" Height="350" Width="700" 
+    WindowStartupLocation ="CenterOwner" 
+    pu:WindowXCaption.Background="{DynamicResource Scb_Theme08}">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <!--陪同访客-->
+        <StackPanel Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Horizontal">
+            <TextBlock Text="{Binding IdCardCheck.Message}" Foreground="Red" FontSize="{DynamicResource FontSize_Large}" />
+            <TextBlock Text=" 相似度：" Foreground="Red" FontSize="{DynamicResource FontSize_Large}" />
+            <TextBlock Text="{Binding IdCardCheck.Similarity}" Foreground="Red" FontSize="{DynamicResource FontSize_Large}" />
+            <TextBlock Text="%" Foreground="Red" FontSize="{DynamicResource FontSize_Large}" />
+        </StackPanel>
+
+        <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center">
+            <Button Content="确认是本人" Style="{DynamicResource Btn_OprateButton}" Click="btn_OK_Click" />
+            <Button x:Name="CancelButton" Content="重新拍照" Style="{DynamicResource Btn_OprateButton}" 
+                    IsEnabled="{Binding IsSubmiting,Converter={StaticResource cvt_BoolAntonym}}" 
+                    Click="btn_Cancel_Click" />
+
+        </StackPanel>
+    </Grid>
+</pu:WindowX>

@@ -1,0 +1,205 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>H531</name>
+    </assembly>
+    <members>
+        <member name="F:H531.H531.IDCARD_ALL.name">
+            char[40]
+        </member>
+        <member name="F:H531.H531.IDCARD_ALL.SurnameCH">
+            char[100]
+        </member>
+        <member name="F:H531.H531.IDCARD_ALL.nameCH">
+            char[100]
+        </member>
+        <member name="F:H531.H531.IDCARD_ALL.sex">
+            char[10]
+        </member>
+        <member name="F:H531.H531.IDCARD_ALL.Gender">
+            char[10]
+        </member>
+        <member name="F:H531.H531.IDCARD_ALL.birthday">
+            char[50]
+        </member>
+        <member name="F:H531.H531.IDCARD_ALL.people">
+            char[20]
+        </member>
+        <member name="F:H531.H531.IDCARD_ALL.signdate">
+            char[50]
+        </member>
+        <member name="F:H531.H531.IDCARD_ALL.validterm">
+            char[50]
+        </member>
+        <member name="F:H531.H531.IDCARD_ALL.address">
+            char[200]
+        </member>
+        <member name="F:H531.H531.IDCARD_ALL.number">
+            char[40]
+        </member>
+        <member name="F:H531.H531.IDCARD_ALL.organs">
+            char[50]
+        </member>
+        <member name="F:H531.H531.IDCARD_ALL.SurnameEN">
+            char[100]
+        </member>
+        <member name="F:H531.H531.IDCARD_ALL.nameEN">
+            char[100]
+        </member>
+        <member name="F:H531.H531.IDCARD_ALL.ENfullname">
+            char[40]
+        </member>
+        <member name="F:H531.H531.IDCARD_ALL.Nationality">
+            char[200]
+        </member>
+        <member name="F:H531.H531.IDCARD_ALL.id">
+            char[100]
+        </member>
+        <member name="F:H531.H531.IDCARD_ALL.Leavetime">
+            char[50]
+        </member>
+        <member name="F:H531.H531.IDCARD_ALL.placeCH">
+            char[100]
+        </member>
+        <member name="F:H531.H531.IDCARD_ALL.placeEN">
+            char[100]
+        </member>
+        <member name="F:H531.H531.IDCARD_ALL.BirthplaceCH">
+            char[100]
+        </member>
+        <member name="F:H531.H531.IDCARD_ALL.BirthplaceEN">
+            char[100]
+        </member>
+        <member name="F:H531.H531.IDCARD_ALL.szCodeOne">
+            char[256]
+        </member>
+        <member name="F:H531.H531.IDCARD_ALL.szCodeTwo">
+            char[256]
+        </member>
+        <member name="F:H531.H531.IDCARD_ALL.szCodeThree">
+            char[256]
+        </member>
+        <member name="F:H531.H531.IDCARD_ALL.Permitnumber_number">
+            char[40]
+        </member>
+        <member name="F:H531.H531.IDCARD_ALL.Vocational">
+            char[200]
+        </member>
+        <member name="F:H531.H531.IDCARD_ALL.DocumentsCategory">
+            char[100]
+        </member>
+        <member name="F:H531.H531.IDCARD_ALL.Other">
+            char[200]
+        </member>
+        <member name="F:H531.H531.IDCARD_ALL.szPicPath">
+            char[256]
+        </member>
+        <member name="F:H531.H531.IDCARD_ALL.szSignDep">
+            char[256]
+        </member>
+        <member name="F:H531.H531.IDCARD_ALL.szICSerial">
+            char[10]
+        </member>
+        <member name="T:H531.H531.Scan_Para">
+            <summary>
+            自定义扫描 参数
+            </summary>
+        </member>
+        <member name="M:H531.H531.ScanAndRcgCard(System.String,System.String,System.String,H531.H531.IDCARD_ALL@,H531.H531.Scan_Para@,H531.H531.Scan_Para@,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            实现对不同证件的扫描并识别
+            </summary>
+            <param name="pchFilePath1">进程扫描后图像文件的保存路径及名称(包含扩展名，不能为空)</param>
+            <param name="pchFilePath2">为回程扫描后图像文件的保存路径及名称(包含扩展名，不能为空)</param>
+            <param name="HeadImgFName">头像文件的保存路径及名称(包含扩展名)。（当lCardType为5时，不生成头像）</param>
+            <param name="rcgCard">识别结果结构IDCARD_ALL的引用,返回的识别结果信息置于此</param>
+            <param name="sP1">为进程扫描参数</param>
+            <param name="sP2">为回程扫描参数，仅当lScanContrl为2时有效，注意回程扫描参数的尺寸和进程设置相同，其他可以不同</param>
+            <param name="lCardType">
+                <para>证件类型：</para>
+                <para>1--一代身份证</para>
+                <para>2--驾照（预留）</para>
+                <para>3--护照（自动判国际护照）</para>
+                <para>4--二代身份证</para>
+                <para>5—国际签证页及居留许可证</para>
+                <para>6--台胞证</para>
+                <para>7--港澳通行证(照片页)</para>
+                <para>如果用户对lCardType赋了上述值</para>
+                <para>则sP1或sP2中设置的扫描区域将失效</para>
+                <para>而被固定为对应证件的尺寸</para>
+                <para>用户设置的扫描模式等仍旧有效。</para>
+                <para>只有lCardType赋值为1，3，4，5，6，7时，才有识别结果</para>
+            </param>
+            <param name="lScanContrl">
+                <para>扫描控制字，对应扫描工作方式</para>
+                <para>0 --- 普通方式，进程扫描后，扫描头自动回程复位</para>
+                <para>1 --- 单程方式，进程扫描后，不让扫描头复位,下次扫描可采用回程方式扫描</para>
+                <para>2--- 双程方式，进程扫描后，系统自动回程扫描，这样可以得到同一证件的两次扫描图像</para>
+            </param>
+            <param name="lrcgContrl">识别控制字，0--不识别； 1--识别</param>
+            <param name="lSaveContrl">保存识别结果控制字，0--不保存，1--保存；如果保存，则将识别结果保存到对应的文本文件中</param>
+            <param name="lJPEG_QUALITY">JPG图像质量指标，越大越清晰，取值0-100，我们建议将这个参数设为15，这样能在保证图象质量的情况下（等比显示），最大限度的节省磁盘空间。</param>
+            <returns></returns>
+        </member>
+        <member name="M:H531.H531.#ctor">
+            <summary>
+            构造函数
+            </summary>
+            <param name="StartupPath"></param>
+        </member>
+        <member name="M:H531.H531.Init">
+            <summary>
+            初始化
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:H531.H531.Freed">
+            <summary>
+            释放
+            </summary>
+        </member>
+        <member name="M:H531.H531.scan(System.String,System.String,System.Int32)">
+            <summary>
+            扫描获得一张图片
+            </summary>
+            <param name="PhotoPath">扫描后获得的图片</param>
+            <param name="HeaderPath">识别的头像文件，在这里不用管他，默认为2.bmp</param>
+            <param name="lCardType">类型，扫描的类型</param>
+            <returns>返回0表示成功</returns>
+        </member>
+        <member name="M:H531.H531.scan(System.String,System.Int32,System.String)">
+            <summary>
+            扫描获得一张图片
+            </summary>
+            <param name="PhotoPath">扫描后获得的图片</param>
+            <param name="HeaderPath">识别的头像文件，在这里不用管他，默认为2.bmp</param>
+            <param name="lCardType">类型，扫描的类型</param>
+            <returns>返回0表示成功</returns>
+        </member>
+        <member name="M:H531.H531.scan(System.String,System.String,H531.H531.Scan_Para@,H531.H531.Scan_Para@,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            获取一张图片
+            </summary>
+            <param name="pchFilePath1">进程扫描后图像文件的保存路径及名称(包含扩展名，不能为空)； </param>
+            <param name="pchFilePath2">为回程扫描后图像文件的保存路径及名称(包含扩展名，不能为空)；</param>
+            <param name="sP1">为进程扫描参数</param>
+            <param name="sP2">为回程扫描参数，仅当lScanContrl为2时有效，注意回程扫描参数的尺寸和进程设置相同，其他可以不同。</param>
+            <param name="lCardType">证件类型：1--一代身份证， 2--驾照（预留），3--护照（自动判国际护照）， 4--二代身份证，5—国际签证页及居留许可证，6--台胞证，7--港澳通行证(照片页)，如果用户对lCardType赋了上述值，则sP1或sP2中设置的扫描区域将失效，而被固定为对应证件的尺寸，用户设置的扫描模式等仍旧有效。</param>
+            <param name="lScanContrl">扫描控制字，对应扫描工作方式0 --- 普通方式，进程扫描后，扫描头自动回程复位1 --- 单程方式，进程扫描后，不让扫描头复位,2--- 双程方式，进程扫描后，系统自动回程扫描，</param>
+            <param name="lJPEG_QUALITY">JPG图像质量指标，越大越清晰，取值0-100，我们建议将这个参数设为15，这样能在保证图象质量的情况下（等比显示），最大限度的节省磁盘空间。</param>
+            <returns></returns>
+        </member>
+        <member name="M:H531.H531.getVersion">
+            <summary>
+            获取扫描仪版本号
+            </summary>
+            <returns>字符串，扫描仪的版本号</returns>
+        </member>
+        <member name="M:H531.H531.calibrate">
+            <summary>
+            校准，时间比较长，建议多线程，免得主界面卡死
+            </summary>
+            <returns>返回值作为参考，完美状态返回0，但是返回1也算是成功</returns>
+        </member>
+    </members>
+</doc>

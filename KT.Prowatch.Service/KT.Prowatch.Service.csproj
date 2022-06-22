@@ -1,0 +1,52 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <Platforms>AnyCPU;x86;x64</Platforms>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Models\InitRequest.cs" />
+    <Compile Remove="Models\ResponseVoid.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="IDaos\ve-7F4B.tmp" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="3.1.7" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.7" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\KT.Common.Data\KT.Common.Data.csproj" />
+    <ProjectReference Include="..\KT.Proxy.BackendApi\KT.Proxy.BackendApi.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="KT.Common.Core">
+      <HintPath>..\KT.Common.Core\bin\Debug\netcoreapp3.1\KT.Common.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="KT.Common.WebApi">
+      <HintPath>..\KT.Common.WebApi\bin\Debug\netcoreapp3.1\KT.Common.WebApi.dll</HintPath>
+    </Reference>
+    <Reference Include="ProwatchAPICS">
+      <HintPath>Files\ProwatchAPICS.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="ProwatchAPI.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Files\ProwatchAPICS.dll">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="syskey.dat">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>

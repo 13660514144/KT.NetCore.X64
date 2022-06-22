@@ -1,0 +1,119 @@
+﻿<Page x:Class="KT.Visitor.Interface.Views.Blacklist.VisitorBlacklist"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+        xmlns:pu="clr-namespace:Panuon.UI.Silver;assembly=Panuon.UI.Silver"
+        xmlns:sp="clr-namespace:KT.Visitor.Interface.Helpers"
+      xmlns:ctls="clr-namespace:KT.Visitor.Interface.Views.Common"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="1300">
+
+    <Grid Background="{DynamicResource Scb_Theme01}">
+        <Grid Margin="25" Background="{DynamicResource Scb_White01}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition />
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0" Grid.Column="0" Margin="0,20,20,5">
+                <WrapPanel >
+                    <StackPanel Orientation="Horizontal" Margin="10,0">
+                        <TextBlock Text="姓名" 
+                           Style="{StaticResource Tbk_SmallTextTitle}" 
+                           VerticalAlignment="Center"/>
+                        <TextBox Width="180" 
+                         Style="{StaticResource Tb_SmallTextInput}" 
+                         VerticalAlignment="Center" x:Name="txt_name"  
+                         pu:TextBoxHelper.Watermark="输入姓名" />
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="10,0">
+                        <TextBlock Text="手机号码" 
+                           Style="{StaticResource Tbk_SmallTextTitle}" 
+                           VerticalAlignment="Center"/>
+                        <TextBox Width="180" 
+                         Style="{StaticResource Tb_SmallTextInput}" 
+                         VerticalAlignment="Center" x:Name="txt_tel"  
+                         pu:TextBoxHelper.Watermark="输入手机号"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="10,0">
+                        <TextBlock Text="身份证号码" 
+                           Style="{StaticResource Tbk_SmallTextTitle}" 
+                           VerticalAlignment="Center"/>
+                        <TextBox Width="180"
+                         Style="{StaticResource Tb_SmallTextInput}" 
+                         x:Name="txt_idnumber" 
+                         pu:TextBoxHelper.Watermark="输入身份证号"/>
+                    </StackPanel>
+                    <Button Content="搜索" 
+                    Style="{DynamicResource Btn_SmallTextButton}"
+                    Width="112" Margin="30,0,0,0"  
+                    Command="{Binding SearchCommand}"/>
+                </WrapPanel>
+            </Grid>
+            <Button Grid.Row="1" 
+                    Grid.Column="0" 
+                    Width="130"                
+                    Content="添加黑名单" 
+                    Style="{DynamicResource Btn_SmallTextButton}" 
+                    HorizontalAlignment="Left" 
+                    Command="{Binding AddCommand}"
+                    Margin="20,20,0,0"/>
+            <DataGrid Grid.Row="2" Grid.Column="0" 
+                      ItemsSource="{Binding Blacklists}"
+                      Style="{DynamicResource Dg_SmallText}"
+                      Margin="20,10,20,0" >
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="姓名" Width="5*" Binding="{Binding Name}" />
+                    <DataGridTextColumn Header="性别" Width="2*" Binding="{Binding GenderText}" />
+                    <DataGridTemplateColumn Width="4*" Header="抓拍照片">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Image Height="50" Width="50" Source="{Binding SnapshotImg,Converter={StaticResource cvt_StringInsert},ConverterParameter={x:Static sp:StaticProperty.ServerAddress}}" />
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTemplateColumn Width="4*" Header="底库照片">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Image Height="50" Width="50" Source="{Binding FaceImg,Converter={StaticResource cvt_StringInsert},ConverterParameter={x:Static sp:StaticProperty.ServerAddress}}" />
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTextColumn Header="手机号码" Width="4*" Binding="{Binding Phone}" />
+                    <DataGridTextColumn Header="身份证号" Width="6*" Binding="{Binding IdNumber}" />
+                    <DataGridTextColumn Header="公司/单位" Width="6*" Binding="{Binding Company}" />
+                    <DataGridTextColumn Header="拉黑原因" Width="4*" Binding="{Binding Reason}" />
+                    <DataGridTextColumn Header="拉黑时间" Width="6*" Binding="{Binding CreateTime}" />
+                    <DataGridTextColumn Header="操作人" Width="3*" Binding="{Binding Operator}" />
+                    <DataGridTemplateColumn Width="150" Header="操作">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                                    <Button BorderBrush="{x:Null}" 
+                                            Style="{DynamicResource Btn_ContentButton}" 
+                                            FontSize="{DynamicResource FontSize_Small}" 
+                                            Content="编辑" 
+                                            Foreground="{DynamicResource Scb_Theme08}"  
+                                            Command="{Binding DataContext.EditCommand,RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=DataGrid}}"
+                                            CommandParameter="{Binding }"/>
+                                    <Button BorderBrush="{x:Null}" 
+                                            Style="{DynamicResource Btn_ContentButton}" 
+                                            FontSize="{DynamicResource FontSize_Small}" 
+                                            Content="移除" 
+                                            Foreground="{DynamicResource Scb_Theme08}" 
+                                            Command="{Binding DataContext.RemoveCommand,RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=DataGrid}}" 
+                                            CommandParameter="{Binding }"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+            <Grid Grid.Row="3" Margin="20,15,25,32">
+                <ContentPresenter Content="{Binding NavPageControl}"/>
+            </Grid>
+        </Grid>
+    </Grid>
+</Page>

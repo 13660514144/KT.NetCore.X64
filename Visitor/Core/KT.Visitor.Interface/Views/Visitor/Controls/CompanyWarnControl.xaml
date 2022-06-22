@@ -1,0 +1,15 @@
+﻿<UserControl x:Class="KT.Visitor.Interface.Views.Visitor.Controls.CompanyWarnControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:KT.Visitor.Interface.Views.Visitor.Controls"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Image Source="/Resources/Images/warning.png" Height="{Binding ElementName=tb_ErrorMsg,Path=ActualHeight}" Margin="5"/>
+            <TextBlock Text="抱歉未查询到公司信息，请检查确认！" FontSize="{DynamicResource FontSize_Normal}" x:Name="tb_ErrorMsg" VerticalAlignment="Center"/>
+        </StackPanel>
+    </Grid>
+</UserControl>

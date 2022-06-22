@@ -1,0 +1,95 @@
+﻿<UserControl x:Class="KT.Quanta.Kone.ToolApp.Views.PassRightListControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:prism="http://prismlibrary.com/"
+             prism:ViewModelLocator.AutoWireViewModel="True"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" 
+             d:DesignWidth="800">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <WrapPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="用户名：" />
+                    <TextBox Text="{Binding PersonName,Mode=TwoWay}" 
+                             MinWidth="200" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="卡号：" />
+                    <TextBox Text="{Binding CardNumber,Mode=TwoWay}" 
+                             MinWidth="200" />
+                </StackPanel>
+
+                <Button Content="查询" 
+                        Command="{Binding RefreshCommand}" 
+                        MinWidth="50"/>
+            </WrapPanel>
+        </Grid>
+        <Grid Grid.Row="1" Margin="10">
+            <DataGrid ItemsSource="{Binding PageData.List}"
+                      AutoGenerateColumns="False"
+                      CanUserAddRows="False">
+                <DataGrid.Columns>
+                    <DataGridTextColumn IsReadOnly="True" Header="姓名" Binding="{Binding Name}" />
+                    <DataGridTextColumn IsReadOnly="True" Header="卡号" Binding="{Binding Sign}" />
+                    <DataGridTextColumn IsReadOnly="True" Header="楼层" Binding="{Binding FloorNames}" />
+                    <DataGridTemplateColumn IsReadOnly="True" Header="目的楼层配置">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button Content="目的楼层配置" 
+                                        Command="{Binding DataContext.SetDestinationFloorCommand,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}" 
+                                        CommandParameter="{Binding SelectedItem,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=DataGrid}}" />
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTemplateColumn IsReadOnly="True" Header="可去楼层配置">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button Content="可去楼层配置" 
+                                        Command="{Binding DataContext.SetAccessibleFloorCommand,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}" 
+                                        CommandParameter="{Binding SelectedItem,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=DataGrid}}" />
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+
+
+                    <DataGridTemplateColumn IsReadOnly="True" Header="多楼层派梯方式配置">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button Content="多楼层派梯方式配置" 
+                                        Command="{Binding DataContext.SetEliMessageTypeCommand,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}" 
+                                        CommandParameter="{Binding SelectedItem,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=DataGrid}}" />
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTemplateColumn IsReadOnly="True" Header="多楼层派梯类型配置">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button Content="多楼层派梯类型配置" 
+                                        Command="{Binding DataContext.SetEliCallTypeCommand,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}" 
+                                        CommandParameter="{Binding SelectedItem,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=DataGrid}}" />
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTemplateColumn IsReadOnly="True" Header="直接派梯类型配置">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button Content="直接派梯类型配置" 
+                                        Command="{Binding DataContext.SetRcgifCallTypeCommand,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}" 
+                                        CommandParameter="{Binding SelectedItem,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=DataGrid}}" />
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+        </Grid>
+    </Grid>
+
+</UserControl>

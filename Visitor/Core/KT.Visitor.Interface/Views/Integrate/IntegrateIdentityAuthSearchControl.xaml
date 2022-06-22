@@ -1,0 +1,75 @@
+﻿<UserControl x:Class="KT.Visitor.Interface.Views.Auth.IntegrateIdentityAuthSearchControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:pu="clr-namespace:Panuon.UI.Silver;assembly=Panuon.UI.Silver"
+             mc:Ignorable="d" 
+      d:DesignHeight="600" d:DesignWidth="1000">
+
+    <Grid>
+        <Grid  HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="请输入访客手机号码" 
+                           FontSize="{DynamicResource FontSize_Large}"
+                           Foreground="{DynamicResource Scb_Gray12}"/>
+                <TextBlock Text="(仅匹配当天的预约记录)"
+                           FontSize="{DynamicResource FontSize_Normal}" 
+                           Foreground="{DynamicResource Scb_Gray10}" 
+                           VerticalAlignment="Bottom"/>
+            </StackPanel>
+            <Grid Grid.Row="1">
+                <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" >
+                        <TextBox x:Name="Tb_CardNumber" 
+                                 pu:TextBoxHelper.Watermark="请输入您的手机号码" 
+                                 Width="350" 
+                                 Text="{Binding SearchText,Mode=TwoWay}"
+                                 Style="{DynamicResource Tb_NormalTextInput}"
+                                 Margin="0,20">
+                            <i:Interaction.Triggers>
+                                <i:KeyTrigger FiredOn="KeyUp" Key="Enter">
+                                    <i:InvokeCommandAction Command="{Binding SearchCommand}" />
+                                </i:KeyTrigger>
+                            </i:Interaction.Triggers>
+                        </TextBox>
+                        <Button Content="确定"
+                                Style="{DynamicResource Btn_NormalTextButton}"
+                                Command="{Binding SearchCommand}"
+                                Margin="20,0,0,0"/>
+                    </StackPanel>
+                    <Grid Width="350" Height="300" Margin="0,5,0,0" HorizontalAlignment="Left">
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Button Grid.Row="0" Grid.Column="0" Margin="0,0,4,4" Command="{Binding AppendNumCommand}" CommandParameter="1" Content="1" Style="{DynamicResource Btn_AppendNum}"/>
+                        <Button Grid.Row="0" Grid.Column="1" Margin="4,0,4,4" Command="{Binding AppendNumCommand}" CommandParameter="2" Content="2" Style="{DynamicResource Btn_AppendNum}"/>
+                        <Button Grid.Row="0" Grid.Column="2" Margin="4,0,0,4" Command="{Binding AppendNumCommand}" CommandParameter="3" Content="3" Style="{DynamicResource Btn_AppendNum}"/>
+                        <Button Grid.Row="1" Grid.Column="0" Margin="0,4,4,4" Command="{Binding AppendNumCommand}" CommandParameter="4" Content="4" Style="{DynamicResource Btn_AppendNum}"/>
+                        <Button Grid.Row="1" Grid.Column="1" Margin="4,4,4,4" Command="{Binding AppendNumCommand}" CommandParameter="5" Content="5" Style="{DynamicResource Btn_AppendNum}"/>
+                        <Button Grid.Row="1" Grid.Column="2" Margin="4,4,0,4" Command="{Binding AppendNumCommand}" CommandParameter="6" Content="6" Style="{DynamicResource Btn_AppendNum}"/>
+                        <Button Grid.Row="2" Grid.Column="0" Margin="0,4,4,4" Command="{Binding AppendNumCommand}" CommandParameter="7" Content="7" Style="{DynamicResource Btn_AppendNum}"/>
+                        <Button Grid.Row="2" Grid.Column="1" Margin="4,4,4,4" Command="{Binding AppendNumCommand}" CommandParameter="8" Content="8" Style="{DynamicResource Btn_AppendNum}"/>
+                        <Button Grid.Row="2" Grid.Column="2" Margin="4,4,0,4" Command="{Binding AppendNumCommand}" CommandParameter="9" Content="9" Style="{DynamicResource Btn_AppendNum}"/>
+                        <Button Grid.Row="3" Grid.Column="0" Margin="0,4,4,0" Command="{Binding DeleteNumCommand}" Content="删除" Background="#F2B230" Foreground="{DynamicResource Scb_White01}" FontSize="{DynamicResource FontSize_Normal}" />
+                        <Button Grid.Row="3" Grid.Column="1" Margin="4,4,4,0" Command="{Binding AppendNumCommand}" CommandParameter="0" Content="0" Style="{DynamicResource Btn_AppendNum}"/>
+                        <Button Grid.Row="3" Grid.Column="2" Margin="4,4,0,0" Command="{Binding SearchCommand}" Content="确定" Background="{DynamicResource Scb_Theme08}" Foreground="{DynamicResource Scb_White01}" FontSize="{DynamicResource FontSize_Normal}" Name="btn_OK"/>
+                    </Grid>
+                </StackPanel>
+            </Grid>
+        </Grid>
+    </Grid>
+</UserControl>

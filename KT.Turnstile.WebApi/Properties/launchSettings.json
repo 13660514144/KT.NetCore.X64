@@ -1,0 +1,105 @@
+{
+  "iisSettings": {
+    "windowsAuthentication": false,
+    "anonymousAuthentication": true,
+    "iisExpress": {
+      "applicationUrl": "http://localhost:13673/",
+      "sslPort": 44342
+    }
+  },
+  "profiles": {
+    "IIS Express": {
+      "commandName": "IISExpress",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
+    },
+    "KT.Turnstile.Manage.WebApi": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "applicationUrl": "http://localhost:5008"
+    },
+    "KT.Trunstile.202-23260": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "202-23260"
+      }
+    },
+    "KT.Trunstile.197-23260": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "197-23260"
+      }
+    },
+    "KT.Trunstile.Test71": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Test71"
+      }
+    },
+    "KT.Trunstile.Test60": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Test60"
+      }
+    },
+    //"KT.Trunstile.Test72": {
+    //  "commandName": "Project",
+    //  "environmentVariables": {
+    //    "ASPNETCORE_ENVIRONMENT": "Test72"
+    //  }
+    //},
+    //"KT.Trunstile.Test73": {
+    //  "commandName": "Project",
+    //  "environmentVariables": {
+    //    "ASPNETCORE_ENVIRONMENT": "Test73"
+    //  }
+    //},
+    //"KT.Trunstile.Test74": {
+    //  "commandName": "Project",
+    //  "environmentVariables": {
+    //    "ASPNETCORE_ENVIRONMENT": "Test74"
+    //  }
+    //},
+    //"KT.Trunstile.Test75": {
+    //  "commandName": "Project",
+    //  "environmentVariables": {
+    //    "ASPNETCORE_ENVIRONMENT": "Test75"
+    //  }
+    //},
+    "KT.Trunstile.WebApi1": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development1"
+      }
+    },
+    "KT.Turnstile.Manage.WebApi2": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development2"
+      }
+    },
+    "KT.Turnstile.Manage.WebApi3": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development3"
+      }
+    },
+    "KT.Turnstile.Manage.WebApi4": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development4"
+      }
+    },
+    "KT.Turnstile.Manage.WebApi5": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development5"
+      }
+    }
+  }
+}

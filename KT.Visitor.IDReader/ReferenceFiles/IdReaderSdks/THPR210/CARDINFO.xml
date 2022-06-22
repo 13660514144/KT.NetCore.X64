@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE IDCARD SYSTEM "IDCARD.dtd">
+<IDCARD>
+<CardInfo chnName="居民身份证-照片页" engName="China Resident Identity Card Portrait Page" mainId="2" autoClass="1" regionCode="1" sizeType="2"/>
+<CardInfo chnName="居民身份证-签发机关页" engName="China Resident Identity Card Authority Page" mainId="3" autoClass="1" regionCode="1" sizeType="2"/>
+<CardInfo chnName="临时居民身份证" engName="China Temporary Resident Identity Card" mainId="4" autoClass="1" regionCode="1" sizeType="2"/>
+<CardInfo chnName="机动车驾驶证" engName="China Driving License" mainId="5" autoClass="1" regionCode="1" sizeType="1"/>
+<CardInfo chnName="机动车行驶证" engName="China Vehicle License" mainId="6" autoClass="1" regionCode="1" sizeType="1"/>
+<CardInfo chnName="军官证" engName="China PLA Officer Card 2016 Edition" mainId="7" autoClass="1" regionCode="1" sizeType="4"/>
+<CardInfo chnName="士兵证1998版" engName="China PLA Soldier Card 1998 Edition " mainId="8" autoClass="0" regionCode="1" sizeType="16"/>
+<CardInfo chnName="往来港澳通行证2005版-照片页" engName="China Mainland Residents Travel Permit to HK and Macao 2005 Edition Portrait Page" mainId="9" autoClass="1" regionCode="1" sizeType="3"/>
+<CardInfo chnName="台湾居民来往大陆通行证1992版-照片页" engName="Taiwan Residents Travel Permit to Mainland 1992 Edition Portrait Page" mainId="10" autoClass="1" regionCode="1" sizeType="3"/>
+<CardInfo chnName="往来台湾通行证1992版-照片页" engName="China Mainland Residents Travel Permit to Taiwan 1992 Edition Portrait Page" mainId="11" autoClass="1" regionCode="1" sizeType="3"/>
+<CardInfo chnName="签证" engName="Visa" mainId="12" autoClass="1" regionCode="0" sizeType="3"/>
+<CardInfo chnName="护照" engName="Passport" mainId="13" autoClass="1" regionCode="0" sizeType="3"/>
+<CardInfo chnName="港澳居民来往内地通行证-照片页" engName="China Mainland Travel Permit for HK and Macao Residents  Portrait Page" mainId="14" autoClass="1" regionCode="1" sizeType="2"/>
+<CardInfo chnName="港澳居民来往内地通行证-机读码页" engName="China Mainland Travel Permit for HK and Macao Residents MRZ Page" mainId="15" autoClass="1" regionCode="1" sizeType="2"/>
+<CardInfo chnName="常住人口登记卡" engName="China Register Card for Permanent Resident" mainId="16" autoClass="0" regionCode="1" sizeType="5"/>
+<CardInfo chnName="海员证2009版-照片页" engName="China Seafarer's Passport 2009 Edition " mainId="17" autoClass="1" regionCode="1" sizeType="3"/>
+<CardInfo chnName="军官证1998版-照片页" engName="China PLA Officer Card 1998 Edition Portrait Page" mainId="18" autoClass="1" regionCode="1" sizeType="18"/>
+<CardInfo chnName="军官证1998版-信息页" engName="China PLA Officer Card 1998 Edition Information Page" mainId="19" autoClass="1" regionCode="1" sizeType="18"/>
+<CardInfo chnName="警官证2006版-照片页" engName="China Police Officer Certificate 2006 Edition Portrait Page " mainId="20" autoClass="1" regionCode="1" sizeType="19"/>
+<CardInfo chnName="警官证2006版-信息页" engName="China Police Officer Certificate 2006 Edition Information Page " mainId="21" autoClass="1" regionCode="1" sizeType="19"/>
+<CardInfo chnName="往来港澳通行证2014版-照片页" engName="China Mainland Residents Travel Permit to HK and Macao  2014 Edition Portrait Page" mainId="22" autoClass="1" regionCode="1" sizeType="2"/>
+<CardInfo chnName="边境地区出入境通行证2014版-照片页" engName="China  Border Exit and Entry Permit 2014 Editon Portrait Page" mainId="23" autoClass="1" regionCode="1" sizeType="3"/>
+<CardInfo chnName="中国人民解放军车辆驾驶证2010版" engName="China PLA Vehicle Driving License 2010 Edition" mainId="24" autoClass="0" regionCode="1" sizeType="2"/>
+<CardInfo chnName="台湾居民来往大陆通行证2015版-照片页" engName="Taiwan Residents Travel Permit to Mainland 2015 Edition Portrait Page" mainId="25" autoClass="1" regionCode="1" sizeType="2"/>
+<CardInfo chnName="台湾居民来往大陆通行证2015版-机读码页" engName="Taiwan Residents Travel Permit to Mainland 2015  Edition MRZ Page" mainId="26" autoClass="1" regionCode="1" sizeType="2"/>
+<CardInfo chnName="中国人民解放军行车执照2012版 " engName="China Driving License of PLA 2012 Edition" mainId="27" autoClass="0" regionCode="1" sizeType="1"/>
+<CardInfo chnName="往来台湾通行证2017版-照片页" engName="China Mainland Residents Travel Permit to Taiwan  2017 Edition Portrait Page" mainId="29" autoClass="1" regionCode="1" sizeType="2"/>
+<CardInfo chnName="居住证（广东、广西、东莞）-照片页" engName="China Residence Permit Portrait Page" mainId="1000" autoClass="1" regionCode="1" sizeType="2"/>
+<CardInfo chnName="香港居民身份证-照片页" engName=" HK Resident Identity Card Portrait Page" mainId="1001" autoClass="1" regionCode="2" sizeType="2"/>
+<CardInfo chnName="边境地区出入境通行证2005版-照片页" engName="China Border Exit and Entry Permit 2005 Edition Portrait Page" mainId="1003" autoClass="0" regionCode="1" sizeType="7"/>
+<CardInfo chnName="边境地区出入境通行证2005版-信息页" engName="China Border Exit and Entry Permit 2005 Edition Information Page" mainId="1004" autoClass="0" regionCode="1" sizeType="8"/>
+<CardInfo chnName="澳门居民身份证-照片页" engName="Macau Resident Identity Card Portrait Page" mainId="1005" autoClass="1" regionCode="2" sizeType="2"/>
+<CardInfo chnName="律师执业证-签发机关页 " engName="China Lawyer's License Authority Page" mainId="1007" autoClass="0" regionCode="1" sizeType="7"/>
+<CardInfo chnName="律师执业证-照片页" engName="China Lawyer's License Portrait Page" mainId="1008" autoClass="0" regionCode="1" sizeType="8"/>
+<CardInfo chnName="中华人民共和国道路运输证IC卡 " engName="China Road Transport IC Card " mainId="1009" autoClass="0" regionCode="1" sizeType="2"/>
+<CardInfo chnName="名片" engName="Business Card" mainId="1010" autoClass="0" regionCode="1" sizeType="2"/>
+<CardInfo chnName="深圳经济特区居住证2015版-照片页" engName="China Shenzhen Residence Permit 2015 Edition Portrait Page" mainId="1013" autoClass="1" regionCode="1" sizeType="2"/>
+<CardInfo chnName="澳门蓝卡-照片页" engName="Macau employee ID Portrait Page" mainId="1014" autoClass="1" regionCode="2" sizeType="2"/>
+<CardInfo chnName="临时海员证" engName="Temporary Seafarer's Passport(PRC)" mainId="1017" autoClass="0" regionCode="1" sizeType="0"/>
+<CardInfo chnName="内蒙古自治区人民法院工作证" engName="Inner Mongolia Autonomous Region People 's Court  Work Permit" mainId="1018" autoClass="0" regionCode="1" sizeType="1"/>
+<CardInfo chnName="内蒙古自治区检察机关工作证" engName="Inner Mongolia Autonomous Region  Procuratorial Work Permit" mainId="1019" autoClass="0" regionCode="1" sizeType="1"/>
+<CardInfo chnName="社会保障卡（北京、重庆）-照片页" engName="China Social Security Card(Beijing,Chongqing) Portrait Page" mainId="1021" autoClass="1" regionCode="1" sizeType="2"/>
+<CardInfo chnName="浙江省临时居住证-照片页" engName="China ZheJiang Temporary Residence Permit Portrait Page" mainId="1029" autoClass="0" regionCode="1" sizeType="15"/>
+<CardInfo chnName="台湾全民健康保险卡 " engName="Taiwan National Health Insurance Card  " mainId="1030" autoClass="1" regionCode="2" sizeType="2"/>
+<CardInfo chnName="台湾地区身份证-照片页" engName="Taiwan Identity Card Portrait Page" mainId="1031" autoClass="1" regionCode="2" sizeType="2"/>
+<CardInfo chnName="台湾地区身份证-条码页" engName="Taiwan Identity Card Barcode Page" mainId="1032" autoClass="1" regionCode="2" sizeType="2"/>
+<CardInfo chnName="神煤集团工作证" engName="Shenhua Shendong Group Work Certificate" mainId="1037" autoClass="0" regionCode="1" sizeType="12"/>
+<CardInfo chnName="厦门市社会保障卡-照片页" engName="China Xiamen Social Security Card Portrait Page" mainId="1039" autoClass="1" regionCode="1" sizeType="2"/>
+<CardInfo chnName="台湾地区驾驶证" engName="Taiwan Driving License" mainId="1040" autoClass="1" regionCode="2" sizeType="2"/>
+<CardInfo chnName="台湾地区（金马澎）入出境许可证2015版-照片页" engName="China Taiwan Area Exit-Entry Permit for Jinmen, Mazu and Penghu Islands 2015 Edition Portrait Page" mainId="34" autoClass="1" regionCode="2" sizeType="2"/>
+<CardInfo chnName="台湾地区居留证-照片页" engName="China Taiwan Area Resident Permit Portrait Page" mainId="35" autoClass="1" regionCode="2" sizeType="2"/>
+<CardInfo chnName="马来西亚身份证-照片页" engName="Malaysia Identity Card Portrait Page" mainId="2001" autoClass="1" regionCode="3" sizeType="2"/>
+<CardInfo chnName="美国加利福利亚驾驶证" engName="US California Driving License" mainId="2002" autoClass="1" regionCode="4" sizeType="2"/>
+<CardInfo chnName="新西兰驾驶证" engName="New Zealand Driving License" mainId="2003" autoClass="1" regionCode="5" sizeType="2"/>
+<CardInfo chnName="新加坡身份证" engName="Singapore Identity Card" mainId="2004" autoClass="1" regionCode="6" sizeType="2"/>
+<CardInfo chnName="TD-2型机读旅行证件" engName="TD-2 Machine Readable Travel Documents" mainId="2006" autoClass="1" regionCode="0" sizeType="21"/>
+<CardInfo chnName="TD-1型机读旅行证件" engName="TD-1 Machine Readable Travel Documents" mainId="2009" autoClass="1" regionCode="0" sizeType="2"/>
+<CardInfo chnName="印度尼西亚居民身份证" engName="Indonesia Resident Identity Card" mainId="2010" autoClass="1" regionCode="7" sizeType="2"/>
+<CardInfo chnName="泰国国民身份证" engName="Thailand National Identity Card" mainId="2011" autoClass="1" regionCode="8" sizeType="2"/>
+<CardInfo chnName="泰国驾驶证" engName="Thailand Driving License" mainId="2012" autoClass="1" regionCode="8" sizeType="2"/>
+<CardInfo chnName="墨西哥选民证-照片页" engName="Mexico INE&IFE ID Card Portrait Page" mainId="2013" autoClass="1" regionCode="9" sizeType="2"/>
+<CardInfo chnName="墨西哥选民证背面ABC" engName="Mexico INE&IFE ID Card Reverse Page" mainId="2014" autoClass="1" regionCode="9" sizeType="2"/>
+<CardInfo chnName="瑞典驾驶证" engName="Sweden Driving License" mainId="2020" autoClass="1" regionCode="10" sizeType="2"/>
+<CardInfo chnName="马来西亚驾驶证" engName="Malaysia Driving License" mainId="2021" autoClass="1" regionCode="3" sizeType="2"/>
+<CardInfo chnName="新加坡驾驶证" engName="Singapore Driving License" mainId="2031" autoClass="1" regionCode="6" sizeType="2"/>
+<CardInfo chnName="印度尼西亚驾驶证" engName="Indonesia Driving License" mainId="2041" autoClass="1" regionCode="7" sizeType="2"/>
+<CardInfo chnName="日本驾驶证" engName="Japan Driving License" mainId="2051" autoClass="1" regionCode="11" sizeType="2"/>
+<CardInfo chnName="机动车行驶证副页" engName="China Driving License Vice Page" mainId="30" autoClass="1" regionCode="1" sizeType="2"/>
+<CardInfo chnName="港澳台居民居住证-照片页" engName="China Residence Permit for HK/Macao/Taiwan Residents Portrait Page" mainId="31" autoClass="1" regionCode="1" sizeType="2"/>
+<CardInfo chnName="港澳台居民居住证-签发机关页" engName="China Residence Permit for HK/Macao/Taiwan Residents Authority Page" mainId="32" autoClass="1" regionCode="1" sizeType="2"/>
+<CardInfo chnName="外国人永久居留身份证2017版-照片页" engName="China Foreign Permanent Resident ID Card 2017 Edition Portrait Page" mainId="33" autoClass="0" regionCode="1" sizeType="2"/>
+<CardInfo chnName="越南出入境通行证" engName="Vietnam Border Entry and Exit Pass" mainId="36" autoClass="1" regionCode="12" sizeType="3"/>
+<CardInfo chnName="新加坡工作证2017版-照片页" engName="Singapore Work Pass and Permit 2017 Edition Portrait Page" mainId="2023" autoClass="1" regionCode="6" sizeType="2"/>
+<CardInfo chnName="新加坡工作证2017版-指纹页" engName="Singapore Work Pass and Permit 2017 Edition Fingerprint Page" mainId="2025" autoClass="1" regionCode="6" sizeType="2"/>
+<CardInfo chnName="法国身份证" engName="French identity card" mainId="2028" autoClass="1" regionCode="13" sizeType="2"/>
+</IDCARD>

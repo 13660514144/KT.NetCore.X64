@@ -1,0 +1,56 @@
+﻿<pu:WindowX x:Class="KT.Visitor.Interface.Views.Register.AccompanyVisitorsWindow"
+            xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+            xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+            xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+            xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+            xmlns:pu="clr-namespace:Panuon.UI.Silver;assembly=Panuon.UI.Silver"
+            mc:Ignorable="d" 
+            d:DesignHeight="768" 
+            d:DesignWidth="1024"
+            Height="768" 
+            Width="1024" 
+            WindowStartupLocation ="CenterOwner" 
+            Title="添加陪同访客"
+            pu:WindowXCaption.Background="{DynamicResource Scb_Theme08}">
+
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!--陪同访客-->
+        <ListBox ItemsSource="{Binding VisitorControls}" 
+                 Style="{DynamicResource lb_ContentVirtualListBoxStyle}"
+                 ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <ContentPresenter Content="{Binding }" Margin="0,0,0,20"/>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+
+        <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center" >
+            <Button Content="陪同访客"
+                    Width="308"
+                    Background="{DynamicResource Scb_White01}"
+                    BorderBrush="{DynamicResource Scb_Theme08}" 
+                    BorderThickness="1" 
+                    FontSize="{DynamicResource FontSize_Normal}" 
+                    Foreground="{DynamicResource Scb_Theme08}"
+                    Height="54"
+                    pu:ButtonHelper.ButtonStyle="Outline"
+                    pu:ButtonHelper.HoverBrush="{DynamicResource Scb_Theme10}"
+                    Command="{Binding AddAccompanyCommand}"
+                    pu:ButtonHelper.Icon="/KT.Visitor.Interface;component/Resources/Images/add.png"
+                    pu:IconHelper.Height="10"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center" >
+            <Button Content="取消" Style="{DynamicResource Btn_CancelButton}" Click="Btn_Cancel_Click"/>
+            <Button Content="确认" Style="{DynamicResource Btn_ConfirmButton}" Click="Btn_Confirm_Click"/>
+        </StackPanel>
+
+    </Grid>
+</pu:WindowX>

@@ -1,0 +1,56 @@
+﻿{
+  "$schema": "http://json.schemastore.org/launchsettings.json",
+  "profiles": {
+    "KT.Quanta.WebApi": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "launchUrl": "weatherforecast",
+      //"applicationUrl": "http://localhost:5000",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
+    },
+    "KT.Quanta.Dev-24260": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Dev-24260"
+      }
+    },
+    "KT.Quanta.189-24260": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "189-24260"
+      }
+    },
+    "KT.Quanta.182-24260": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "182-24260"
+      }
+    },
+    "KT.Quanta.183-24260": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "183-24260"
+      }
+    },
+    "KT.Quanta.197-24260": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "197-24260"
+      }
+    },
+    "KT.Quanta.kone": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "kone"
+      }
+    },
+    "KT.Quanta.b1-1": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "b1-1"
+      }
+    }
+  }
+}

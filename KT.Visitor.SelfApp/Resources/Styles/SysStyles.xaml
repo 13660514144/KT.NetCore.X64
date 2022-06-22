@@ -1,0 +1,273 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:pu="clr-namespace:Panuon.UI.Silver;assembly=Panuon.UI.Silver">
+    <!-- 3D 相关部分开始 -->
+    <!-- 3D Models -->
+    <MeshGeometry3D x:Key="CubeSide01"
+      TriangleIndices="0,1,2 3,4,5 "
+      Normals="-1,0,0 -1,0,0 -1,0,0 -1,0,0 -1,0,0 -1,0,0 "
+      TextureCoordinates="0,1 0,0 1,0 1,0 1,1 0,1 "
+      Positions="-0.5,0.5,-0.5 -0.5,-0.5,-0.5 -0.5,-0.5,0.5 -0.5,-0.5,0.5 -0.5,0.5,0.5 -0.5,0.5,-0.5 " />
+
+    <MeshGeometry3D x:Key="CubeSide02"
+      TriangleIndices="0,1,2 3,4,5 "
+      Normals="0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 "
+      TextureCoordinates="0,0 1,0 1,1 1,1 0,1 0,0 "
+      Positions="-0.5,-0.5,0.5 0.5,-0.5,0.5 0.5,0.5,0.5 0.5,0.5,0.5 -0.5,0.5,0.5 -0.5,-0.5,0.5 " />
+
+    <MeshGeometry3D x:Key="CubeSide03"
+      TriangleIndices="0,1,2 3,4,5 "
+      Normals="0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 "
+      TextureCoordinates="1,0 1,1 0,1 0,1 0,0 1,0 "
+      Positions="0.5,-0.5,-0.5 0.5,0.5,-0.5 0.5,0.5,0.5 0.5,0.5,0.5 0.5,-0.5,0.5 0.5,-0.5,-0.5 " />
+
+    <MeshGeometry3D x:Key="CubeSide04"
+      TriangleIndices="0,1,2 3,4,5 "
+      Normals="1,0,0 1,0,0 1,0,0 1,0,0 1,0,0 1,0,0 "
+      TextureCoordinates="1,0 1,1 0,1 0,1 0,0 1,0 "
+      Positions="-0.5,-0.5,-0.5 -0.5,0.5,-0.5 0.5,0.5,-0.5 0.5,0.5,-0.5 0.5,-0.5,-0.5 -0.5,-0.5,-0.5 " />
+
+    <MeshGeometry3D x:Key="CubeSide05"
+      TriangleIndices="0,1,2 3,4,5 6,7,8 9,10,11 "
+      Normals="0,-1,0 0,-1,0 0,-1,0 0,-1,0 0,-1,0 0,-1,0 0,1,0 0,1,0 0,1,0 0,1,0 0,1,0 0,1,0 "
+      TextureCoordinates="0,0 1,0 1,1 1,1 0,1 0,0 1,1 0,1 0,0 0,0 1,0 1,1 "
+      Positions="-0.5,-0.5,-0.5 -0.5,0.5,0.5 -0.5,-0.5,0.5   0.5,-0.5,0.5 -0.5,-0.5,-0.5 -0.5,0.5,-0.5   
+                          0.5,0.5,-0.5 -0.5,0.5,-0.5 -0.5,0.5,0.5  -0.5,0.5,0.5 0.5,0.5,0.5 0.5,0.5,-0.5 " />
+
+    <MeshGeometry3D x:Key="CubeSide06"
+      TriangleIndices="0,1,2 3,4,5 6,7,8 9,10,11 "
+      Normals="-1,0,0 -1,0,0 -1,0,0 -1,0,0 -1,0,0 -1,0,0 "
+      TextureCoordinates="1,0 1,1 0,1 0,1 0,0 1,0 "
+      Positions="-0.5,-0.5,0.5 -0.5,-0.5,-0.5 0.5,-0.5,-0.5   0.5,-0.5,-0.5 0.5,-0.5,0.5 -0.5,-0.5,0.5" />
+
+    <!-- 3D Materials -->
+    <MaterialGroup x:Key="LeavesMaterial1">
+        <DiffuseMaterial>
+            <DiffuseMaterial.Brush>
+                <ImageBrush Stretch="UniformToFill" ImageSource="/KT.Visitor.SelfApp;component/Resources/icons/@2x/logo@2x.png" 
+                                TileMode="None" ViewportUnits="Absolute" 
+                                Viewport="0 0 1 1" AlignmentX="Left" AlignmentY="Top" Opacity="1.000000" />
+            </DiffuseMaterial.Brush>
+        </DiffuseMaterial>
+        <SpecularMaterial SpecularPower="85.3333">
+            <SpecularMaterial.Brush>
+                <SolidColorBrush Color="#FFFFFF" Opacity="1.000000"/>
+            </SpecularMaterial.Brush>
+        </SpecularMaterial>
+    </MaterialGroup>
+
+    <MaterialGroup x:Key="RocksMaterial">
+        <DiffuseMaterial>
+            <DiffuseMaterial.Brush>
+                <ImageBrush Stretch="UniformToFill" ImageSource="/KT.Visitor.SelfApp;component/Resources/icons/@2x/logo@2x.png" 
+                                TileMode="None" ViewportUnits="Absolute" Viewport="0 0 1 1" 
+                                AlignmentX="Left" AlignmentY="Top" Opacity="1.000000" />
+            </DiffuseMaterial.Brush>
+        </DiffuseMaterial>
+        <SpecularMaterial SpecularPower="85.3333">
+            <SpecularMaterial.Brush>
+                <SolidColorBrush Color="#FFFFFF" Opacity="1.000000"/>
+            </SpecularMaterial.Brush>
+        </SpecularMaterial>
+    </MaterialGroup>
+
+    <MaterialGroup x:Key="BranchesMaterial">
+        <DiffuseMaterial>
+            <DiffuseMaterial.Brush>
+                <ImageBrush Stretch="UniformToFill" ImageSource="/KT.Visitor.SelfApp;component/Resources/icons/@2x/logo@2x.png" 
+                                TileMode="None" ViewportUnits="Absolute" Viewport="0 0 1 1" 
+                                AlignmentX="Left" AlignmentY="Top" Opacity="1.000000" />
+            </DiffuseMaterial.Brush>
+        </DiffuseMaterial>
+        <SpecularMaterial SpecularPower="85.3333">
+            <SpecularMaterial.Brush>
+                <SolidColorBrush Color="#FFFFFF" Opacity="1.000000"/>
+            </SpecularMaterial.Brush>
+        </SpecularMaterial>
+    </MaterialGroup>
+    <MaterialGroup x:Key="BerriesMaterial">
+        <DiffuseMaterial>
+            <DiffuseMaterial.Brush>
+                <ImageBrush Stretch="UniformToFill" ImageSource="/KT.Visitor.SelfApp;component/Resources/icons/@2x/logo@2x.png" 
+                                TileMode="None" ViewportUnits="Absolute" Viewport="0 0 1 1" 
+                                AlignmentX="Left" AlignmentY="Top" Opacity="1.000000" />
+            </DiffuseMaterial.Brush>
+        </DiffuseMaterial>
+        <SpecularMaterial SpecularPower="85.3333">
+            <SpecularMaterial.Brush>
+                <SolidColorBrush Color="#FFFFFF" Opacity="1.000000"/>
+            </SpecularMaterial.Brush>
+        </SpecularMaterial>
+    </MaterialGroup>
+    <MaterialGroup x:Key="FlowersMaterial">
+        <DiffuseMaterial>
+            <DiffuseMaterial.Brush>
+                <ImageBrush Stretch="UniformToFill" ImageSource="/KT.Visitor.SelfApp;component/Resources/icons/@2x/logo@2x.png" 
+                                ViewportUnits="Absolute" 
+            Viewport="0 0 1 1" AlignmentX="Left" AlignmentY="Top" Opacity="1.000000" />
+            </DiffuseMaterial.Brush>
+        </DiffuseMaterial>
+        <SpecularMaterial SpecularPower="85.3333">
+            <SpecularMaterial.Brush>
+                <SolidColorBrush Color="#FFFFFF" Opacity="1.000000"/>
+            </SpecularMaterial.Brush>
+        </SpecularMaterial>
+    </MaterialGroup>
+    <MaterialGroup x:Key="SunsetMaterial">
+        <DiffuseMaterial>
+            <DiffuseMaterial.Brush>
+                <ImageBrush Stretch="UniformToFill" ImageSource="/KT.Visitor.SelfApp;component/Resources/icons/@2x/logo@2x.png"
+                                ViewportUnits="Absolute" 
+            Viewport="0 0 1 1" AlignmentX="Left" AlignmentY="Top" Opacity="1.000000" />
+            </DiffuseMaterial.Brush>
+        </DiffuseMaterial>
+        <SpecularMaterial SpecularPower="85.3333">
+            <SpecularMaterial.Brush>
+                <SolidColorBrush Color="#FFFFFF" Opacity="1.000000"/>
+            </SpecularMaterial.Brush>
+        </SpecularMaterial>
+    </MaterialGroup>
+    <MaterialGroup x:Key="SolidColorMaterial">
+        <DiffuseMaterial>
+            <DiffuseMaterial.Brush>
+                <SolidColorBrush Color="Orange" Opacity="1.000000"/>
+            </DiffuseMaterial.Brush>
+        </DiffuseMaterial>
+        <SpecularMaterial SpecularPower="85.3333">
+            <SpecularMaterial.Brush>
+                <SolidColorBrush Color="#FFFFFF" Opacity="1.000000"/>
+            </SpecularMaterial.Brush>
+        </SpecularMaterial>
+    </MaterialGroup>
+
+
+    <!-- Model3DVisuals -->
+    <ModelVisual3D x:Key="PictureCubeModelVisual3DResource" x:Shared="False">
+        <ModelVisual3D.Children>
+            <ModelVisual3D>
+                <ModelVisual3D.Content>
+                    <AmbientLight Color="#333333" />
+                </ModelVisual3D.Content>
+            </ModelVisual3D>
+            <ModelVisual3D>
+                <ModelVisual3D.Content>
+                    <DirectionalLight Color="#FFFFFF" Direction="-0.612372,-0.5,-0.612372" />
+                </ModelVisual3D.Content>
+            </ModelVisual3D>
+            <ModelVisual3D>
+                <ModelVisual3D.Content>
+                    <DirectionalLight Color="#FFFFFF" Direction="0.612372,-0.5,-0.612372" />
+                </ModelVisual3D.Content>
+            </ModelVisual3D>
+            <ModelVisual3D>
+                <ModelVisual3D.Content>
+                    <GeometryModel3D Geometry="{StaticResource CubeSide01}" Material="{StaticResource BranchesMaterial}"/>
+                </ModelVisual3D.Content>
+            </ModelVisual3D>
+            <ModelVisual3D>
+                <ModelVisual3D.Content>
+                    <GeometryModel3D Geometry="{StaticResource CubeSide02}" Material="{StaticResource FlowersMaterial}"/>
+                </ModelVisual3D.Content>
+            </ModelVisual3D>
+            <ModelVisual3D>
+                <ModelVisual3D.Content>
+                    <GeometryModel3D Geometry="{StaticResource CubeSide03}" Material="{StaticResource BerriesMaterial}"/>
+                </ModelVisual3D.Content>
+            </ModelVisual3D>
+            <ModelVisual3D>
+                <ModelVisual3D.Content>
+                    <GeometryModel3D Geometry="{StaticResource CubeSide04}" Material="{StaticResource LeavesMaterial1}"/>
+                </ModelVisual3D.Content>
+            </ModelVisual3D>
+            <ModelVisual3D>
+                <ModelVisual3D.Content>
+                    <GeometryModel3D Geometry="{StaticResource CubeSide05}" Material="{StaticResource RocksMaterial}"/>
+                </ModelVisual3D.Content>
+            </ModelVisual3D>
+            <ModelVisual3D>
+                <ModelVisual3D.Content>
+                    <GeometryModel3D Geometry="{StaticResource CubeSide06}" Material="{StaticResource SunsetMaterial}"/>
+                </ModelVisual3D.Content>
+            </ModelVisual3D>
+        </ModelVisual3D.Children>
+    </ModelVisual3D>
+
+    <Style TargetType="{x:Type Button}">
+        <Setter Property="BorderBrush" Value="{DynamicResource Scb_Theme08}"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border x:Name="border" CornerRadius="5" Background="{TemplateBinding Background}" BorderThickness="{TemplateBinding BorderThickness}" BorderBrush="{TemplateBinding BorderBrush}" SnapsToDevicePixels="true">
+                        <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsDefaulted" Value="True">
+
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="True">
+
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False">
+
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="Btn_Jump" TargetType="{x:Type Button}">
+        <Setter Property="BorderBrush" Value="{DynamicResource Scb_Theme08}"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="Background">
+            <Setter.Value>
+                <ImageBrush ImageSource="/KT.Visitor.SelfApp;component/Resources/icons/@2x/按钮未选中@2x.png"/>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border x:Name="border" CornerRadius="5" Background="{TemplateBinding Background}" BorderThickness="{TemplateBinding BorderThickness}" BorderBrush="{TemplateBinding BorderBrush}" SnapsToDevicePixels="true">
+                        <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsDefaulted" Value="True">
+
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="True">
+
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter Property="Background">
+                                <Setter.Value>
+                                    <ImageBrush ImageSource="/KT.Visitor.SelfApp;component/Resources/icons/@2x/按钮选中@2x.png"/>
+                                </Setter.Value>
+                            </Setter>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False">
+
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="Rb_Style" TargetType="{x:Type RadioButton}" BasedOn="{StaticResource {x:Type RadioButton}}">
+        <Setter Property="pu:ButtonHelper.CornerRadius" Value="4"/>
+        <Setter Property="FontSize" Value="{DynamicResource FontSize_Normal}"/>
+        <Setter Property="BorderBrush" Value="{DynamicResource Scb_Gray05}"/>
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="pu:RadioButtonHelper.CheckedBorderBrush" Value="{DynamicResource Scb_Theme08}"/>
+        <Setter Property="pu:RadioButtonHelper.CheckedGlyphBrush" Value="{DynamicResource Scb_Theme08}"/>
+        <Setter Property="pu:RadioButtonHelper.BoxHeight" Value="18"/>
+        <Setter Property="pu:RadioButtonHelper.BoxWidth" Value="18"/>
+        <Setter Property="BorderThickness" Value="2"/>
+        <Setter Property="Margin" Value="20,10,0,10"/>
+        <Setter Property="Cursor" Value="Hand"/>
+    </Style>
+</ResourceDictionary>

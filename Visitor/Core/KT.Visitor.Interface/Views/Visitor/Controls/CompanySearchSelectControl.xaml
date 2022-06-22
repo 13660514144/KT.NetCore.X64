@@ -1,0 +1,25 @@
+﻿<UserControl x:Class="KT.Visitor.Interface.Views.Visitor.Controls.CompanySearchSelectControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:pu="clr-namespace:Panuon.UI.Silver;assembly=Panuon.UI.Silver"
+             mc:Ignorable="d" 
+             d:DesignHeight="100" d:DesignWidth="1200">
+    <Grid>
+        <StackPanel Orientation="Horizontal" >
+            <TextBox pu:TextBoxHelper.Watermark="输入单元号/公司名称搜索公司" Width="674" Margin="0,15,0,0" Height="42" 
+                      Text="{Binding SearchText,Mode=TwoWay}"/>
+            <Button Background="{DynamicResource Scb_Theme08}" Width="100" Height="42" Margin="20,15,0,0" 
+                    Name="btnSearch" Click="Btn_Search_Click" Padding="3" BorderThickness="0">
+                <StackPanel Orientation="Horizontal">
+                    <Image Width="15" Source="/Resources/Images/SearchIcon.png" Margin="0,0,10,0"/>
+                    <TextBlock Text="搜索" FontSize="{DynamicResource FontSize_Normal}" VerticalAlignment="Center" />
+                </StackPanel>
+            </Button>
+            <Button Background="#F2B230" Content="查看公司列表" Width="155" Height="42" 
+                    Margin="20,15,0,0" FontSize="{DynamicResource FontSize_Normal}" Name="btnCompanyList" BorderThickness="0"
+                    Click="Btn_ListCompany_Click"/>
+        </StackPanel>
+    </Grid>
+</UserControl>

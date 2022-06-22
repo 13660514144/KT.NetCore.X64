@@ -1,0 +1,253 @@
+﻿<Page x:Class="KT.Visitor.Interface.Views.Visitor.VisitorDetailPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:pu="clr-namespace:Panuon.UI.Silver;assembly=Panuon.UI.Silver"
+      mc:Ignorable="d" 
+      d:DesignWidth="1300">
+    <Page.Resources>
+        <Style x:Key="Tbk_Title" TargetType="{x:Type TextBlock}">
+            <Setter Property="FontSize" Value="{DynamicResource FontSize_Normal}"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="Margin" Value="30,0"/>
+            <Setter Property="Foreground" Value="{DynamicResource Scb_White01}"/>
+        </Style>
+        <Style x:Key="Tb_DetailTitle" TargetType="{x:Type TextBlock}">
+            <Setter Property="FontSize" Value="{DynamicResource FontSize_Normal}"/>
+            <Setter Property="Foreground" Value="{DynamicResource Scb_Gray12}"/>
+            <Setter Property="Margin" Value="0,10,0,10"/>
+        </Style>
+        <Style x:Key="Tb_DetailValue" TargetType="{x:Type TextBlock}">
+            <Setter Property="FontSize" Value="{DynamicResource FontSize_Normal}"/>
+            <Setter Property="Foreground" Value="{DynamicResource Scb_Gray12}"/>
+            <Setter Property="Margin" Value="30,10,30,10"/>
+        </Style>
+        <Style x:Key="Sp_TitlePanel" TargetType="{x:Type Grid}">
+            <Setter Property="Height" Value="48"/>
+            <Setter Property="Background" Value="{DynamicResource Scb_Theme08}"/>
+        </Style>
+    </Page.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" 
+                    Orientation="Horizontal"
+                    Margin="30,30,0,0">
+            <Button  Click="But_VisitorRecord_Click"  
+                     FontSize="{DynamicResource FontSize_Normal}" 
+                     Padding="0" 
+                     Foreground="{DynamicResource Scb_Theme08}" 
+                     Content="访客记录" 
+                     Style="{DynamicResource Btn_ContentButton}" />
+            <TextBlock Text="-详情" 
+                       VerticalAlignment="Center" 
+                       FontSize="{DynamicResource FontSize_Normal}" />
+        </StackPanel>
+        <ScrollViewer Grid.Row="1">
+            <StackPanel Orientation="Vertical" 
+                        Margin="30,30,30,0" 
+                        Background="{DynamicResource Scb_White01}">
+                <StackPanel Orientation="Horizontal" 
+                            Margin="30,20,0,20">
+                    <TextBlock Text="{Binding Path=VisitorStatusName}" 
+                               FontSize="{DynamicResource FontSize_Normal}" 
+                               Foreground="Green"/>
+                </StackPanel>
+                <!--被访问人信息-->
+                <Grid Style="{StaticResource Sp_TitlePanel}">
+                    <TextBlock Text="被访问人信息" Style="{StaticResource Tbk_Title}"/>
+                </Grid>
+                <Grid Margin="30,10">
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Row="0" Grid.Column="0" 
+                               Text="被访人姓名" 
+                               Style="{StaticResource Tb_DetailTitle}" />
+                    <TextBlock Grid.Row="0" Grid.Column="1" 
+                               Text="{Binding Path=BeVisitStaffName}" 
+                               Style="{StaticResource Tb_DetailValue}"/>
+                    <TextBlock Grid.Row="1" Grid.Column="0"  
+                               Text="公司名称" 
+                               Style="{StaticResource Tb_DetailTitle}" />
+                    <TextBlock Grid.Row="1" Grid.Column="1"  
+                               Text="{Binding Path=BeVisitCompanyName}" 
+                               Style="{StaticResource Tb_DetailValue}" />
+                    <TextBlock Grid.Row="2" Grid.Column="0"  
+                               Text="所在位置" 
+                               Style="{StaticResource Tb_DetailTitle}" />
+                    <TextBlock Grid.Row="2" Grid.Column="1"  
+                               Text="{Binding Path=BeVisitCompanyLocation}" 
+                               Style="{StaticResource Tb_DetailValue}" />
+                </Grid>
+                <!--访客信息-->
+                <Grid Style="{StaticResource Sp_TitlePanel}">
+                    <TextBlock Text="访客信息" 
+                               Style="{StaticResource Tbk_Title}"/>
+                </Grid>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Grid Margin="30,10">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <TextBlock Grid.Row="0" Grid.Column="0" 
+                                   Text="主访客姓名" 
+                                   Style="{StaticResource Tb_DetailTitle}"/>
+                        <TextBlock Grid.Row="0" Grid.Column="1" 
+                                   Text="{Binding Path=Name}" 
+                                   Style="{StaticResource Tb_DetailValue}"/>
+
+                        <TextBlock Grid.Row="1" Grid.Column="0" 
+                                   Text="手机号" 
+                                   Style="{StaticResource Tb_DetailTitle}"/>
+                        <TextBlock Grid.Row="1" Grid.Column="1" 
+                                   Text="{Binding Phone}" 
+                                   Style="{StaticResource Tb_DetailValue}"/>
+
+                        <TextBlock Grid.Row="2" Grid.Column="0" 
+                                   Text="单位/公司" 
+                                   Style="{StaticResource Tb_DetailTitle}"/>
+                        <TextBlock Grid.Row="2" Grid.Column="1" 
+                                   Text="{Binding Path=Company}" 
+                                   Style="{StaticResource Tb_DetailValue}"/>
+
+                        <TextBlock Grid.Row="3" Grid.Column="0" 
+                                   Text="卡号" 
+                                   Style="{StaticResource Tb_DetailTitle}"/>
+                        <TextBlock Grid.Row="3" Grid.Column="1" 
+                                   Text="{Binding Path=IcNumber}" 
+                                   Style="{StaticResource Tb_DetailValue}"/>
+
+                        <TextBlock Grid.Row="4" Grid.Column="0" 
+                                   Text="来访事由" 
+                                   Style="{StaticResource Tb_DetailTitle}"/>
+                        <TextBlock Grid.Row="4" Grid.Column="1" 
+                                   Text="{Binding Path=Reason}" 
+                                   Style="{StaticResource Tb_DetailValue}"/>
+
+                        <TextBlock Grid.Row="5" Grid.Column="0" 
+                                   Text="来访时间" 
+                                   Style="{StaticResource Tb_DetailTitle}"/>
+                        <TextBlock Grid.Row="5" Grid.Column="1" 
+                                   Text="{Binding Path=VisitDate}" 
+                                   Style="{StaticResource Tb_DetailValue}"/>
+
+                        <TextBlock Grid.Row="6" Grid.Column="0" 
+                                   Text="来访车牌" 
+                                   Style="{StaticResource Tb_DetailTitle}"/>
+                        <TextBlock Grid.Row="6" Grid.Column="1"  
+                                   Text="{Binding Path=CarNumber}" 
+                                   Style="{StaticResource Tb_DetailValue}"/>
+                    </Grid>
+                    <!--<StackPanel Grid.Column="1" Orientation="Horizontal">
+                        <Border BorderThickness="1" 
+                                BorderBrush="#C9E9F8" 
+                                CornerRadius="10" 
+                                Background="{DynamicResource Scb_Theme08}" 
+                                VerticalAlignment="Center"
+                                Height="207"
+                                Margin="10">
+                            <StackPanel Orientation="Vertical" Width="223">
+                                <TextBlock Text="底库照" 
+                                           TextAlignment="Center" 
+                                           Padding="10" 
+                                           Background="Transparent" 
+                                           Foreground="{DynamicResource Scb_White01}" 
+                                           FontSize="{DynamicResource FontSize_Normal}" 
+                                           Height="42"/>
+                                <Border Background="{DynamicResource Scb_White01}" 
+                                        Height="165"
+                                        BorderThickness="1"
+                                        BorderBrush="#C9E9F8" 
+                                        CornerRadius="0,0,0,10" >
+                                    <Image Margin="5" Name="img_head" Source="/Resources/Images/certificateNot.png"/>
+                                </Border>
+                            </StackPanel>
+                        </Border>-->
+                    <Grid Grid.Column="1" Width="223" Height="207" Margin="10" VerticalAlignment="Center">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+                        <Border BorderThickness="1" BorderBrush="#F2B230" CornerRadius="10,10,0,0" Margin="0" Height="42"  Background="#F2B230">
+                            <TextBlock Text="抓拍照" 
+                                           FontSize="{DynamicResource FontSize_Normal}" 
+                                           TextAlignment="Center" 
+                                           Background="Transparent"
+                                           VerticalAlignment="Center"/>
+                        </Border>
+                        <Grid Grid.Row="1">
+                            <Border Background="{DynamicResource Scb_Gray15}"
+                                            CornerRadius="0,0,10,10">
+                                <Viewbox>
+                                    <Image x:Name="img_pz" 
+                                               Width="{Binding RelativeSource={RelativeSource Self}, Path=Source.PixelWidth}"
+                                               Height="{Binding RelativeSource={RelativeSource Self}, Path=Source.PixelHeight}"
+                                               Stretch="None" 
+                                               Source="/Resources/Images/cameraPicture.png"/>
+                                </Viewbox>
+                            </Border>
+                        </Grid>
+                    </Grid>
+                    <!--</StackPanel>-->
+                </Grid>
+
+                <Border BorderBrush="{DynamicResource Scb_Gray10}" BorderThickness="0.5" Margin="0,5" x:Name="border_Assistant"/>
+
+                <StackPanel Orientation="Vertical" x:Name="sp_AssistantVisitor"/>
+
+                <Grid Style="{StaticResource Sp_TitlePanel}" >
+                    <TextBlock Text="访客动态" Style="{StaticResource Tbk_Title}"/>
+                </Grid>
+                <!--访客动态流程-->
+                <StackPanel Orientation="Vertical" Margin="0,0,0,50" Name="uc_status_lst"/>
+            </StackPanel>
+        </ScrollViewer>
+        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center">
+            <Button Content="取消访问" 
+                    Width="300"  
+                    Margin="30" 
+                    Style="{DynamicResource Btn_NormalCancelButton}"
+                    Click="btn_AppendToBlack_Click"/>
+            
+            <Button Content="结束访问" 
+                    Width="300"  
+                    Margin="30" 
+                    Style="{DynamicResource Btn_NormalCancelButton}"
+                    Click="btn_AppendToBlack_Click"/>
+
+            <Button Content="加入黑名单" 
+                    Width="300" 
+                    Margin="30" 
+                    Style="{DynamicResource Btn_NormalRedButton}"
+                    Name="btn_AppendToBlack" 
+                    Click="btn_AppendToBlack_Click"/>
+
+        </StackPanel>
+
+    </Grid>
+</Page>

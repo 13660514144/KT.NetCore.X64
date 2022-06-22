@@ -1,0 +1,80 @@
+﻿<UserControl x:Class="KT.Visitor.Interface.Views.Common.IntegrateGenderControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:KT.Visitor.Interface"
+               xmlns:pu="clr-namespace:Panuon.UI.Silver;assembly=Panuon.UI.Silver"
+             mc:Ignorable="d" 
+             d:DesignHeight="43">
+    <Grid>
+        <Grid Visibility="{Binding GenderValue,RelativeSource={RelativeSource AncestorType={x:Type UserControl}},Converter={StaticResource cvt_StringParCollapsed},ConverterParameter=FEMALE}">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="0"
+                Background="{DynamicResource Scb_Theme08}" 
+                Height="42" 
+                Foreground="{DynamicResource Scb_White01}"
+                FontSize="{DynamicResource FontSize_Normal}"  
+                Click="BtnMan_Click" 
+                BorderBrush="LightGray" 
+                BorderThickness="1">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="/Resources/Images/male.png" Width="16" Height="16"/>
+                    <TextBlock Text="男" Margin="5" />
+                </StackPanel>
+            </Button>
+            <Button Grid.Column="1" 
+                Height="42" 
+                Margin="5,0,0,0" 
+                Background="Transparent" 
+                FontSize="{DynamicResource FontSize_Normal}" 
+                Foreground="{DynamicResource Scb_Gray12}"
+                BorderBrush="LightGray" 
+                BorderThickness="1" 
+                Click="BtnWoMan_Click">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="/Resources/Images/female1.png" Width="16" Height="16"/>
+                    <TextBlock Text="女" Margin="5"  />
+                </StackPanel>
+            </Button>
+        </Grid>
+
+        <Grid Visibility="{Binding GenderValue,RelativeSource={RelativeSource AncestorType={x:Type UserControl}},Converter={StaticResource cvt_StringParVisible},ConverterParameter=FEMALE}">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="0"
+                Background="{DynamicResource Scb_White01}" 
+                Height="42" 
+                Foreground="{DynamicResource Scb_Gray12}"
+                FontSize="{DynamicResource FontSize_Normal}"  
+                Click="BtnMan_Click" 
+                BorderBrush="LightGray" 
+                BorderThickness="1">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="/Resources/Images/male1.png" Width="16" Height="16"/>
+                    <TextBlock Text="男" Margin="5"  />
+                </StackPanel>
+            </Button>
+            <Button Grid.Column="1"
+                Background="{DynamicResource Scb_Theme08}" 
+                Height="42" 
+                Margin="5,0,0,0" 
+                Foreground="{DynamicResource Scb_White01}"
+                FontSize="{DynamicResource FontSize_Normal}"  
+                BorderBrush="LightGray" 
+                BorderThickness="1" 
+                Click="BtnWoMan_Click">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="/Resources/Images/female.png" Width="16" Height="16"/>
+                    <TextBlock Text="女" Margin="5"  />
+                </StackPanel>
+            </Button>
+        </Grid>
+    </Grid>
+
+</UserControl>

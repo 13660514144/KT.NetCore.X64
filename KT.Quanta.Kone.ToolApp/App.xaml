@@ -1,0 +1,15 @@
+﻿<prism:PrismApplication x:Class="KT.Quanta.Kone.ToolApp.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:KT.Quanta.Kone.ToolApp"
+             xmlns:prism="http://prismlibrary.com/" >
+    <Application.Resources>
+        <ResourceDictionary>
+            <!--自定义样式-结束-->
+            <ResourceDictionary.MergedDictionaries>
+                <!--Fla主题样式-->
+                <ResourceDictionary Source="/KT.Common.WpfApp;component/Resources/CommonUiResources.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
+</prism:PrismApplication>

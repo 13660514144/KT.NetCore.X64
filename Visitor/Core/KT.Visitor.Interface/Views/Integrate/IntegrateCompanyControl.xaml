@@ -1,0 +1,35 @@
+﻿<UserControl x:Class="KT.Visitor.Interface.Views.Integrate.IntegrateCompanyControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:KT.Visitor.Interface.Views.Integrate"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <!--浏览选择公司模块-->
+        <ContentPresenter Content="{Binding CompanySelectListControl}"/>
+            <Button Margin="5,5,0,0"
+                    Visibility="{Binding CompanySearchSelectControl.Visibility,Converter={StaticResource cvt_VisibleCollapsedInverse}}"
+                    HorizontalAlignment="Right"
+                    VerticalAlignment="Top"
+                    Background="{DynamicResource Scb_Theme08}"
+                    Width="50" 
+                    Height="42" 
+                    Padding="3" 
+                    BorderThickness="0"
+                    Command="{Binding ShowSearchCommand}">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Width="15" Source="/Resources/Images/SearchIcon.png"  />
+                    </StackPanel>
+            </Button>
+        
+        <Grid Background="{DynamicResource Scb_White01}" VerticalAlignment="Top" >
+            <!--公司查询列表选择器-->
+            <ContentPresenter Content="{Binding CompanySearchSelectControl}" Margin="5,5,0,0"/>
+        </Grid>
+        <!--公司详情展示-->
+        <ContentPresenter Grid.Row="1" Content="{Binding CompanyShowDetailControl}"/>
+
+    </Grid>
+</UserControl>

@@ -1,0 +1,25 @@
+﻿<UserControl x:Class="KT.Visitor.Interface.Views.Visitor.Controls.VisitorDynamicDetailControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:KT.Visitor.Interface"
+             mc:Ignorable="d" 
+             d:DesignHeight="75" d:DesignWidth="600"  FontSize="{DynamicResource FontSize_Normal}">
+    <StackPanel Orientation="Vertical">
+        <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="0,20,0,0">
+            <Image Source="/KT.Visitor.Interface;component/KT.Visitor.Interface;component/Resources/Images/finish.png" Height="24" Margin="25,0,0,0"/>
+            <TextBlock Text="2019/05/02 12:36:36" Margin="30,0,0,0" VerticalAlignment="Center" Name="tb_activeTime" />
+            <TextBlock Text="王晓伟在微信提交访问申请" Margin="30,0,0,0" VerticalAlignment="Center"  Name="tb_activeMsg"/>
+
+        </StackPanel>
+        <!--中部的竖线-->
+        <Canvas  Grid.Row="1" Grid.RowSpan="2" Grid.Column="1" Margin="37,2,0,0">
+            <Path Stroke="{DynamicResource Scb_Gray10}" StrokeThickness="1">
+                <Path.Data>
+                    <LineGeometry StartPoint="0,0" EndPoint="0,16"></LineGeometry>
+                </Path.Data>
+            </Path>
+        </Canvas>
+    </StackPanel>
+</UserControl>

@@ -1,0 +1,663 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>0dff8663-c779-414d-8126-2b1ccab84154</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>KT.Visitor.Core</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Folder Include="$(MSBuildThisFileDirectory)Views\User\Controls\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="$(MSBuildThisFileDirectory)Resources\Styles\Base\BaseControlStyles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Resources\Styles\Base\BaseSysStyles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Resources\Styles\Base\PathDataStyles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Resources\Styles\Base\WindowsStyles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Resources\Styles\ListBoxStyles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Resources\Styles\SysStyles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Resources\Styles\TreeChcekSelectStyles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Views\Auth\AuthMsgPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Views\Auth\Controls\AppointAuthDetailControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Views\Auth\IdentityAuthActivePage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Views\Auth\IdentityAuthPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Views\Auth\InviteAuthActivePage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Views\Auth\ReadIdCardPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Views\Blacklist\AddBlacklistPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Views\Blacklist\PullBlackConfirmWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Views\Blacklist\VisitorBlacklist.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Views\Common\CameraTakePhotoWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Views\Common\GenderControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Views\Common\MessageWarnBox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Views\Common\NavPageControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Views\Common\SuccessPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Views\Integrate\AddAccompanyCardWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Views\Integrate\AddAccompanyPhotoWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Views\Integrate\IntegrateAccompanyVisitorControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Views\Integrate\IntegrateAccompanyVisitorsWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Views\Integrate\IntegrateAuthModeControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Views\Integrate\IntegrateCompanyControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Views\Integrate\IntegrateCompanySearchSelectControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Views\Integrate\IntegrateCompanySelectListControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Views\Integrate\IntegrateCompanyShowDetailControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Views\Integrate\IntegrateGenderControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Views\Integrate\IntegrateIdentityAuthActiveControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Views\Integrate\IntegrateIdentityAuthControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Views\Integrate\IntegrateIdentityAuthSearchControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Views\Integrate\IntegrateInviteAuthActiveControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Views\Integrate\IntegrateInviteAuthControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Views\Integrate\IntegrateInviteAuthSearchControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Views\Integrate\IntegrateReadIdCardControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Views\Integrate\IntegrateRegisterControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Views\Integrate\IntegrateSuccessWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Views\Integrate\IntegrateSystemSettingWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Views\Integrate\IntegrateVisitorControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Views\Integrate\InterateVisitorRegisterControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Views\Main\FrontMainWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Views\Main\IntegrateLoginWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Views\Main\IntegrateMainWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Views\Register\RegisterPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Views\Setting\ConfigSetting.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Views\Setting\NotifyPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Views\Setting\SystemSettingWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Views\User\LoginWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Views\User\SystemLoginWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Views\Visitor\Controls\AccompanyVisitorControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Views\Visitor\Controls\AssistantVisitorControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Views\Visitor\Controls\CompanySearchSelectControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Views\Visitor\Controls\CompanySelectControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Views\Visitor\Controls\CompanySelectListControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Views\Visitor\Controls\CompanyShowDetailControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Views\Visitor\Controls\CompanyShowSelectControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Views\Visitor\Controls\CompanyWarnControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Views\Visitor\Controls\TakePictureControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Views\Visitor\Controls\VisitorDynamicDetailControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Views\Visitor\Controls\VisitorsControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Views\Visitor\VisitorDetailPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Views\Visitor\VisitorRecordListPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Views\Visitor\VisitorRegisterPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)Converters\DateTimeConverter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Converters\PathLengthConverter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Converters\StringConverter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Enums\EnumTipWarnType.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\ConfigHelper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\MainFrameHelper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\StaticProperty.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Settings\AppSettings.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Tools\ImageHelper\ImageConvert.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Tools\ImageHelper\ImageUtils.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Tools\ImageHelper\QRCodeHelper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Tools\Printer\DocumentRenderer\IDocumentRenderer.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Tools\Printer\DocumentRenderer\VisitQRCodeRenderer.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Tools\Printer\Models\PrintConfig.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Tools\Printer\Models\VisitQRCodePrintModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Tools\Printer\PrintOperator\SmallTicketOperator.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\AuthorizeTimeLimitViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\BlacklistViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\CaptureImageViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\ComboViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\CompanyVerifyViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\CompanyViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\ItemsCheckViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\MainBarViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\NavPageViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\TreeCheckViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\VisitorInfoViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Auth\AuthMsgPage.xaml.cs">
+      <DependentUpon>AuthMsgPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Auth\Controls\AppointAuthDetailControl.xaml.cs">
+      <DependentUpon>AppointAuthDetailControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Auth\IdentityAuthActivePage.xaml.cs">
+      <DependentUpon>IdentityAuthActivePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Auth\IdentityAuthActivePageViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Auth\IdentityAuthPage.xaml.cs">
+      <DependentUpon>IdentityAuthPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Auth\InviteAuthActivePage.xaml.cs">
+      <DependentUpon>InviteAuthActivePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Auth\InviteAuthActivePageViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Auth\ReadIdCardPage.xaml.cs">
+      <DependentUpon>ReadIdCardPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Blacklist\AddBlacklistPage.xaml.cs">
+      <DependentUpon>AddBlacklistPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Blacklist\AddBlacklistPageViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Blacklist\PullBlackConfirmWindow.xaml.cs">
+      <DependentUpon>PullBlackConfirmWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Blacklist\PullBlackConfirmWindowViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Blacklist\VisitorBlacklist.xaml.cs">
+      <DependentUpon>VisitorBlacklist.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Blacklist\VisitorBlacklistViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Common\CameraTakePhotoWindow.xaml.cs">
+      <DependentUpon>CameraTakePhotoWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Common\GenderControl.xaml.cs">
+      <DependentUpon>GenderControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Common\MessageWarnBox.xaml.cs">
+      <DependentUpon>MessageWarnBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Common\MessageWarnBoxViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Common\NavPageControl.xaml.cs">
+      <DependentUpon>NavPageControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Common\NavPageControlViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Common\SuccessPage.xaml.cs">
+      <DependentUpon>SuccessPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Helper\CompanyTreeCheckHelper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Helper\VistitorConfigHelper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Integrate\AddAccompanyCardWindow.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>AddAccompanyCardWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Integrate\AddAccompanyCardWindowViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Integrate\AddAccompanyPhotoWindow.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>AddAccompanyPhotoWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Integrate\AddAccompanyPhotoWindowViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Integrate\IntegrateAccompanyVisitorControl.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>IntegrateAccompanyVisitorControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Integrate\IntegrateAccompanyVisitorControlViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Integrate\IntegrateAccompanyVisitorsWindow.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>IntegrateAccompanyVisitorsWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Integrate\IntegrateAccompanyVisitorsWindowViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Integrate\IntegrateAuthModeControl.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>IntegrateAuthModeControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Integrate\IntegrateAuthModeControlViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Integrate\IntegrateCompanyControl.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>IntegrateCompanyControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Integrate\IntegrateCompanyControlViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Integrate\IntegrateCompanySearchSelectControl.xaml.cs">
+      <DependentUpon>IntegrateCompanySearchSelectControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Integrate\IntegrateCompanySearchSelectControlViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Integrate\IntegrateCompanySelectListControl.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>IntegrateCompanySelectListControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Integrate\IntegrateCompanySelectListControlViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Integrate\IntegrateCompanyShowDetailControl.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>IntegrateCompanyShowDetailControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Integrate\IntegrateCompanyShowDetailControlViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Integrate\IntegrateGenderControl.xaml.cs">
+      <DependentUpon>IntegrateGenderControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Integrate\IntegrateIdentityAuthActiveControl.xaml.cs">
+      <DependentUpon>IntegrateIdentityAuthActiveControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Integrate\IntegrateIdentityAuthActiveControlViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Integrate\IntegrateIdentityAuthControl.xaml.cs">
+      <DependentUpon>IntegrateIdentityAuthControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Integrate\IntegrateIdentityAuthControlViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Integrate\IntegrateIdentityAuthSearchControl.xaml.cs">
+      <DependentUpon>IntegrateIdentityAuthSearchControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Integrate\IntegrateIdentityAuthSearchControlViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Integrate\IntegrateInviteAuthActiveControl.xaml.cs">
+      <DependentUpon>IntegrateInviteAuthActiveControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Integrate\IntegrateInviteAuthActiveControlViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Integrate\IntegrateInviteAuthControl.xaml.cs">
+      <DependentUpon>IntegrateInviteAuthControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Integrate\IntegrateInviteAuthControlViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Integrate\IntegrateInviteAuthSearchControl.xaml.cs">
+      <DependentUpon>IntegrateInviteAuthSearchControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Integrate\IntegrateInviteAuthSearchControlViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Integrate\IntegrateReadIdCardControl.xaml.cs">
+      <DependentUpon>IntegrateReadIdCardControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Integrate\IntegrateRegisterControl.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>IntegrateRegisterControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Integrate\IntegrateRegisterControlViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Integrate\IntegrateSuccessWindow.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>IntegrateSuccessWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Integrate\IntegrateSystemSettingWindow.xaml.cs">
+      <DependentUpon>IntegrateSystemSettingWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Integrate\IntegrateVisitorControl.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>IntegrateVisitorControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Integrate\IntegrateVisitorControlViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Integrate\InterateVisitorRegisterControl.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>InterateVisitorRegisterControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Integrate\InterateVisitorRegisterControlViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Main\FrontMainWindow.xaml.cs">
+      <DependentUpon>FrontMainWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Main\FrontMainWindowViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Main\IntegrateLoginWindow.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>IntegrateLoginWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Main\IntegrateMainWindow.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>IntegrateMainWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Main\IntegrateMainWindowViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Register\RegisterPage.xaml.cs">
+      <DependentUpon>RegisterPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Register\RegisterPageViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Setting\ConfigSetting.xaml.cs">
+      <DependentUpon>ConfigSetting.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Setting\NotifyPage.xaml.cs">
+      <DependentUpon>NotifyPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Setting\NotifyPageViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Setting\SystemSettingWindow.xaml.cs">
+      <DependentUpon>SystemSettingWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Setting\SystemSettingWindowViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\User\LoginWindow.xaml.cs">
+      <DependentUpon>LoginWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\User\LoginWindowViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\User\SystemLoginWindow.xaml.cs">
+      <DependentUpon>SystemLoginWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Visitor\Controls\AccompanyVisitorControl.xaml.cs">
+      <DependentUpon>AccompanyVisitorControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Visitor\Controls\AccompanyVisitorControlViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Visitor\Controls\AssistantVisitorControl.xaml.cs">
+      <DependentUpon>AssistantVisitorControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Visitor\Controls\AssistantVisitorControlViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Visitor\Controls\CompanySearchSelectControl.xaml.cs">
+      <DependentUpon>CompanySearchSelectControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Visitor\Controls\CompanySearchSelectControlViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Visitor\Controls\CompanySelectControl.xaml.cs">
+      <DependentUpon>CompanySelectControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Visitor\Controls\CompanySelectControlViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Visitor\Controls\CompanySelectListControl.xaml.cs">
+      <DependentUpon>CompanySelectListControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Visitor\Controls\CompanySelectListControlViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Visitor\Controls\CompanyShowDetailControl.xaml.cs">
+      <DependentUpon>CompanyShowDetailControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Visitor\Controls\CompanyShowDetailControlViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Visitor\Controls\CompanyShowSelectControl.xaml.cs">
+      <DependentUpon>CompanyShowSelectControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Visitor\Controls\CompanyShowSelectControlViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Visitor\Controls\CompanyWarnControl.xaml.cs">
+      <DependentUpon>CompanyWarnControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Visitor\Controls\TakePictureControl.xaml.cs">
+      <DependentUpon>TakePictureControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Visitor\Controls\TakePictureControlViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Visitor\Controls\VisitorDynamicDetailControl.xaml.cs">
+      <DependentUpon>VisitorDynamicDetailControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Visitor\Controls\VisitorsControl.xaml.cs">
+      <DependentUpon>VisitorsControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Visitor\Controls\VisitorsControlViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Visitor\VisitorDetailPage.xaml.cs">
+      <DependentUpon>VisitorDetailPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Visitor\VisitorRecordListPage.xaml.cs">
+      <DependentUpon>VisitorRecordListPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Visitor\VisitorRecordListPageViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Visitor\VisitorRegisterPage.xaml.cs">
+      <DependentUpon>VisitorRegisterPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Visitor\VisitorRegisterPageViewModel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="$(MSBuildThisFileDirectory)fontawesome.ttf" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources\Images\add.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources\Images\appointVisitor.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources\Images\blacklist.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources\Images\cameraPicture.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources\Images\certificateNot.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources\Images\currentVisitor.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources\Images\deleteInfo.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources\Images\exit.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources\Images\fail.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources\Images\female.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources\Images\female1.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources\Images\finish.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources\Images\grils.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources\Images\loginBackground.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources\Images\logoBackgroup.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources\Images\logoBlue.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources\Images\male.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources\Images\male1.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources\Images\message.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources\Images\password.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources\Images\SearchIcon.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources\Images\see.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources\Images\selectProject.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources\Images\set.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources\Images\setting.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources\Images\TakePicture.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources\Images\todayVisitor.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources\Images\userName.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources\Images\visitorRecord.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources\Images\visitorRegiter.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources\Images\warning.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="$(MSBuildThisFileDirectory)Files\Images\def_logo.png" />
+    <None Include="$(MSBuildThisFileDirectory)Resources\grils.png" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources\Images\exitWhite.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources\Images\logoWhite.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <None Include="$(MSBuildThisFileDirectory)Resources\readidnum.png" />
+    <None Include="$(MSBuildThisFileDirectory)Tools\Printer\DocumentTemplate\VisitQRCodeDocument.xaml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="$(MSBuildThisFileDirectory)appsettings.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="$(MSBuildThisFileDirectory)log4net.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+</Project>

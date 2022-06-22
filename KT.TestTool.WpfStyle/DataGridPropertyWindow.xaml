@@ -1,0 +1,34 @@
+﻿<Window x:Class="KT.Tools.WpfStyle.DataGridPropertyWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:KT.Tools.WpfStyle"
+        mc:Ignorable="d"
+        Title="DataGridPropertyWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <TextBlock Height="200" Text="aabb" TextAlignment="Center">
+            
+        </TextBlock>
+        
+        <DataGrid x:Name="dg" Grid.Row="1" AutoGenerateColumns="False"  
+                  TextBlock.TextAlignment="Center"
+        
+                  TextBlock.LineHeight="50">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="姓名" Width="5*" Binding="{Binding Name}" />
+                <DataGridTextColumn Header="性别" Width="2*" Binding="{Binding GenderText}" />
+                <DataGridTextColumn Header="手机号码" Width="4*" Binding="{Binding Phone}" />
+                <DataGridTextColumn Header="身份证号" Width="6*" Binding="{Binding IdNumber}" />
+                <DataGridTextColumn Header="公司/单位" Width="6*" Binding="{Binding Company}" />
+                <DataGridTextColumn Header="拉黑原因" Width="4*" Binding="{Binding Reason}" />
+                <DataGridTextColumn Header="拉黑时间" Width="6*" Binding="{Binding CreateTime}" />
+                <DataGridTextColumn Header="操作人" Width="3*" Binding="{Binding Operator}" />
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Window>

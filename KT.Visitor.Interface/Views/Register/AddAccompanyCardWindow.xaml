@@ -1,0 +1,159 @@
+﻿<pu:WindowX x:Class="KT.Visitor.Interface.Views.Register.AddAccompanyCardWindow"
+            xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+            xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+            xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+            xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
+            xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+            xmlns:pu="clr-namespace:Panuon.UI.Silver;assembly=Panuon.UI.Silver"
+            mc:Ignorable="d"
+            Title="AddAccompanyCardWindow" Height="768" Width="1024"
+            WindowStartupLocation ="CenterOwner" 
+            pu:WindowXCaption.Background="{DynamicResource Scb_Theme08}">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid  HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid>
+                    <StackPanel Orientation="Horizontal" 
+                                Margin="0,50"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Center" >
+                        <TextBlock Text="已发卡共" 
+                                   Foreground="{DynamicResource Scb_Gray10}"
+                                   FontSize="{DynamicResource FontSize_Large}"
+                                   VerticalAlignment="Center"/>
+                        <TextBlock Text="{Binding AccompanyNum}"
+                                   Foreground="{DynamicResource Scb_Gray14}"
+                                   FontSize="{DynamicResource FontSize_XLarge}" 
+                                   Margin="5"
+                                   VerticalAlignment="Center"/>
+                        <TextBlock Text="张，" 
+                                   Foreground="{DynamicResource Scb_Gray10}"
+                                   FontSize="{DynamicResource FontSize_Large}"
+                                   VerticalAlignment="Center"/>
+                        <TextBlock Text="请将第" 
+                                   Foreground="{DynamicResource Scb_Gray10}"
+                                   FontSize="{DynamicResource FontSize_Large}"
+                                   VerticalAlignment="Center"/>
+                        <TextBlock Text="{Binding AccompanyOrder}"
+                                   Foreground="{DynamicResource Scb_Gray14}"
+                                   FontSize="{DynamicResource FontSize_XLarge}" 
+                                   Margin="5"
+                                   VerticalAlignment="Center"/>
+                        <TextBlock Text="张卡放在读卡器上" 
+                                   Foreground="{DynamicResource Scb_Gray10}"
+                                   FontSize="{DynamicResource FontSize_Large}"
+                                   VerticalAlignment="Center"/>
+                    </StackPanel>
+                </Grid>
+                <Grid Grid.Row="1">
+                    <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" >
+                            <TextBox x:Name="Tb_CardNumber" 
+                                     pu:TextBoxHelper.Watermark="请输入IC卡卡号" 
+                                     Width="350" 
+                                     Text="{Binding IcCard,Mode=TwoWay}"
+                                     Style="{DynamicResource Tb_NormalTextInput}">
+                                <i:Interaction.Triggers>
+                                    <i:KeyTrigger FiredOn="KeyUp" Key="Enter">
+                                        <i:InvokeCommandAction Command="{Binding EnterInputCommand}" />
+                                    </i:KeyTrigger>
+                                </i:Interaction.Triggers>
+                            </TextBox>
+                            <Button Content="确定"
+                                    Style="{DynamicResource Btn_NormalTextButton}"
+                                    Command="{Binding AddIcCardCommand}"
+                                    Margin="20,0,0,0"/>
+                        </StackPanel>
+                        <Grid Width="350" Height="300" Margin="0,5,0,0" HorizontalAlignment="Left">
+                            <Grid.RowDefinitions>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition />
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Button Grid.Row="0" Grid.Column="0" Margin="0,0,4,4" Command="{Binding AppendNumCommand}" CommandParameter="1" Content="1" Style="{DynamicResource Btn_AppendNum}"/>
+                            <Button Grid.Row="0" Grid.Column="1" Margin="4,0,4,4" Command="{Binding AppendNumCommand}" CommandParameter="2" Content="2" Style="{DynamicResource Btn_AppendNum}"/>
+                            <Button Grid.Row="0" Grid.Column="2" Margin="4,0,0,4" Command="{Binding AppendNumCommand}" CommandParameter="3" Content="3" Style="{DynamicResource Btn_AppendNum}"/>
+                            <Button Grid.Row="1" Grid.Column="0" Margin="0,4,4,4" Command="{Binding AppendNumCommand}" CommandParameter="4" Content="4" Style="{DynamicResource Btn_AppendNum}"/>
+                            <Button Grid.Row="1" Grid.Column="1" Margin="4,4,4,4" Command="{Binding AppendNumCommand}" CommandParameter="5" Content="5" Style="{DynamicResource Btn_AppendNum}"/>
+                            <Button Grid.Row="1" Grid.Column="2" Margin="4,4,0,4" Command="{Binding AppendNumCommand}" CommandParameter="6" Content="6" Style="{DynamicResource Btn_AppendNum}"/>
+                            <Button Grid.Row="2" Grid.Column="0" Margin="0,4,4,4" Command="{Binding AppendNumCommand}" CommandParameter="7" Content="7" Style="{DynamicResource Btn_AppendNum}"/>
+                            <Button Grid.Row="2" Grid.Column="1" Margin="4,4,4,4" Command="{Binding AppendNumCommand}" CommandParameter="8" Content="8" Style="{DynamicResource Btn_AppendNum}"/>
+                            <Button Grid.Row="2" Grid.Column="2" Margin="4,4,0,4" Command="{Binding AppendNumCommand}" CommandParameter="9" Content="9" Style="{DynamicResource Btn_AppendNum}"/>
+                            <Button Grid.Row="3" Grid.Column="0" Margin="0,4,4,0" Command="{Binding DeleteNumCommand}" Content="删除" Background="#F2B230" Foreground="{DynamicResource Scb_White01}" FontSize="{DynamicResource FontSize_Normal}" />
+                            <Button Grid.Row="3" Grid.Column="1" Margin="4,4,4,0" Command="{Binding AppendNumCommand}" CommandParameter="0" Content="0" Style="{DynamicResource Btn_AppendNum}"/>
+                            <Button Grid.Row="3" Grid.Column="2" Margin="4,4,0,0" Command="{Binding AddIcCardCommand}" Content="确定" Background="{DynamicResource Scb_Theme08}" Foreground="{DynamicResource Scb_White01}" FontSize="{DynamicResource FontSize_Normal}" Name="btn_OK"/>
+                        </Grid>
+                    </StackPanel>
+                </Grid>
+            </Grid>
+
+            <Grid Grid.Column="1" Margin="10">
+                <ListBox ItemsSource="{Binding AccompanyInfos}" 
+                         Style="{DynamicResource lb_ContentListBoxStyle}">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <Grid Width="200" VerticalAlignment="Top"  Background="{DynamicResource Scb_Theme01}" >
+                                <Grid Margin="10,5" VerticalAlignment="Top">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                    </Grid.RowDefinitions>
+                                    <TextBlock Text="{Binding Name}"
+                                               Margin="6"
+                                               Foreground="{DynamicResource Scb_Gray10}"
+                                               FontSize="{DynamicResource FontSize_Normal}"/>
+                                    <TextBlock Grid.Row="1" 
+                                               Text="{Binding IcCard}"
+                                               Margin="6"
+                                               Foreground="{DynamicResource Scb_Blue08}"
+                                               FontSize="{DynamicResource FontSize_Normal}"/>
+                                </Grid>
+                                <Button Style="{DynamicResource Btn_ContentButton}" 
+                                        Margin="0"
+                                        VerticalAlignment="Top" 
+                                        HorizontalAlignment="Right" 
+                                        Command="{Binding DataContext.DeleteAccompanyCommand,RelativeSource={RelativeSource AncestorType={x:Type ListBox}}}"
+                                        CommandParameter="{Binding }">
+                                    <Image Source="/KT.Visitor.Interface;component/Resources/Images/deleteInfo.png" Height="20"/>
+                                </Button>
+                            </Grid>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                    <ListBox.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <StackPanel Orientation="Vertical"/>
+                        </ItemsPanelTemplate>
+                    </ListBox.ItemsPanel>
+                </ListBox>
+            </Grid>
+        </Grid>
+
+        <Grid Grid.Row="1">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <Button Content="取消" Style="{DynamicResource Btn_CancelButton}" Click="Btn_Cancel_Click"/>
+                <Button Content="确定" Style="{DynamicResource Btn_ConfirmButton}" Click="Btn_Confirm_Click"/>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</pu:WindowX>

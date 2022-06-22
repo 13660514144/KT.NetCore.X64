@@ -1,0 +1,66 @@
+﻿<UserControl x:Class="KT.Turnstile.Unit.ClientApp.Views.Controls.HeaderControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:KT.Turnstile.Unit.ClientApp.Views.Controls"
+             xmlns:prism="http://prismlibrary.com/"
+             prism:ViewModelLocator.AutoWireViewModel="True"
+             mc:Ignorable="d"
+             d:DesignWidth="600">
+    <Grid>
+        <Grid Margin="0,0,0,25">
+            <Image Source="/KT.Turnstile.Unit.ClientApp;component/Resources/Images/TopLeft.png" 
+                       HorizontalAlignment="Left" 
+                       Width="315" />
+            <Image Source="/KT.Turnstile.Unit.ClientApp;component/Resources/Images/TopRight.png" 
+                       HorizontalAlignment="Right"
+                       Width="315" />
+        </Grid>
+        <StackPanel Orientation="Horizontal" 
+                        HorizontalAlignment="Center" 
+                        VerticalAlignment="Top"
+                        Margin="0,8">
+            <Image Source="{Binding LogoUrl}" 
+                       Height="40"/>
+            <TextBlock Text="{Binding SystemName}" Foreground="White" FontSize="16" FontWeight="Bold" VerticalAlignment="Center" Margin="10,0,0,0"/>
+        </StackPanel>
+        <Grid>
+            <Border BorderThickness="1"
+                        BorderBrush="#04ECFF"
+                        CornerRadius="4"
+                        Height="35"
+                        Width="35"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Bottom"
+                        Margin="20,0,0,5">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <TextBlock Text="{Binding SurplusTime}" 
+                               Foreground="#04ECFF"
+                               HorizontalAlignment="Center"
+                               VerticalAlignment="Center"/>
+                    <TextBlock Text="s" 
+                               Foreground="#04ECFF"
+                               HorizontalAlignment="Center"
+                               VerticalAlignment="Center"/>
+                </StackPanel>
+
+            </Border>
+            <Button Height="50"
+                    Width="60"
+                    HorizontalAlignment="Right" 
+                    VerticalAlignment="Bottom"
+                    Margin="0,0,10,0"
+                    Command="{Binding LinkToHomeCommand}">
+                <Button.Background>
+                    <ImageBrush ImageSource="/KT.Turnstile.Unit.ClientApp;component/Resources/Images/Exit.png"/>
+                </Button.Background>
+            </Button>
+            <!--<Image Source="/KT.Turnstile.Unit.ClientApp;component/Resources/Images/Exit.png" 
+                       Height="50" 
+                       HorizontalAlignment="Right" 
+                       VerticalAlignment="Bottom"
+                       Margin="0,0,10,0"/>-->
+        </Grid>
+    </Grid>
+</UserControl>

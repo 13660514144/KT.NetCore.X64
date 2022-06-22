@@ -1,0 +1,22 @@
+﻿<UserControl x:Class="KT.Elevator.Unit.Dispatch.ClientApp.Views.Controls.CopyrightControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:sh="clr-namespace:KT.Common.Core.Helpers;assembly=KT.Common.Core"
+             mc:Ignorable="d">
+    <Grid Height="40">
+        <Border Background="#00FFF8" Opacity="0.1"/>
+        <StackPanel Orientation="Horizontal"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center">
+            <TextBlock Text="2016-2020 QuantaData.All Rights Reserved. 广州康塔科技有限公司  "
+                           Foreground="{DynamicResource Scb_Gray03}"
+                           FontSize="10"/>
+            <TextBlock Text="{x:Static sh:VersionSetting.Text}"
+                           TextAlignment="Center"
+                           Foreground="{DynamicResource Scb_Gray03}"
+                           FontSize="10"/>
+        </StackPanel>
+    </Grid>
+</UserControl>

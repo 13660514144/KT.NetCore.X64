@@ -1,0 +1,55 @@
+﻿<UserControl x:Class="KT.Visitor.Interface.Views.Auth.IntegrateInviteAuthActiveControl"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+        xmlns:pu="clr-namespace:Panuon.UI.Silver;assembly=Panuon.UI.Silver"
+      xmlns:ctls="clr-namespace:KT.Visitor.Interface.Views.Visitor.Controls"
+      mc:Ignorable="d" 
+      d:DesignHeight="600" d:DesignWidth="1000"
+     Background="#F3F7F9" >
+
+    <StackPanel Orientation="Vertical">
+        <TextBlock Text="邀约验证" FontSize="{DynamicResource FontSize_Normal}" Margin="45,30,0,24" Width="1300"/>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch" Height="258" Margin="25,38,0,25">
+            <Border BorderBrush="LightGray" BorderThickness="1">
+                <StackPanel Orientation="Vertical" Width="500" >
+                    <TextBlock Text="{Binding Record.BeVisitStaffName}"  Margin="33,15,0,0" Name="tb_interviewee"/>
+                    <TextBlock Text="{Binding Record.BeVisitCompanyName }" Margin="33,15,0,0" Name="tb_company"/>
+                    <TextBlock Text="{Binding Record.BeVisitCompanyLocation}" Margin="33,15,0,0" Name="tb_address"/>
+                    <TextBlock Text="{Binding Record.VisitDate}" Margin="33,15,0,0" Name="tb_time"/>
+                </StackPanel>
+            </Border>
+            <Border BorderBrush="LightGray" BorderThickness="1">
+                <StackPanel Orientation="Horizontal" Width="600" >
+                    <StackPanel Orientation="Vertical" Width="320">
+                        <TextBlock Text="{Binding Record.Name}" Margin="33,15,0,0" Name="tb_vistor"/>
+                        <TextBlock Text="{Binding Record.Phone}" Margin="33,15,0,0" Name="tb_vis_tel"/>
+                        <StackPanel Orientation="Horizontal" Margin="33,15,0,0">
+                            <TextBlock Text="IC卡:" />
+                            <TextBox pu:TextBoxHelper.Watermark="IC卡授权必须录入IC卡号" VerticalAlignment="Top" Margin="5,-5,0,0" Width="240" x:Name="txt_vis_ic"/>
+                        </StackPanel>
+                    </StackPanel>
+                    <StackPanel Orientation="Vertical" Margin="10,0,0,0">
+                        <ContentPresenter Content="{Binding TakePictureControl}"/>
+                    </StackPanel>
+                </StackPanel>
+            </Border>
+
+        </StackPanel>
+        <StackPanel Orientation="Horizontal"  Background="{DynamicResource Scb_White01}" Margin="25,5" >
+            <TextBlock Text="授权方式" FontSize="{DynamicResource FontSize_Normal}" Margin="20" VerticalAlignment="Center"/>
+            <ItemsControl ItemsSource="{Binding AuthTypes}" Style="{DynamicResource BaseItemsControlStyle}" VerticalAlignment="Center">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <CheckBox Content="{Binding Name}" IsChecked="{Binding IsChecked,Mode=TwoWay}" Style="{DynamicResource Cb_Style}"/>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+            <Button Content="取消" Style="{DynamicResource Btn_CancelButton}" Click="Btn_Cancel_Click"/>
+            <Button Content="确认授权" Style="{DynamicResource Btn_ConfirmButton}" Name="btn_auth" Click="btn_auth_Click"/>
+        </StackPanel>
+    </StackPanel>
+</UserControl>

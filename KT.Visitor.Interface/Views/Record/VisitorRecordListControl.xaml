@@ -1,0 +1,247 @@
+﻿<UserControl x:Class="KT.Visitor.Interface.Views.VisitorRecordListControl"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:pu="clr-namespace:Panuon.UI.Silver;assembly=Panuon.UI.Silver"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="1336" >
+    <Grid Background="{DynamicResource Scb_Theme01}">
+        <Grid Background="{DynamicResource Scb_White01}" Margin="20">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <WrapPanel Grid.Row="0" Margin="10,20,20,0">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="姓名" 
+                           Style="{DynamicResource Tbk_SmallTextTitle}"/>
+                    <TextBox Width="180"
+                         Style="{DynamicResource Tb_SmallTextInput}"
+                         pu:TextBoxHelper.Watermark="请输入访客姓名"
+                         x:Name="txt_name"/>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="性别" 
+                           Style="{DynamicResource Tbk_SmallTextTitle}"/>
+                    <ComboBox ItemsSource="{Binding Genders}"
+                              Width="180" 
+                              Style="{DynamicResource Cb_Small}" 
+                              Name="cbo_sex"
+                              SelectedIndex="0"
+                              DisplayMemberPath="Text"
+                              SelectedValuePath="Value"/>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="访客来源" 
+                           Style="{DynamicResource Tbk_SmallTextTitle}"/>
+                    <ComboBox ItemsSource="{Binding VisitorFroms}" 
+                              Width="180"
+                              Style="{DynamicResource Cb_Small}" 
+                              Name="cbo_visSource"
+                              SelectedIndex="0"
+                              DisplayMemberPath="Text"
+                              SelectedValuePath="Value"/>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="卡号" 
+                           Style="{DynamicResource Tbk_SmallTextTitle}"/>
+                    <TextBox Width="180"
+                         Style="{DynamicResource Tb_SmallTextInput}" 
+                         pu:TextBoxHelper.Watermark="请输入卡号"
+                         x:Name="txt_icnum"/>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="身份证号"
+                           Style="{DynamicResource Tbk_SmallTextTitle}"/>
+                    <TextBox Width="180"
+                         Style="{DynamicResource Tb_SmallTextInput}" 
+                         pu:TextBoxHelper.Watermark="请输身份证号"
+                         x:Name="txt_idNumber"/>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="状态"
+                           Style="{DynamicResource Tbk_SmallTextTitle}"/>
+                    <ComboBox Width="180"
+                          DisplayMemberPath="Text"
+                          SelectedValuePath="Value"
+                          Style="{DynamicResource Cb_Small}" 
+                          ItemsSource="{Binding StatusItems}" 
+                          SelectedValue="{Binding Status,Mode=TwoWay}"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="被访人" 
+                           Style="{DynamicResource Tbk_SmallTextTitle}" />
+                    <TextBox Width="180" pu:TextBoxHelper.Watermark="请输入被访人姓名"
+                          Style="{DynamicResource Tb_SmallTextInput}" 
+                          Margin="0,15,15,15" x:Name="txt_interName"/>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="来访时间" 
+                           Style="{DynamicResource Tbk_SmallTextTitle}"/>
+                    <TextBox Name="tb_start_time" 
+                         Text="{Binding StartTime,Mode=TwoWay,Converter={StaticResource cvt_DateTimeShow},ConverterParameter=yyyy-MM-dd HH:mm:ss}" 
+                         Width="220"
+                         pu:TextBoxHelper.Watermark="请选择或输入来访时间" 
+                         Style="{DynamicResource Tb_SmallTextInput}" 
+                         Margin="0,15,0,15" 
+                         GotFocus="dtp_time_GotFocus" 
+                         PreviewMouseLeftButtonDown="dtp_time_PreviewMouseLeftButtonDown"/>
+                    <TextBlock FontSize="{DynamicResource FontSize_Small}" Text="-" 
+                           Style="{DynamicResource Tbk_SmallTextTitle}" 
+                           VerticalAlignment="Center" Margin="0"/>
+                    <TextBox Name="tb_end_time" 
+                         Text="{Binding EndTime,Mode=TwoWay,Converter={StaticResource cvt_DateTimeShow},ConverterParameter=yyyy-MM-dd HH:mm:ss}" 
+                         Width="220" Height="36" pu:TextBoxHelper.Watermark="请选择或输入来访时间" 
+                         Style="{DynamicResource Tb_SmallTextInput}" 
+                         Margin="0,15,15,15" 
+                         GotFocus="dtp_time_GotFocus" 
+                         PreviewMouseLeftButtonDown="dtp_time_PreviewMouseLeftButtonDown"/>
+                    <Popup x:Name="pop_SelectTime" IsOpen="False">
+                        <Grid x:Name="grid_Picker" Background="{DynamicResource Scb_White01}">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+                            <DatePicker Grid.Column="0" FontSize="{DynamicResource FontSize_Small}" Height="35" SelectedDate="{Binding StartTime,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
+                            <DatePicker Grid.Column="1" FontSize="{DynamicResource FontSize_Small}" Height="35" SelectedDate="{Binding EndTime,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
+                            <Grid Grid.Row="1" Grid.ColumnSpan="2">
+                                <Border BorderBrush="{DynamicResource Scb_Gray05}" BorderThickness="0.5" VerticalAlignment="Top"/>
+                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                                    <Button Content="今天" Style="{DynamicResource Btn_SmallCancelButton}" Click="Btn_Clean_Click"/>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                                    <Button Content="确定" Style="{DynamicResource Btn_SmallConfirmButton}" Click="Btn_Confirm_Click"/>
+                                </StackPanel>
+                            </Grid>
+                        </Grid>
+                    </Popup>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="大厦楼层" 
+                           Style="{DynamicResource Tbk_SmallTextTitle}"/>
+                    <Grid Height="{Binding ElementName=txt_company,Path=ActualHeight}" VerticalAlignment="Center">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="0"/>
+                        </Grid.RowDefinitions>
+                        <Button Width="300" Height="35" 
+                            x:Name="btn_TreeCompanys" 
+                            Content="{Binding TreeCompany.SelectedNames}" 
+                            Style="{DynamicResource Btn_SmallCancelButton}" 
+                            Margin="0" 
+                            FontSize="{DynamicResource FontSize_Small}"
+                            Click="btn_TreeCompanys_Click"/>
+                        <pu:PopupX x:Name="pop_TreeCompanys" 
+                                   IsOpen="False" 
+                                   AllowsTransparency="True" 
+                                   AllowDrop="True"
+                                   MaxHeight="400">
+                            <Grid x:Name="Grid_CheckTreeCompanys" Width="{Binding ElementName=btnPopup,Path=ActualWidth}" Background="{DynamicResource Scb_White01}">
+                                <TreeView ItemsSource="{Binding TreeCompany.TreeCompanies}" 
+                                          HorizontalAlignment="Left" 
+                                          BorderThickness="0" 
+                                          MinWidth="{Binding ElementName=btn_TreeCompanys,Path=ActualWidth}"  
+                                          VerticalAlignment="Top" 
+                                          Style="{DynamicResource BaseTreeViewStyle}">
+                                    <TreeView.ItemTemplate>
+                                        <HierarchicalDataTemplate ItemsSource="{Binding Children}">
+                                            <ContentPresenter Content="{Binding Name}"/>
+                                        </HierarchicalDataTemplate>
+                                    </TreeView.ItemTemplate>
+                                </TreeView>
+                            </Grid>
+                        </pu:PopupX>
+                    </Grid>
+                </StackPanel>
+                <Button Content="搜索" 
+                        Style="{DynamicResource Btn_SmallTextButton}" 
+                        Width="112" 
+                        Margin="30,15,15,15" 
+                        Name="btnSeach" 
+                        Click="BtnSeach_Click"/>
+                <Button Content="导入" 
+                        Style="{DynamicResource Btn_SmallTextButton}" 
+                        Width="112" 
+                        Margin="30,15,15,15" 
+                        Command="{Binding LinkVisitorImportRecordListCommand}"/>
+            </WrapPanel>
+            <DataGrid Grid.Row="1" 
+                      x:Name="dtgShow"
+                      Margin="20,10,25,0" 
+                      Style="{DynamicResource Dg_SmallText}">
+
+                <DataGrid.Columns>
+                    <DataGridTemplateColumn Width="Auto">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Border Background="{DynamicResource Scb_Theme07}" 
+                                    CornerRadius="0,7,7,0" 
+                                    Visibility="{Binding Team,Converter={StaticResource cvt_TrueVisbile}}">
+                                    <StackPanel Orientation="Vertical" VerticalAlignment="Center" Margin="0,5">
+                                        <TextBlock Foreground="{DynamicResource Scb_White01}" FontSize="{DynamicResource FontSize_XSmall}" Text="多" />
+                                        <TextBlock Foreground="{DynamicResource Scb_White01}" FontSize="{DynamicResource FontSize_XSmall}" Text="人" />
+                                    </StackPanel>
+                                </Border>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+
+                    <DataGridTextColumn IsReadOnly="True" Header="姓名" Width="40*" Binding="{Binding Name, Mode=OneWay}" />
+                    <DataGridTextColumn IsReadOnly="True" Header="性别" Width="30*" Binding="{Binding Gender, Mode=OneWay}"/>
+
+                    <DataGridTemplateColumn Width="40*" Header="底库照片">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Image MaxHeight="50" MaxWidth="50" Source="{Binding ServerFaceImg}" />
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+
+                    <DataGridTextColumn IsReadOnly="True" Header="手机号码" Width="50*" Binding="{Binding Phone, Mode=OneWay}"/>
+                    <DataGridTextColumn IsReadOnly="True" Header="卡号" Width="60*" Binding="{Binding CardText, Mode=OneWay}"/>
+                    <DataGridTextColumn IsReadOnly="True" Header="来访事由" Width="40*" Binding="{Binding Reason, Mode=OneWay}"/>
+                    <DataGridTextColumn IsReadOnly="True" Header="来访时间" Width="70*" Binding="{Binding VisitDate, Mode=OneWay}"/>
+                    <DataGridTextColumn IsReadOnly="True" Header="访客来源" Width="50*" Binding="{Binding VisitorFrom, Mode=OneWay}"/>
+                    <DataGridTextColumn IsReadOnly="True" Header="被访人" Width="40*" Binding="{Binding BeVisitStaffName, Mode=OneWay}"/>
+                    <DataGridTextColumn IsReadOnly="True" Header="被访人公司" Width="60*" Binding="{Binding BeVisitCompanyName, Mode=OneWay}"/>
+                    <DataGridTextColumn IsReadOnly="True" Header="来访楼层" Width="60*" Binding="{Binding EdificeFloorName, Mode=OneWay}"/>
+                    <DataGridTextColumn IsReadOnly="True" Header="状态" Width="30*" Binding="{Binding VisitorStatusName, Mode=OneWay}"/>
+                    <DataGridTemplateColumn Width="100" Header="操作">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button BorderBrush="{x:Null}" 
+                                        Style="{DynamicResource Btn_ContentButton}"  
+                                        Command="{Binding DataContext.DetailCommand,RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}}"
+                                        CommandParameter="{Binding }"
+                                        HorizontalAlignment="Center">
+                                    <Image Source="/KT.Visitor.Interface;component/Resources/Images/see.png"
+                                           Height="30"
+                                           Name="img_operate"
+                                           Cursor="Hand" 
+                                           Tag="{Binding Operate,Mode=OneWay}"/>
+                                </Button>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+            <Grid Grid.Row="2" Margin="20,15,25,32">
+                <ContentPresenter Content="{Binding NavPageControl}" />
+            </Grid>
+        </Grid>
+
+    </Grid>
+</UserControl>

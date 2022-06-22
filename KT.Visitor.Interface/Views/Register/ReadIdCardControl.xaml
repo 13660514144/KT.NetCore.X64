@@ -1,0 +1,15 @@
+﻿<UserControl x:Class="KT.Visitor.IntegrateApp.Views.ReadIdCardControl"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      mc:Ignorable="d" >
+
+    <Grid>
+        <StackPanel Background="White" Orientation="Vertical" HorizontalAlignment="Center"  Width="800" Height="600" Margin="0,30,0,0">
+            <TextBlock Text="请将访客身份证放置在证件阅读器上" Foreground="Black" HorizontalAlignment="Center" FontSize="18" Margin="0,60,0,0"/>
+            <Image Source="/KT.Visitor.Interface;component/Resources/Images/readidnum.png" Width="450" Height="500" Margin="0,0,0,60"/>
+        </StackPanel>
+    </Grid>
+
+</UserControl>

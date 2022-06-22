@@ -1,0 +1,54 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:converter="clr-namespace:KT.Common.WpfApp.Converters">
+
+    <!--转换器-->
+    <converter:DoubleMultiplyConverter x:Key="cvt_DoubleMultiply"/>
+    <converter:DoublePlusConverter x:Key="cvt_DoublePlus"/>
+    <converter:DoubleReduceConverter x:Key="cvt_DoubleReduce"/>
+
+    <converter:StringEmptyFalseConverter x:Key="cvt_StringEmptyFalse"/>
+    <converter:StringEmptyTrueConverter x:Key="cvt_StringEmptyTrue"/>
+    <converter:BoolAntonymConverter x:Key="cvt_BoolAntonym"/>
+    <converter:NullableBoolAntonymConverter x:Key="cvt_NullableBoolAntonym"/>
+
+    <converter:TrueVisbileConverter x:Key="cvt_TrueVisbile"/>
+    <converter:TrueCollapsedConverter x:Key="cvt_TrueCollapsed"/>
+    <converter:TrueHiddenConverter x:Key="cvt_TrueHidden"/>
+    <converter:FalseHiddenConverter x:Key="cvt_FalseHidden"/>
+    <converter:NumParVisibleConverter x:Key="cvt_NumParVisible"/>
+    <converter:NumParCollapsedConverter x:Key="cvt_NumParCollapsed"/>
+    <converter:StringParVisibleConverter x:Key="cvt_StringParVisible"/>
+    <converter:StringParCollapsedConverter x:Key="cvt_StringParCollapsed"/>
+    <converter:StringParTrueConverter x:Key="cvt_StringParTrue"/>
+    <converter:StringParFalseConverter x:Key="cvt_StringParFalse"/>
+    <converter:StringNullCollapsedConverter x:Key="cvt_StringNullCollapsed"/>
+    <converter:StringNullVisibleConverter x:Key="cvt_StringNullVisible"/>
+    <converter:EqualValuesVisibleConverter x:Key="cvt_EqualValuesVisible"/>
+    <converter:EqualValuesCollapsedConverter x:Key="cvt_EqualValuesCollapsed"/>
+    <converter:MoreThanZeroVisibleConverter x:Key="cvt_MoreThanZeroVisible"/>
+    <converter:MoreThanZeroCollapsedConverter x:Key="cvt_MoreThanZeroCollapsed"/>
+    <converter:TrueZeroConverter x:Key="cvt_TrueZero"/>
+    <converter:FalseZeroConverter x:Key="cvt_FalseZero"/>
+    <converter:VisibleCollapsedInverseConverter x:Key="cvt_VisibleCollapsedInverse" />
+    <converter:VisibleHiddenInverseConverter x:Key="cvt_VisibleHiddenInverse" />
+
+    <converter:StringAppendConverter x:Key="cvt_StringAppend" />
+    <converter:StringInsertConverter x:Key="cvt_StringInsert" />
+    <converter:DateTimeShowConverter x:Key="cvt_DateTimeShow" />
+
+    <ResourceDictionary.MergedDictionaries>
+        <!--所有颜色-->
+        <ResourceDictionary Source="/KT.Common.WpfApp;component/Resources/Styles/ColorStyles.xaml"/>
+        <ResourceDictionary Source="/KT.Common.WpfApp;component/Resources/Styles/BrushStyles.xaml"/>
+        <!--主题定义-->
+        <ResourceDictionary Source="/KT.Common.WpfApp;component/Resources/Styles/ThemeStyles.xaml"/>
+        <ResourceDictionary Source="/KT.Common.WpfApp;component/Resources/Styles/SizeStyles.xaml"/>
+        <!--组件样式-->
+        <!--<ResourceDictionary Source="/KT.Common.WpfApp;component/Resources/Styles/TextBoxStyles.xaml"/>
+        <ResourceDictionary Source="/KT.Common.WpfApp;component/Resources/Styles/ItemsPanelStyles.xaml"/>
+        <ResourceDictionary Source="/KT.Common.WpfApp;component/Resources/Styles/ItemsControlStyles.xaml"/>
+        <ResourceDictionary Source="/KT.Common.WpfApp;component/Resources/Styles/ListBoxStyles.xaml"/>-->
+
+    </ResourceDictionary.MergedDictionaries>
+</ResourceDictionary>

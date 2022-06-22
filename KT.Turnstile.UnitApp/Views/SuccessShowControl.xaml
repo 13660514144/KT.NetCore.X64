@@ -1,0 +1,38 @@
+﻿<UserControl x:Class="KT.Turnstile.Unit.ClientApp.Views.SuccessShowControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:controls="clr-namespace:KT.Turnstile.Unit.ClientApp.Views.Controls"
+             xmlns:helpers="clr-namespace:KT.Turnstile.Unit.ClientApp.Views.Helpers"
+             xmlns:prism="http://prismlibrary.com/"
+             prism:ViewModelLocator.AutoWireViewModel="True"
+             mc:Ignorable="d" 
+             d:DesignHeight="1000" d:DesignWidth="600">
+    <Grid>
+        <Grid.Background>
+            <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                <GradientStop Offset="0" Color="#0B148C" />
+                <GradientStop Offset="1" Color="#060A45" />
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition />
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <controls:HeaderControl Grid.Row="0"/>
+        <Grid Grid.Row="1">
+            <ContentControl prism:RegionManager.RegionName="{x:Static helpers:RegionNameHelper.HandleElevatorSuccessRegion}" />
+            <ContentControl prism:RegionManager.RegionName="{x:Static helpers:RegionNameHelper.FaceNoRightPassRegion}" />
+            <ContentControl prism:RegionManager.RegionName="{x:Static helpers:RegionNameHelper.FaceEnterPassRegion}" />
+            <ContentControl prism:RegionManager.RegionName="{x:Static helpers:RegionNameHelper.FaceLeavePassRegion}" />
+            <ContentControl prism:RegionManager.RegionName="{x:Static helpers:RegionNameHelper.FaceEnterPassRegion}" />
+            <ContentControl prism:RegionManager.RegionName="{x:Static helpers:RegionNameHelper.FaceLeavePassRegion}" />
+            <ContentControl prism:RegionManager.RegionName="{x:Static helpers:RegionNameHelper.DefaultNoRightPassRegion}" />
+            <ContentControl prism:RegionManager.RegionName="{x:Static helpers:RegionNameHelper.DefaultEnterPassRegion}" />
+            <ContentControl prism:RegionManager.RegionName="{x:Static helpers:RegionNameHelper.DefaultLeavePassRegion}" />
+        </Grid>
+        <controls:CopyrightControl Grid.Row="4"/>
+    </Grid>
+</UserControl>

@@ -1,0 +1,299 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <OutputType>Library</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <ApplicationIcon />
+    <StartupObject />
+    <Platforms>AnyCPU;x64;x86</Platforms>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Views\Visitor\**" />
+    <EmbeddedResource Remove="Views\Visitor\**" />
+    <None Remove="Views\Visitor\**" />
+    <Page Remove="Views\Visitor\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Events\SubmitedRegisteEvent.cs" />
+    <Compile Remove="Helpers\MainFrameHelper.cs" />
+    <Compile Remove="Views\Common\AForgeCameraTakePhotoWindow.xaml.cs" />
+    <Compile Remove="Views\Common\SuccessPage.xaml.cs" />
+    <Compile Remove="Views\Register\IdCardFaceWarnWindow.xaml.cs" />
+    <Compile Remove="Views\Register\IdCardFaceWarnWindowViewModel.cs" />
+    <Compile Remove="Views\Register\RegisterPage.xaml.cs" />
+    <Compile Remove="Views\Register\RegisterPageViewModel.cs" />
+    <Compile Remove="Views\Setting\ConfigSetting.xaml.cs" />
+    <Compile Remove="Views\Setting\NotifyPage.xaml.cs" />
+    <Compile Remove="Views\Setting\NotifyPageViewModel.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="appsettings.json" />
+    <None Remove="Files\Documents\VisitorImprotTemplate.xls" />
+    <None Remove="fontawesome.ttf" />
+    <None Remove="log4net.config" />
+    <None Remove="Resources\Images\add.png" />
+    <None Remove="Resources\Images\appointVisitor.png" />
+    <None Remove="Resources\Images\blacklist.png" />
+    <None Remove="Resources\Images\cameraPicture.png" />
+    <None Remove="Resources\Images\certificateNot.png" />
+    <None Remove="Resources\Images\currentVisitor.png" />
+    <None Remove="Resources\Images\deleteInfo.png" />
+    <None Remove="Resources\Images\exit.png" />
+    <None Remove="Resources\Images\exitWhite.png" />
+    <None Remove="Resources\Images\fail.png" />
+    <None Remove="Resources\Images\female.png" />
+    <None Remove="Resources\Images\female1.png" />
+    <None Remove="Resources\Images\finish.png" />
+    <None Remove="Resources\Images\frame%402x.png" />
+    <None Remove="Resources\Images\grils.png" />
+    <None Remove="Resources\Images\loginBackground.png" />
+    <None Remove="Resources\Images\logoBackgroup.png" />
+    <None Remove="Resources\Images\logoBlue.png" />
+    <None Remove="Resources\Images\logoWhite.png" />
+    <None Remove="Resources\Images\male.png" />
+    <None Remove="Resources\Images\male1.png" />
+    <None Remove="Resources\Images\message.png" />
+    <None Remove="Resources\Images\password.png" />
+    <None Remove="Resources\Images\readidnum.png" />
+    <None Remove="Resources\Images\SearchIcon.png" />
+    <None Remove="Resources\Images\see.png" />
+    <None Remove="Resources\Images\selectProject.png" />
+    <None Remove="Resources\Images\set.png" />
+    <None Remove="Resources\Images\setting.png" />
+    <None Remove="Resources\Images\TakePicture.png" />
+    <None Remove="Resources\Images\todayVisitor.png" />
+    <None Remove="Resources\Images\userName.png" />
+    <None Remove="Resources\Images\visitorRecord.png" />
+    <None Remove="Resources\Images\visitorRegiter.png" />
+    <None Remove="Resources\Images\warning.png" />
+    <None Remove="Views\Record\VisitorImportRecordListControl.xaml~RF9ad5d04.TMP" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Remove="Resources\Styles\Base\PathDataStyles.xaml" />
+    <Page Remove="Views\Common\AForgeCameraTakePhotoWindow.xaml" />
+    <Page Remove="Views\Common\SuccessPage.xaml" />
+    <Page Remove="Views\Register\IdCardFaceWarnWindow.xaml" />
+    <Page Remove="Views\Register\RegisterPage.xaml" />
+    <Page Remove="Views\Setting\ConfigSetting.xaml" />
+    <Page Remove="Views\Setting\NotifyPage.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="appsettings.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="log4net.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Files\Documents\VisitorImprotTemplate.xls" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Core.System.Configuration.Install" Version="1.1.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\KT.Common.Core\KT.Common.Core.csproj" />
+    <ProjectReference Include="..\KT.Common.WpfApp\KT.Common.WpfApp.csproj" />
+    <ProjectReference Include="..\KT.Face.Check\KT.Face.Check.csproj" />
+    <ProjectReference Include="..\KT.Front.WriteCard\KT.Front.WriteCard.csproj" />
+    <ProjectReference Include="..\KT.Visitor.Common\KT.Visitor.Common.csproj" />
+    <ProjectReference Include="..\KT.Visitor.Data\KT.Visitor.Data.csproj" />
+    <ProjectReference Include="..\KT.Visitor.IDReader\KT.Visitor.IdReader.csproj" />
+    <ProjectReference Include="..\ThirdParty\PanuonUI.Silver\Core30\Panuon.UI.Silver\Panuon.UI.Silver.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="fontawesome.ttf" />
+    <Resource Include="Resources\Images\add.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\appointVisitor.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\blacklist.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\cameraPicture.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\certificateNot.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\currentVisitor.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\deleteInfo.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\exit.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\exitWhite.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\fail.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\female.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\female1.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\finish.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\frame@2x.png" />
+    <Resource Include="Resources\Images\grils.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\loginBackground.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\logoBackgroup.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\logoBlue.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\logoWhite.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\male.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\male1.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\message.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\password.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\readidnum.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\SearchIcon.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\see.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\selectProject.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\set.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\setting.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\TakePicture.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\todayVisitor.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\userName.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\visitorRecord.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\visitorRegiter.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\warning.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Views\Register\AddAccompanyPhotoWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Resources\Images\logo.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Update="Views\Common\AutoTakePictureControl.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\Common\MessageInfoBox.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\Record\AddBlacklistControl.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\Record\Controls\AssistantVisitorControl.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\Record\Controls\VisitorDynamicDetailControl.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\Record\PullBlackConfirmWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\Record\VisitorBlacklistControl.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\Record\VisitorDetailControl.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\Record\VisitorImportDetailListControl.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\Record\VisitorImportRecordListControl.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\Record\VisitorRecordListControl.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\Register\AddAccompanyPhotoWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\Register\Controls\CompanyWarnControl.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\Register\IdentityAuthDetailControl.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\Register\IdentityAuthSearchControl.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\Register\InviteAuthActiveControl.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\Register\InviteAuthControl.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\Register\InviteAuthDetailControl.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\Register\InviteAuthSearchControl.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\Register\VisitorRegisterControl.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+
+  <ProjectExtensions><VisualStudio><UserProperties appsettings_1json__JsonSchema="" /></VisualStudio></ProjectExtensions>
+
+</Project>

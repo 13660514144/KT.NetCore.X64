@@ -1,0 +1,15 @@
+﻿<Page x:Class="KT.Visitor.Interface.Views.Visitor.RegisterPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:pu="clr-namespace:Panuon.UI.Silver;assembly=Panuon.UI.Silver"
+      xmlns:ctls="clr-namespace:KT.Visitor.Interface.Views.Visitor.Controls"
+      mc:Ignorable="d" 
+       d:DesignWidth="800" 
+      d:DesignHeight="600">
+    <!--选择访问公司模块-->
+    <Grid>
+        <ContentPresenter Content="{Binding IntegrateRegisterControl}"/>
+    </Grid>
+</Page>

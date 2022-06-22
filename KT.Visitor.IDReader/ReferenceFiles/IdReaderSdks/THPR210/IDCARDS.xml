@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE IDCARD SYSTEM "IDCARD.dtd">
+<IDCARD>
+<!--全局的图像预处理-->
+  <vecProcessImage>
+    <CProcessImage processType="8" nEnable="1">
+      <CTiltCorrection nMaxAngle="0.3" bSameSize="1" nMinAngle="0.017" nFilledType="0" />
+    </CProcessImage>
+  </vecProcessImage>
+  <!--通用机读证件-->
+  <TemplatePath>IDCARDS/13.xml</TemplatePath><!--护照-->
+  <TemplatePath>IDCARDS/12.xml</TemplatePath><!--签证-->
+  <TemplatePath>IDCARDS/2009.xml</TemplatePath><!--TD-1型机读旅行证件-->
+  <TemplatePath>IDCARDS/2006.xml</TemplatePath><!--TD-2型机读旅行证件-->
+  <!--中国大陆-->
+<TemplatePath>IDCARDS/2.xml</TemplatePath><!--居民身份证-照片页-->
+<TemplatePath>IDCARDS/3.xml</TemplatePath><!--居民身份证-签发机关页-->
+<TemplatePath>IDCARDS/4.xml</TemplatePath><!--临时居民身份证-->
+<TemplatePath>IDCARDS/5.xml</TemplatePath><!--机动车驾驶证-->
+<TemplatePath>IDCARDS/6.xml</TemplatePath><!--机动车行驶证-->
+<TemplatePath>IDCARDS/30.xml</TemplatePath><!--机动车行驶证副页-->
+<TemplatePath>IDCARDS/9.xml</TemplatePath><!--往来港澳通行证2005版-照片页-->
+<TemplatePath>IDCARDS/22.xml</TemplatePath><!--往来港澳通行证2014版-照片页-->
+<TemplatePath>IDCARDS/11.xml</TemplatePath><!--往来台湾通行证1992版-照片页-->
+<TemplatePath>IDCARDS/29.xml</TemplatePath><!--往来台湾通行证2017版-照片页-->
+<TemplatePath>IDCARDS/14.xml</TemplatePath><!--港澳居民来往内地通行证-照片页-->
+<TemplatePath>IDCARDS/15.xml</TemplatePath><!--港澳居民来往内地通行证-机读码页-->
+<TemplatePath>IDCARDS/10.xml</TemplatePath><!--台湾居民来往大陆通行证1992版-照片页-->
+<TemplatePath>IDCARDS/25.xml</TemplatePath><!--台湾居民来往大陆通行证2015版-照片页-->
+<TemplatePath>IDCARDS/26.xml</TemplatePath><!--台湾居民来往大陆通行证2015版-机读码页-->
+<TemplatePath>IDCARDS/31.xml</TemplatePath><!--中华人民共和国港澳居民居住证——照片页-->
+<TemplatePath>IDCARDS/32.xml</TemplatePath><!--中华人民共和国港澳居民居住证——签发机关页-->
+<TemplatePath>IDCARDS/33.xml</TemplatePath><!--外国人永久居留身份证——照片页-->
+<TemplatePath>IDCARDS/23.xml</TemplatePath><!--边境地区出入境通行证2014版-照片页-->
+<TemplatePath>IDCARDS/1003.xml</TemplatePath><!--边境地区出入境通行证2005版-照片页-->
+<TemplatePath>IDCARDS/1004.xml</TemplatePath><!--边境地区出入境通行证2005版-信息页-->
+<TemplatePath>IDCARDS/16.xml</TemplatePath><!--常住人口登记卡-->
+<TemplatePath>IDCARDS/1009.xml</TemplatePath>
+<TemplatePath>IDCARDS/1010.xml</TemplatePath><!--名片-->
+<TemplatePath>IDCARDS/1000.xml</TemplatePath><!--居住证（广东、广西、东莞）-照片页-->
+<TemplatePath>IDCARDS/1013.xml</TemplatePath><!--深圳经济特区居住证2015版-照片页-->
+<TemplatePath>IDCARDS/1021.xml</TemplatePath><!--社会保障卡（北京、重庆）-照片页-->
+<TemplatePath>IDCARDS/1039.xml</TemplatePath><!--厦门市社会保障卡-照片页-->
+<TemplatePath>IDCARDS/1007.xml</TemplatePath><!--律师执业证-签发机关页-->
+<TemplatePath>IDCARDS/1008.xml</TemplatePath><!--律师执业证-照片页-->
+<TemplatePath>IDCARDS/8.xml</TemplatePath><!--士兵证1998版-->
+<TemplatePath>IDCARDS/7.xml</TemplatePath><!--军官证1998版-->
+<TemplatePath>IDCARDS/18.xml</TemplatePath><!--军官证1998版-照片页-->
+<TemplatePath>IDCARDS/19.xml</TemplatePath><!--军官证1998版-信息页-->
+<TemplatePath>IDCARDS/20.xml</TemplatePath><!--警官证2006版-照片页-->
+<TemplatePath>IDCARDS/21.xml</TemplatePath><!--警官证2006版-信息页-->
+<TemplatePath>IDCARDS/24.xml</TemplatePath><!--中国人民解放军车辆驾驶证2010版-->
+<TemplatePath>IDCARDS/27.xml</TemplatePath><!--中国人民解放军行车执照2012版-->
+<TemplatePath>IDCARDS/17.xml</TemplatePath><!--海员证2009版-照片页-->
+<TemplatePath>IDCARDS/1017.xml</TemplatePath><!--临时海员证-->
+<TemplatePath>IDCARDS/1018.xml</TemplatePath><!--内蒙古自治区人民法院工作证-->
+<TemplatePath>IDCARDS/1019.xml</TemplatePath><!--内蒙古自治区检察机关工作证-->
+<TemplatePath>IDCARDS/1037.xml</TemplatePath><!--神煤集团工作证-->
+<TemplatePath>IDCARDS/1009.xml</TemplatePath><!--中华人民共和国道路运输证IC卡-->
+
+<!--港奥台证件-->
+<TemplatePath>IDCARDS/34.xml</TemplatePath><!--台湾地区（金马澎）入出境许可证2015版-照片页-->
+<TemplatePath>IDCARDS/35.xml</TemplatePath><!--台湾居留证-->
+<TemplatePath>IDCARDS/1001.xml</TemplatePath><!--香港居民身份证2003版-照片页-->
+<TemplatePath>IDCARDS/1005.xml</TemplatePath><!--澳门居民身份证-照片页-->
+<TemplatePath>IDCARDS/1031.xml</TemplatePath><!--台湾地区身份证-照片页-->
+<TemplatePath>IDCARDS/1032.xml</TemplatePath><!--台湾地区身份证-条码页-->
+<TemplatePath>IDCARDS/1030.xml</TemplatePath><!--台湾全民健康保险卡-->
+<TemplatePath>IDCARDS/1040.xml</TemplatePath><!--台湾地区驾驶证-->
+<!--印度尼西亚-->
+<TemplatePath>IDCARDS/2010.xml</TemplatePath><!--印度尼西亚居民身份证-->
+<TemplatePath>IDCARDS/2041.xml</TemplatePath>
+<!--日本-->
+<TemplatePath>IDCARDS/2051.xml</TemplatePath><!--日本驾驶证-->
+<!--马来西亚-->
+<TemplatePath>IDCARDS/2001.xml</TemplatePath><!--马来西亚身份证-照片页-->
+<TemplatePath>IDCARDS/2021.xml</TemplatePath><!--马拉西亚驾驶证-->
+<!--墨西哥-->
+<TemplatePath>IDCARDS/2013.xml</TemplatePath><!--墨西哥选民证-照片页-->
+<TemplatePath>IDCARDS/2014.xml</TemplatePath><!--墨西哥选民证-机读码页-->
+<!--新西兰-->
+<TemplatePath>IDCARDS/2003.xml</TemplatePath><!--新西兰驾驶证-->
+<!--新加坡-->
+<TemplatePath>IDCARDS/2004.xml</TemplatePath><!--新加坡身份证-->
+<TemplatePath>IDCARDS/2031.xml</TemplatePath><!--新加坡驾驶证-->
+<!--瑞典-->
+<TemplatePath>IDCARDS/2020.xml</TemplatePath><!--瑞典驾驶证-->
+<!--泰国-->
+<TemplatePath>IDCARDS/2011.xml</TemplatePath><!--泰国国民身份证-->
+<TemplatePath>IDCARDS/2012.xml</TemplatePath><!--泰国驾驶证-->
+<!--美国-->
+<TemplatePath>IDCARDS/2002.xml</TemplatePath><!--美国加利福利亚驾驶证-->
+<!--越南-->
+<TemplatePath>IDCARDS/36.xml</TemplatePath><!--越南出入境通行证-->
+</IDCARD>

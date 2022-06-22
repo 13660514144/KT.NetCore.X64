@@ -1,0 +1,14 @@
+﻿<UserControl x:Class="KT.Visitor.Interface.Views.Auth.IntegrateIdentityAuthControl"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+           xmlns:pu="clr-namespace:Panuon.UI.Silver;assembly=Panuon.UI.Silver"
+      mc:Ignorable="d" 
+      d:DesignHeight="600" d:DesignWidth="1000">
+
+    <Grid>
+        <ContentPresenter Content="{Binding IntegrateIdentityAuthSearchControl}"/>
+        <ContentPresenter Content="{Binding IntegrateIdentityAuthActiveControl}"/>
+    </Grid>
+</UserControl>
